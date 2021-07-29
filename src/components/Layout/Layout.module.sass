@@ -1,0 +1,61 @@
+@use "styles/abstracts/mixins" as m
+@use "styles/abstracts/colors" as c
+
+$nprogress-height: 20px
+$navbar-height: 100px
+$footer-min-visible-height: 10px
+$max-page-width: 1600px
+$max-width-fade-area-width: 200px
+
+.page
+  max-width: $max-page-width
+  margin: 0 auto
+
+.layout
+  display: grid
+  grid-template-areas: "nprogress nprogress nprogress" ". navbar ." ". content ." ". footer ."
+  grid-template-columns: 10px 1fr 10px
+  background: c.$background
+  position: relative
+
+  &:before
+    content: ""
+    width: $max-width-fade-area-width
+    height: 100%
+    position: absolute
+    left: -$max-width-fade-area-width
+    background: linear-gradient(90deg, c.$background-pale 0%, c.$background 100%)
+
+  &:after
+    content: ""
+    width: $max-width-fade-area-width
+    height: 100%
+    position: absolute
+    right: -$max-width-fade-area-width
+    background: linear-gradient(90deg, c.$background 0%, c.$background-pale 100%)
+
+  > *
+    border: 1px solid red
+
+.content
+  grid-area: content
+  min-height: calc(100vh - #{$nprogress-height + $navbar-height + $footer-min-visible-height})
+
+.navbar
+  grid-area: navbar
+  height: 100px
+  position: sticky
+  top: $nprogress-height
+  background: inherit
+
+.footer
+  grid-area: footer
+  height: 100px
+
+.nprogress
+  grid-area: nprogress
+  height: $nprogress-height
+  position: sticky
+  top: 0
+  background: inherit
+
