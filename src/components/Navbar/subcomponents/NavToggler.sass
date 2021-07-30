@@ -1,8 +1,8 @@
-@use "styles/abstracts/colors" as c
+@use "styles/abstracts" as *
 
 $nav-toggler-width: 40px
 
-.navbarToggler
+.navbar-toggler
   &,
   &:focus,
   &:active
@@ -11,7 +11,7 @@ $nav-toggler-width: 40px
     box-shadow: none
 
 
-.navbarTogglerIcon
+.navbar-toggler__icon
   width: $nav-toggler-width
   height: $nav-toggler-width
   position: relative
@@ -22,7 +22,7 @@ $nav-toggler-width: 40px
     width: 100%
     left: 0
     transition: all 0.4s ease-in-out, background-color 0s
-    background: c.$text
+    background: $text
 
     &:nth-child(1)
       top: 9px
@@ -39,26 +39,27 @@ $nav-toggler-width: 40px
       top: 27px
       transform: rotate(0deg)
 
-.navbarTogglerIconIsOpen
-  span
-    &:nth-child(1)
-      top: 20px
-      width: 0
-      left: 50%
+  &.--is-open
+    span
+      &:nth-child(1)
+        top: 20px
+        width: 0
+        left: 50%
 
 
-    &:nth-child(2)
-      transform: rotate(45deg)
+      &:nth-child(2)
+        transform: rotate(45deg)
 
 
-    &:nth-child(3)
-      transform: rotate(-45deg)
+      &:nth-child(3)
+        transform: rotate(-45deg)
 
 
-    &:nth-child(4)
-      top: 20px
-      width: 0
-      left: 50%
+      &:nth-child(4)
+        top: 20px
+        width: 0
+        left: 50%
+
 
 
 

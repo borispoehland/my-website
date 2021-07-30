@@ -1,6 +1,5 @@
 import { MouseEventHandler } from 'react';
 import { Navbar } from 'react-bootstrap';
-import styles from './NavToggler.module.sass';
 import cx from 'classnames';
 
 interface IProps {
@@ -9,10 +8,10 @@ interface IProps {
 }
 
 const NavToggler = ({ isOpen, onClick }: IProps): JSX.Element => (
-  <Navbar.Toggle className={styles.navbarToggler} onClick={onClick}>
+  <Navbar.Toggle onClick={onClick}>
     <div
-      className={cx(styles.navbarTogglerIcon, {
-        [styles.navbarTogglerIconIsOpen]: isOpen,
+      className={cx('navbar-toggler__icon', {
+        '--is-open': isOpen,
       })}
     >
       <span />

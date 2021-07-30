@@ -1,16 +1,14 @@
-import styles from './Layout.module.sass';
-import cx from 'classnames';
 import Navbar from '../Navbar/Navbar';
 
 interface IProps extends HasChildren {}
 
 const Layout = ({ children }: IProps): JSX.Element => {
   return (
-    <div className={styles.layout}>
-      <section className={cx(styles.nprogress, 'nprogress')} />
-      <Navbar className={styles.navbar} />
-      <div className={styles.content}>{children}</div>
-      <footer className={styles.footer} />
+    <div className="page">
+      <section className="page__progress" />
+      <Navbar className="page__navbar" />
+      <div className="page__content">{children}</div>
+      <footer className="page__footer" />
     </div>
   );
 };

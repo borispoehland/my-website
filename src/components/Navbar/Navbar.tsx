@@ -1,4 +1,3 @@
-import styles from './Navbar.module.sass';
 import { Nav, Navbar as BootstrapNavbar } from 'react-bootstrap';
 import { useRef, useState, useEffect } from 'react';
 import NextLink from '../NextLink/NextLink';
@@ -40,8 +39,8 @@ const Navbar = ({ className }: IProps): JSX.Element => {
 
   return (
     <BootstrapNavbar className={className} expand="md" expanded={isOpen}>
-      <section className={styles.navbarNonCollapse}>
-        <NextLink href="/" className={styles.navbarBrand}>
+      <section className="navbar-non-collapse">
+        <NextLink href="/" className="navbar-brand">
           <Image
             src={`/img/bp-${theme}.png`}
             width={912}
@@ -52,15 +51,15 @@ const Navbar = ({ className }: IProps): JSX.Element => {
         </NextLink>
         <NavToggler isOpen={isOpen} onClick={computedOnce.current.toggleMenu} />
       </section>
-      <BootstrapNavbar.Collapse className={styles.navbarCollapse} timeout={0}>
-        <Nav className={styles.navbarNav}>
+      <BootstrapNavbar.Collapse timeout={0}>
+        <Nav>
           {getTranslatedNavItems().map(({ href, label, collapsedOnly }) => {
             return (
               <NextLink
                 key={href}
                 href={href}
                 className={cx('nav-link', {
-                  [styles.collapsedOnlyLink]: collapsedOnly,
+                  '--collapsed-only': collapsedOnly,
                 })}
               >
                 {label}

@@ -1,0 +1,17 @@
+@use "styles/abstracts" as *
+
+.link
+  @extend %link
+
+  &:hover
+    svg
+      color: $text
+
+  &.--is-external
+    display: inline-flex
+    align-items: center
+    flex-wrap: wrap
+
+    +gap(xs, false)
+
+

@@ -1,16 +1,15 @@
-@use "styles/abstracts/mixins" as m
-@use "styles/abstracts/colors" as c
+@use "styles/abstracts" as *
 
 $nprogress-height: 20px
 $footer-min-visible-height: 10px
 $max-page-width: 1600px
 
-.layout
+.page
   display: grid
   grid-template-areas: "nprogress" "navbar" "content" "footer"
   min-height: 100vh
   grid-template-rows: auto auto 1fr auto
-  background: c.$background
+  background: $background
   position: relative
   max-width: $max-page-width
   margin: 0 auto
@@ -18,27 +17,28 @@ $max-page-width: 1600px
   > *
     border: 1px solid red
 
-.content
+.page__content
   grid-area: content
 
-.navbar
+.page__navbar
   grid-area: navbar
   position: sticky
   top: $nprogress-height
   background: inherit
   font-size: 1.3rem
 
-.footer
+.page__footer
   grid-area: footer
   height: 100px
 
-.nprogress
+.page__progress
   grid-area: nprogress
   height: $nprogress-height
   position: sticky
   top: 0
   background: inherit
 
-.content, .navbar, .footer
-  padding: 0 1rem
+.page
+  &__content, &__navbar, &__footer
+    padding: 0 1rem
 

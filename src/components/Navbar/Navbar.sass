@@ -1,43 +1,43 @@
-@use "styles/abstracts/colors" as c
-@use "styles/abstracts/mixins" as m
+@use "styles/abstracts" as *
 
 $nav-logo-width: 300px
 
-.navbarNonCollapse
+.navbar-non-collapse
   padding: 0.5rem 0
   display: flex
   flex-grow: 1
   justify-content: space-between
   align-items: center
 
-.navbarBrand
+.navbar-brand
   max-width: $nav-logo-width
   display: flex
   margin-right: 1rem
 
-.navbarCollapse
+.navbar-collapse
   position: absolute
   right: 0
   transform: translateY(0)
   border-radius: 0 0 5px 5px
   transition: transform 0.4s ease-out, opacity 0.2s ease-out
-  background: c.$background
+  background: $background
 
-  +m.from(md)
+  +from(md)
     position: static
     justify-content: flex-end
 
-.navbarNav
+.navbar-nav
   padding: 0 0.75rem
   align-items: flex-end
 
-  +m.from(md)
+  +from(md)
     flex-direction: row
     padding: 0
 
-.collapsedOnlyLink
-  +m.from(md)
-    display: none
+.nav-link
+  &.--collapsed-only
+    +from(md)
+      display: none
 
 //@include from(lg)
   margin-left: 1rem
