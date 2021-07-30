@@ -13,8 +13,7 @@ $max-width-fade-area-width: 200px
 
 .layout
   display: grid
-  grid-template-areas: "nprogress nprogress nprogress" ". navbar ." ". content ." ". footer ."
-  grid-template-columns: 10px 1fr 10px
+  grid-template-areas: "nprogress" "navbar" "content" "footer"
   background: c.$background
   position: relative
 
@@ -58,4 +57,7 @@ $max-width-fade-area-width: 200px
   position: sticky
   top: 0
   background: inherit
+
+.content, .navbar, .footer
+  padding: 0 1rem
 
