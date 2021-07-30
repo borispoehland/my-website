@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { GoLinkExternal } from 'react-icons/go';
 import cx from 'classnames';
+import styles from './NextLink.module.sass';
 
 interface IProps extends HasChildren {
   className?: string;
@@ -18,7 +19,9 @@ const NextLink = ({
     <Link href={href}>
       <a
         target={isExternal ? '__blank' : undefined}
-        className={cx('link', className, { '--is-external': isExternal })}
+        className={cx('link', styles.link, className, {
+          [styles.linkIsExternal]: isExternal,
+        })}
       >
         {isExternal ? (
           <>

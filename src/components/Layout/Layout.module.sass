@@ -4,11 +4,6 @@
 $nprogress-height: 20px
 $footer-min-visible-height: 10px
 $max-page-width: 1600px
-$max-width-fade-area-width: 200px
-
-.page
-  max-width: $max-page-width
-  margin: 0 auto
 
 .layout
   display: grid
@@ -17,22 +12,8 @@ $max-width-fade-area-width: 200px
   grid-template-rows: auto auto 1fr auto
   background: c.$background
   position: relative
-
-  //&:before
-  //  content: ""
-  //  width: $max-width-fade-area-width
-  //  height: 100%
-  //  position: absolute
-  //  left: -$max-width-fade-area-width
-  //  background: linear-gradient(90deg, c.$background-pale 0%, c.$background 100%)
-  //
-  //&:after
-  //  content: ""
-  //  width: $max-width-fade-area-width
-  //  height: 100%
-  //  position: absolute
-  //  right: -$max-width-fade-area-width
-  //  background: linear-gradient(90deg, c.$background 0%, c.$background-pale 100%)
+  max-width: $max-page-width
+  margin: 0 auto
 
   > *
     border: 1px solid red
@@ -45,6 +26,7 @@ $max-width-fade-area-width: 200px
   position: sticky
   top: $nprogress-height
   background: inherit
+  font-size: 1.3rem
 
 .footer
   grid-area: footer

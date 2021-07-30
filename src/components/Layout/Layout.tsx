@@ -6,13 +6,11 @@ interface IProps extends HasChildren {}
 
 const Layout = ({ children }: IProps): JSX.Element => {
   return (
-    <div className={styles.page}>
-      <div className={styles.layout}>
-        <section className={cx(styles.nprogress, 'nprogress')} />
-        <Navbar className={styles.navbar} />
-        <div className={styles.content}>{children}</div>
-        <footer className={styles.footer} />
-      </div>
+    <div className={styles.layout}>
+      <section className={cx(styles.nprogress, 'nprogress')} />
+      <Navbar className={styles.navbar} />
+      <div className={styles.content}>{children}</div>
+      <footer className={styles.footer} />
     </div>
   );
 };
