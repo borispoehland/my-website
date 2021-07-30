@@ -2,7 +2,6 @@
 @use "styles/abstracts/colors" as c
 
 $nprogress-height: 20px
-$navbar-height: 100px
 $footer-min-visible-height: 10px
 $max-page-width: 1600px
 $max-width-fade-area-width: 200px
@@ -14,35 +13,35 @@ $max-width-fade-area-width: 200px
 .layout
   display: grid
   grid-template-areas: "nprogress" "navbar" "content" "footer"
+  min-height: 100vh
+  grid-template-rows: auto auto 1fr auto
   background: c.$background
   position: relative
 
-  &:before
-    content: ""
-    width: $max-width-fade-area-width
-    height: 100%
-    position: absolute
-    left: -$max-width-fade-area-width
-    background: linear-gradient(90deg, c.$background-pale 0%, c.$background 100%)
-
-  &:after
-    content: ""
-    width: $max-width-fade-area-width
-    height: 100%
-    position: absolute
-    right: -$max-width-fade-area-width
-    background: linear-gradient(90deg, c.$background 0%, c.$background-pale 100%)
+  //&:before
+  //  content: ""
+  //  width: $max-width-fade-area-width
+  //  height: 100%
+  //  position: absolute
+  //  left: -$max-width-fade-area-width
+  //  background: linear-gradient(90deg, c.$background-pale 0%, c.$background 100%)
+  //
+  //&:after
+  //  content: ""
+  //  width: $max-width-fade-area-width
+  //  height: 100%
+  //  position: absolute
+  //  right: -$max-width-fade-area-width
+  //  background: linear-gradient(90deg, c.$background 0%, c.$background-pale 100%)
 
   > *
     border: 1px solid red
 
 .content
   grid-area: content
-  min-height: calc(100vh - #{$nprogress-height + $navbar-height + $footer-min-visible-height})
 
 .navbar
   grid-area: navbar
-  height: 100px
   position: sticky
   top: $nprogress-height
   background: inherit

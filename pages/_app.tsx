@@ -4,6 +4,7 @@ import Layout from '../src/components/Layout/Layout';
 import NProgress from 'nprogress';
 import { useRouter } from 'next/router';
 import { useEffect, useRef } from 'react';
+import { RecoilRoot } from 'recoil';
 
 NProgress.configure({ showSpinner: false, parent: '.nprogress' });
 
@@ -40,9 +41,11 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   }, [router.events]);
 
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <RecoilRoot>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </RecoilRoot>
   );
 };
 
