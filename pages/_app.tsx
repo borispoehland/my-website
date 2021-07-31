@@ -5,6 +5,8 @@ import NProgress from 'nprogress';
 import { useRouter } from 'next/router';
 import { useEffect, useRef } from 'react';
 import { RecoilRoot } from 'recoil';
+import Head from 'next/head';
+import { UIDReset } from 'react-uid';
 
 NProgress.configure({ showSpinner: false, parent: '.page__progress' });
 
@@ -39,11 +41,18 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   }, [router.events]);
 
   return (
-    <RecoilRoot>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </RecoilRoot>
+    <>
+      <Head>
+        <title>Boris Pöhland | Web Developer | Usability Analyst</title>
+      </Head>
+      <UIDReset prefix="uid_">
+        <RecoilRoot>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </RecoilRoot>
+      </UIDReset>
+    </>
   );
 };
 

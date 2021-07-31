@@ -16,9 +16,13 @@
   padding: 0 0.75rem
   align-items: flex-end
 
+  > *:last-child
+    padding-right: 0 !important
+
   +from(md)
     flex-direction: row
     padding: 0
+    align-items: center
 
 .nav-link
   &.--collapsed-only
