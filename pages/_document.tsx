@@ -5,12 +5,8 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <script
-            async
-            src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-            integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
-            crossOrigin="anonymous"
-          />
+          {/*eslint-disable-next-line @next/next/no-sync-scripts*/}
+          <script src="/scripts/jquery-3.5.1.slim.min.js" />
         </Head>
         <body>
           <Main />

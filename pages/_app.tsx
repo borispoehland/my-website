@@ -4,8 +4,9 @@ import Layout from '../src/components/Layout/Layout';
 import NProgress from 'nprogress';
 import { useRouter } from 'next/router';
 import { useEffect, useRef } from 'react';
+import { RecoilRoot } from 'recoil';
 
-NProgress.configure({ showSpinner: false, parent: '.nprogress' });
+NProgress.configure({ showSpinner: false, parent: '.page__progress' });
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
@@ -28,8 +29,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
     router.events.on('routeChangeError', endLoadingSpinner);
 
-    $('#__next').attr('data-theme', 'light');
-
     return () => {
       router.events.off('routeChangeStart', startLoadingSpinner);
 
@@ -40,9 +39,11 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   }, [router.events]);
 
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <RecoilRoot>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </RecoilRoot>
   );
 };
 

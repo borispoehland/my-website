@@ -1,0 +1,66 @@
+@use "styles/abstracts" as *
+
+$nav-toggler-width: 40px
+
+.navbar-toggler
+  &,
+  &:focus,
+  &:active
+    outline: none
+    border: none
+    box-shadow: none
+
+
+.navbar-toggler__icon
+  width: $nav-toggler-width
+  height: $nav-toggler-width
+  position: relative
+  margin: 0
+  span
+    position: absolute
+    height: 4px
+    width: 100%
+    left: 0
+    transition: all 0.4s ease-in-out, background-color 0s
+    background: $c-text
+
+    &:nth-child(1)
+      top: 9px
+      transform: rotate(0deg)
+
+
+    &:nth-child(2),
+    &:nth-child(3)
+      top: 18px
+      transform: rotate(0deg)
+
+
+    &:nth-child(4)
+      top: 27px
+      transform: rotate(0deg)
+
+  &.--is-open
+    span
+      &:nth-child(1)
+        top: 20px
+        width: 0
+        left: 50%
+
+
+      &:nth-child(2)
+        transform: rotate(45deg)
+
+
+      &:nth-child(3)
+        transform: rotate(-45deg)
+
+
+      &:nth-child(4)
+        top: 20px
+        width: 0
+        left: 50%
+
+
+
+
+
