@@ -1,5 +1,6 @@
-import { ReactNode, useState } from 'react';
+import { ReactNode, useCallback, useState } from 'react';
 import cx from 'classnames';
+import { useUID } from 'react-uid';
 
 interface IProps {
   action: Fn<void, void>;
@@ -19,6 +20,12 @@ const Switch = ({
   right,
 }: IProps): JSX.Element => {
   const [isRight, setIsRight] = useState(isRightProp);
+  const id = useUID();
+
+  const onSwitchChange = useCallback(() => {
+    setIsRight((prevState): boolean => !prevState);
+    action();
+  }, [action]);
 
   return (
     <button
@@ -26,14 +33,12 @@ const Switch = ({
       aria-label={ariaLabel}
       className={cx('--as-link', className)}
     >
-      <label className="switch">
+      <label htmlFor={id} className="switch">
         <input
+          id={id}
           type="checkbox"
           checked={isRight}
-          onChange={(): void => {
-            setIsRight((prevState): boolean => !prevState);
-            action();
-          }}
+          onChange={onSwitchChange}
         />
         <span className="switch__slider">
           <span className="switch__indicator">{isRight ? right : left}</span>
