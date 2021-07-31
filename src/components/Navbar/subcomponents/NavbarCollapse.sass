@@ -1,0 +1,34 @@
+@use "styles/abstracts" as *
+
+.navbar-collapse
+  position: absolute
+  right: 0
+  transform: translateY(0)
+  border-radius: 0 0 5px 5px
+  transition: transform 0.4s ease-out, opacity 0.2s ease-out
+  background: $c-background
+
+  +from(md)
+    position: static
+    justify-content: flex-end
+
+.navbar-nav
+  padding: 0 0.75rem
+  align-items: flex-end
+
+  +from(md)
+    flex-direction: row
+    padding: 0
+
+.nav-link
+  &.--collapsed-only
+    +from(md)
+      display: none
+
+.navbar-collapse
+  &:not(.show)
+    display: block
+    transform: translateY(-100%)
+
+    +from(md)
+      transform: none

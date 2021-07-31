@@ -1,0 +1,21 @@
+\:root
+  --primary-color: #c60ac4
+
+body
+  &[data-theme="1"]
+    --background-color: black
+    --text-color: white
+    --switch-1: white
+    --switch-2: #c60ac4
+
+  &[data-theme="0"]
+    --background-color: white
+    --text-color: black
+    --switch-1: #c60ac4
+    --switch-2: white
+
+$c-primary: var(--primary-color)
+$c-text: var(--text-color)
+$c-background: var(--background-color)
+$c-switch-1: var(--switch-1)
+$c-switch-2: var(--switch-2)

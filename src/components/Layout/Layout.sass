@@ -1,0 +1,42 @@
+@use "styles/abstracts" as *
+
+$nprogress-height: 10px
+$max-page-width: 1600px
+
+.page
+  display: grid
+  grid-template-areas: "nprogress" "navbar" "content" "footer"
+  min-height: 100vh
+  grid-template-rows: auto auto 1fr auto
+  background: $c-background
+  position: relative
+  max-width: $max-page-width
+  margin: 0 auto
+  grid-gap: $nprogress-height
+
+  &__content
+    grid-area: content
+
+  &__navbar
+    grid-area: navbar
+    position: sticky
+    top: $nprogress-height
+    background: inherit
+    font-size: 1.3rem
+
+  &__footer
+    grid-area: footer
+    height: 100px
+
+  &__progress
+    grid-area: nprogress
+    height: $nprogress-height
+    position: sticky
+    top: 0
+    background: inherit
+    z-index: 1 // to overlap the mobile menu
+    margin-top: -$nprogress-height // to not have grid gap + height of nprogress
+
+  &__content, &__navbar, &__footer
+    margin: 0 1rem
+

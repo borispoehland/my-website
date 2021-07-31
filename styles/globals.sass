@@ -1,23 +1,16 @@
-@use "styles/abstracts/colors" as c
+@forward "styles/vendors/bootstrap"
+@forward "styles/vendor-extensions/bootstrap"
 
-@import "styles/vendors/nprogress"
-@import "styles/vendor-extensions/nprogress"
+@forward "styles/vendors/nprogress"
+@forward "styles/vendor-extensions/nprogress"
 
-html,
-body
-  padding: 0
-  margin: 0
+@forward "base/base"
+@forward "base/classes"
 
-
-a
-  color: inherit
-  text-decoration: none
+@forward "src/components/Layout/Layout"
+@forward "src/components/Navbar/Navbar"
+@forward "src/components/NextLink/NextLink"
+@forward "src/components/Switch/Switch"
 
 
-*
-  box-sizing: border-box
-
-#__next
-  background: c.$background-pale
-  overflow-x: hidden
 
