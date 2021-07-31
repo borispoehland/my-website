@@ -27,6 +27,7 @@ const NavbarNonCollapse = ({
           height={169}
           sizes={logoSizes}
           quality={100}
+          priority
           alt="Image of Boris Pöhland"
         />
       </NextLink>
