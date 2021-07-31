@@ -29,8 +29,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
     router.events.on('routeChangeError', endLoadingSpinner);
 
-    $('body').attr('data-theme', 'light');
-
     return () => {
       router.events.off('routeChangeStart', startLoadingSpinner);
 

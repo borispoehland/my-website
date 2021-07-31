@@ -1,43 +1,7 @@
-@use "styles/abstracts" as *
+@forward "subcomponents/NavbarCollapse"
+@forward "subcomponents/NavbarNonCollapse"
+@forward "subcomponents/NavToggler"
 
-$nav-logo-width: 300px
-
-.navbar-non-collapse
-  padding: 0.5rem 0
-  display: flex
-  flex-grow: 1
-  justify-content: space-between
-  align-items: center
-
-.navbar-brand
-  max-width: $nav-logo-width
-  display: flex
-  margin-right: 1rem
-
-.navbar-collapse
-  position: absolute
-  right: 0
-  transform: translateY(0)
-  border-radius: 0 0 5px 5px
-  transition: transform 0.4s ease-out, opacity 0.2s ease-out
-  background: $background
-
-  +from(md)
-    position: static
-    justify-content: flex-end
-
-.navbar-nav
-  padding: 0 0.75rem
-  align-items: flex-end
-
-  +from(md)
-    flex-direction: row
-    padding: 0
-
-.nav-link
-  &.--collapsed-only
-    +from(md)
-      display: none
 
 //@include from(lg)
   margin-left: 1rem
