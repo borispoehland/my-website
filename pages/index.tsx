@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       {[...Array(20)].map((_, i) => (
-        <h1 key={i}>Hello World!</h1>
+        <h1 key={i}>Hello World</h1>
       ))}
     </>
   );

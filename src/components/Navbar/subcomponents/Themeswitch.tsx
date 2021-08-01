@@ -23,9 +23,7 @@ const ThemeSwitch = ({ className }: IProps): JSX.Element => {
   return (
     <Switch
       action={changeTheme}
-      ariaLabel={`${
-        theme === Theme.LIGHT ? 'Activate' : 'Deactivate'
-      } dark mode`}
+      label={`${theme === Theme.LIGHT ? 'Activate' : 'Deactivate'} dark mode`}
       className={className}
       left={<BiSun />}
       right={<BiMoon />}
