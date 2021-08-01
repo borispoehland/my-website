@@ -4,7 +4,7 @@ import { useUID } from 'react-uid';
 
 interface IProps {
   action: Fn<void, void>;
-  ariaLabel: string;
+  label: string;
   className?: string;
   isRight?: boolean;
   left: ReactNode;
@@ -13,7 +13,7 @@ interface IProps {
 
 const Switch = ({
   action,
-  ariaLabel,
+  label,
   className,
   isRight: isRightProp,
   left,
@@ -28,12 +28,9 @@ const Switch = ({
   }, [action]);
 
   return (
-    <button
-      type="button"
-      aria-label={ariaLabel}
-      className={cx('--as-link', className)}
-    >
-      <label htmlFor={id} className="switch">
+    <button type="button" className={cx('--as-link', className)}>
+      <div className="switch">
+        <label htmlFor={id}>{label}</label>
         <input
           id={id}
           type="checkbox"
@@ -43,7 +40,7 @@ const Switch = ({
         <span className="switch__slider">
           <span className="switch__indicator">{isRight ? right : left}</span>
         </span>
-      </label>
+      </div>
     </button>
   );
 };
