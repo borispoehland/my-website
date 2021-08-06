@@ -14,11 +14,12 @@ interface IProps {
 }
 
 export interface IIndexSection {
+  actionButton?: ReactNode;
+  heading: string;
   imgSrc: string;
   imgAlt: string;
-  heading: string;
+  tag?: keyof HTMLElementTagNameMap;
   textContent: ReactNode;
-  actionButton?: ReactNode;
 }
 
 const IndexSections = ({

@@ -23,6 +23,7 @@ const getIndexSections = (theme: Theme): IIndexSection[] => [
       </>
     ),
     actionButton: <Button onClick={() => {}}>Contact me</Button>,
+    tag: 'main',
   },
   {
     imgSrc: `/img/index-page/stack-${theme}.png`,
