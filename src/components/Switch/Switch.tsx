@@ -1,6 +1,7 @@
-import { ReactNode, useCallback, useState } from 'react';
+import { ReactNode, useState } from 'react';
 import cx from 'classnames';
 import { useUID } from 'react-uid';
+import { useCallbackOne } from 'use-memo-one';
 
 interface IProps {
   action: Fn<void, void>;
@@ -22,7 +23,7 @@ const Switch = ({
   const [isRight, setIsRight] = useState(isRightProp);
   const id = useUID();
 
-  const onSwitchChange = useCallback(() => {
+  const onSwitchChange = useCallbackOne(() => {
     setIsRight((prevState): boolean => !prevState);
     action();
   }, [action]);

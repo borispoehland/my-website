@@ -1,16 +1,21 @@
 import { useEffect } from 'react';
 
-export const useSetMobileNavPosition = (): void => {
+export const useSetMobileNavTop = (): void => {
   useEffect(() => {
-    const setCollapseTopOnNavChange = (): void => {
-      const navbarHeight = $('.navbar').outerHeight(false);
-      $('.navbar-collapse').css('top', `${navbarHeight}px`);
-    };
+    const $navbar = $('.navbar');
+    const $navbarCollapse = $('.navbar-collapse');
     const $window = $(window);
-    setCollapseTopOnNavChange();
-    $window.on('scroll resize', setCollapseTopOnNavChange);
+
+    const setMobileNavTop = () => {
+      const navbarHeight = $navbar.outerHeight(false);
+      $navbarCollapse.css('top', `${navbarHeight}px`);
+    };
+
+    setMobileNavTop();
+    $window.on('resize', setMobileNavTop);
+
     return (): void => {
-      $window.off('scroll resize', setCollapseTopOnNavChange);
+      $window.off('resize', setMobileNavTop);
     };
   }, []);
 };

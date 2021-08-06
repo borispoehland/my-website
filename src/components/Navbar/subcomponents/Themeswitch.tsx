@@ -1,9 +1,10 @@
 import { useRecoilState } from 'recoil';
-import { useCallback, useEffect } from 'react';
+import { useEffect } from 'react';
 import { sTheme } from '../../../store';
 import Switch from '../../Switch/Switch';
 import { Theme } from '../../../../@types/enums';
 import { BiMoon, BiSun } from 'react-icons/bi';
+import { useCallbackOne } from 'use-memo-one';
 
 interface IProps {
   className: string;
@@ -16,7 +17,7 @@ const ThemeSwitch = ({ className }: IProps): JSX.Element => {
     $('html').attr('data-theme', theme);
   }, [theme]);
 
-  const changeTheme = useCallback((): void => {
+  const changeTheme = useCallbackOne((): void => {
     setTheme(1 - theme);
   }, [theme, setTheme]);
 
