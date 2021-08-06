@@ -21,6 +21,27 @@
     @media screen and (min-width: #{$breakpoint})
     @content
 
+@mixin to($breakpoint)
+  @if $breakpoint == xl
+    @media screen and (max-width: $breakpoint-xl)
+    @content
+
+  @else if $breakpoint == lg
+    @media screen and (max-width: $breakpoint-lg)
+      @content
+
+  @else if $breakpoint == md
+    @media screen and (max-width: $breakpoint-md)
+      @content
+
+  @else if $breakpoint == sm
+    @media screen and (max-width: $breakpoint-sm)
+      @content
+
+  @else
+    @media screen and (max-width: #{$breakpoint})
+    @content
+
 
 @mixin gap($size, $row: true)
   > *:not(:first-child)
