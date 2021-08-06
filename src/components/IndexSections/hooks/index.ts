@@ -60,7 +60,7 @@ export const useAdaptLeftLaneItemHeight = () => {
     const adaptMobileLaneItemHeight = () => {
       const navbarHeight = $navbar.outerHeight(false) as number;
 
-      const spaceFromTop = navbarHeight + 2 * pxToNumber(layoutGridGap);
+      const spaceFromTop = navbarHeight + 3 * pxToNumber(layoutGridGap); // above nav, below nav, below breadcrumbs
       const doubleSpaceFromTop = 2 * spaceFromTop;
 
       const leftLaneHeightAsCss = `calc(100vh - ${doubleSpaceFromTop}px)`;

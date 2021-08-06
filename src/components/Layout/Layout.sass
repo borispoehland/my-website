@@ -4,9 +4,9 @@ $max-page-width: 1600px
 
 .page
   display: grid
-  grid-template-areas: "nprogress" "navbar" "content" "footer"
+  grid-template-areas: "nprogress" "navbar" "breadcrumbs" "content" "footer"
   min-height: 100vh
-  grid-template-rows: auto auto 1fr auto
+  grid-template-rows: auto auto auto 1fr auto
   background: $c-background
   position: relative
   max-width: $max-page-width
@@ -24,6 +24,13 @@ $max-page-width: 1600px
     font-size: 1.3rem
     z-index: 1
 
+  &__breadcrumbs
+    grid-area: breadcrumbs
+    display: none
+
+    +from(sm)
+      display: flex
+
   &__footer
     grid-area: footer
     height: 500px
@@ -37,6 +44,6 @@ $max-page-width: 1600px
     z-index: 2 // to overlap the mobile menu
     margin-top: -$nprogress-height // to not have grid gap + height of nprogress
 
-  &__content, &__navbar, &__footer
+  &__content, &__navbar, &__footer, &__breadcrumbs
     margin: 0 1rem
 
