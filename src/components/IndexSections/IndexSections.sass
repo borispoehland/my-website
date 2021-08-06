@@ -1,0 +1,34 @@
+@use "styles/abstracts" as *
+
+@forward "converters/ToIndexSectionConverter"
+
+.index
+
+  display: grid
+  grid-template-columns: $md-gap 1fr $md-gap
+  grid-template-areas: ". left-lane ."
+
+  +from(md)
+    grid-template-columns: $lg-gap 40% $xl-gap 1fr
+    grid-template-areas: ". left-lane . right-lane"
+
+  &__left-lane
+    grid-area: left-lane
+
+  &__right-lane
+    grid-area: right-lane
+    display: none
+    +from(md)
+      display: block
+
+.right-lane-wrapper
+  display: flex
+  align-items: center
+
+  .right-lane-item
+    width: 100%
+    height: 100%
+    position: absolute
+    display: flex
+    justify-content: center
+    align-items: center

@@ -13,7 +13,7 @@ const ThemeSwitch = ({ className }: IProps): JSX.Element => {
   const [theme, setTheme] = useRecoilState(sTheme);
 
   useEffect((): void => {
-    $('body').attr('data-theme', theme);
+    $('html').attr('data-theme', theme);
   }, [theme]);
 
   const changeTheme = useCallback((): void => {

@@ -1,6 +1,5 @@
 @use "styles/abstracts" as *
 
-$nprogress-height: 10px
 $max-page-width: 1600px
 
 .page
@@ -23,10 +22,11 @@ $max-page-width: 1600px
     top: $nprogress-height
     background: inherit
     font-size: 1.3rem
+    z-index: 1
 
   &__footer
     grid-area: footer
-    height: 100px
+    height: 500px
 
   &__progress
     grid-area: nprogress
@@ -34,7 +34,7 @@ $max-page-width: 1600px
     position: sticky
     top: 0
     background: inherit
-    z-index: 1 // to overlap the mobile menu
+    z-index: 2 // to overlap the mobile menu
     margin-top: -$nprogress-height // to not have grid gap + height of nprogress
 
   &__content, &__navbar, &__footer
