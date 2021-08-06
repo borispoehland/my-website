@@ -1,0 +1,34 @@
+@use "styles/abstracts" as *
+
+.left-lane-item
+  position: relative
+  display: flex
+  flex-direction: column
+  justify-content: center
+
+  +to(md)
+    height: auto !important
+
+  +from(md)
+    min-height: 0 !important
+
+    &__heading
+      padding-top: $lg-gap
+    &__action
+      padding-bottom: $lg-gap
+
+  &__image
+    +from(md)
+      display: none
+
+  &__text
+    overflow-y: scroll
+    margin-bottom: $lg-gap
+
+.right-lane-item
+  opacity: 0
+
+  &:first-child
+    opacity: 1
+
+
