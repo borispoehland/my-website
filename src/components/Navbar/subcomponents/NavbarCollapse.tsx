@@ -21,8 +21,6 @@ const NavbarCollapse = (): JSX.Element => {
             </NextLink>
           );
         })}
-        {/*          <LanguageSwitch className="nav-link" />
-          <ThemeSwitch className="nav-link" />*/}
         <ThemeSwitch className="nav-link" />
       </Nav>
     </Navbar.Collapse>

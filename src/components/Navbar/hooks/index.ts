@@ -1,4 +1,6 @@
 import { useEffect } from 'react';
+import { pxToNumber } from '../../../utils/calc';
+import { layoutGridGap } from '../../../utils/css';
 
 export const useSetMobileNavTop = (): void => {
   useEffect(() => {
@@ -7,7 +9,8 @@ export const useSetMobileNavTop = (): void => {
     const $window = $(window);
 
     const setMobileNavTop = () => {
-      const navbarHeight = $navbar.outerHeight(false);
+      const navbarHeight =
+        ($navbar.outerHeight(false) as number) + pxToNumber(layoutGridGap);
       $navbarCollapse.css('top', `${navbarHeight}px`);
     };
 
@@ -25,7 +28,7 @@ export const useCloseNavAutomatically = (
 ): void => {
   useEffect(() => {
     const $window = $(window);
-    const navLinks = $('.nav-link.link');
+    const navLinks = $('.nav-link.link, .navbar-brand');
     $window.on('resize', closeMenu);
     navLinks.on('click', closeMenu);
 

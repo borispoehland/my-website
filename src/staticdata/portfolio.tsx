@@ -13,7 +13,7 @@ const getPortfolio = (): IPortfolioItem[] => {
       ],
       imgFolder: 'boris-poehland-web',
       imgFilename: 'main',
-      href: 'https://boris-webseite.vercel.app',
+      href: 'https://boris-webseite-borispoehland.vercel.app',
     },
     {
       name: 'Website of Regina Pöhland',

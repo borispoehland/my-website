@@ -29,6 +29,7 @@
     grid-area: tags
     display: flex
     overflow-x: auto
+    padding-bottom: $sm-gap // because below the image the margin seems bigger because of the line-height of the text
     +gap(sm, false)
 
     +from(md)
@@ -37,12 +38,17 @@
     .portfolio-tag
       padding: $sm-gap $lg-gap
       border-radius: 34px
-      border: 2px solid
+      border: 1px solid
       flex-shrink: 0
+
+      +from(md)
+        border-width: 2px
 
   &__image
     grid-area: image
     position: relative
+    display: flex
+    align-items: center
 
   &__appetizer
     grid-area: appetizer
