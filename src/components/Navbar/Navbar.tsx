@@ -24,7 +24,6 @@ const Navbar = ({ className }: IProps): JSX.Element => {
   return (
     <BootstrapNavbar className={className} expand="md" expanded={isOpen}>
       <NavbarNonCollapse
-        isOpen={isOpen}
         onTogglerClick={computedOnce.current.toggleMenu}
         theme={theme}
       />

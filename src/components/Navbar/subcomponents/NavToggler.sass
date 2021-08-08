@@ -10,6 +10,27 @@ $nav-toggler-width: 40px
     border: none
     box-shadow: none
 
+  &:not(.collapsed)
+    .navbar-toggler__icon
+      span
+        &:nth-child(1)
+          top: 20px
+          width: 0
+          left: 50%
+
+
+        &:nth-child(2)
+          transform: rotate(45deg)
+
+
+        &:nth-child(3)
+          transform: rotate(-45deg)
+
+
+        &:nth-child(4)
+          top: 20px
+          width: 0
+          left: 50%
 
 .navbar-toggler__icon
   width: $nav-toggler-width
@@ -23,6 +44,7 @@ $nav-toggler-width: 40px
     left: 0
     transition: all 0.4s ease-in-out, background-color 0s
     background: $c-text
+    border-radius: 5px
 
     &:nth-child(1)
       top: 9px
@@ -39,26 +61,6 @@ $nav-toggler-width: 40px
       top: 27px
       transform: rotate(0deg)
 
-  &.--is-open
-    span
-      &:nth-child(1)
-        top: 20px
-        width: 0
-        left: 50%
-
-
-      &:nth-child(2)
-        transform: rotate(45deg)
-
-
-      &:nth-child(3)
-        transform: rotate(-45deg)
-
-
-      &:nth-child(4)
-        top: 20px
-        width: 0
-        left: 50%
 
 
 

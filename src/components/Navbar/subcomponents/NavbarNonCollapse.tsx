@@ -6,18 +6,13 @@ import { MouseEventHandler } from 'react';
 import { navLogoWidth } from '../../../utils/css';
 
 interface IProps {
-  isOpen: boolean;
   onTogglerClick: MouseEventHandler;
   theme: ETheme;
 }
 
 const logoSizes = `${navLogoWidth}`;
 
-const NavbarNonCollapse = ({
-  isOpen,
-  onTogglerClick,
-  theme,
-}: IProps): JSX.Element => {
+const NavbarNonCollapse = ({ onTogglerClick, theme }: IProps): JSX.Element => {
   return (
     <div className="navbar-non-collapse">
       <NextLink href="/" className="navbar-brand">
@@ -31,7 +26,7 @@ const NavbarNonCollapse = ({
           alt="Image of Boris Pöhland"
         />
       </NextLink>
-      <NavToggler isOpen={isOpen} onClick={onTogglerClick} />
+      <NavToggler onClick={onTogglerClick} />
     </div>
   );
 };

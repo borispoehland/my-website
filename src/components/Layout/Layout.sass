@@ -26,6 +26,7 @@ $max-page-width: 1600px
     background: inherit
     font-size: 1.3rem
     z-index: 2 // to overlap the breadcrumbs
+    overflow: hidden
 
   &__breadcrumbs
     grid-area: breadcrumbs
@@ -41,7 +42,7 @@ $max-page-width: 1600px
     position: sticky
     top: 0
     background: inherit
-    z-index: 3 // to overlap the mobile menu
+    z-index: 1
     margin-top: -$nprogress-height // to not have grid gap + height of nprogress
 
   &__content, &__navbar, &__footer
