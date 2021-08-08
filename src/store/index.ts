@@ -1,7 +1,7 @@
 import { atom } from 'recoil';
-import { Theme } from '../../@types/enums';
+import { ETheme } from '../../@types/enums';
 
-export const sTheme = atom<Theme>({
+export const sTheme = atom<ETheme>({
   key: 'theme',
-  default: Theme.DARK,
+  default: ETheme.LIGHT,
 });

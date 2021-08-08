@@ -1,14 +1,14 @@
 import NextLink from '../../NextLink/NextLink';
 import Image from 'next/image';
 import NavToggler from './NavToggler';
-import { Theme } from '../../../../@types/enums';
+import { ETheme } from '../../../../@types/enums';
 import { MouseEventHandler } from 'react';
 import { navLogoWidth } from '../../../utils/css';
 
 interface IProps {
   isOpen: boolean;
   onTogglerClick: MouseEventHandler;
-  theme: Theme;
+  theme: ETheme;
 }
 
 const logoSizes = `${navLogoWidth}`;

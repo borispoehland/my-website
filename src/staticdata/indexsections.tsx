@@ -1,12 +1,13 @@
-import { Theme } from '../../@types/enums';
-import { IIndexSection } from '../components/IndexSections/IndexSections';
+import { ETheme } from '../../@types/enums';
 import NextLink from '../components/NextLink/NextLink';
 import Button from '../components/Button/Button';
+import { IIndexSection } from '../components/IndexSections/converters/ToIndexSectionConverter';
 
-const getIndexSections = (theme: Theme): IIndexSection[] => [
+const getIndexSections = (theme: ETheme): IIndexSection[] => [
   {
     imgSrc: '/img/index-page/me.png',
     imgAlt: '',
+    imgPriority: true,
     heading: 'Hey,',
     textContent: (
       <>
