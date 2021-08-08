@@ -1,28 +1,33 @@
 import Link from 'next/link';
 import { GoLinkExternal } from 'react-icons/go';
 import cx from 'classnames';
+import { useMemoOne } from 'use-memo-one';
 
 interface IProps extends HasChildren {
   className?: string;
   href: string;
-  isExternal?: boolean;
+  hasExternalIndicator?: boolean;
 }
 
 const NextLink = ({
   children,
   className,
   href,
-  isExternal,
+  hasExternalIndicator,
 }: IProps): JSX.Element => {
+  const isExternalLink = useMemoOne(() => {
+    return /^https?:\/\//i.test(href);
+  }, [href]);
+
   return (
     <Link href={href}>
       <a
-        target={isExternal ? '__blank' : undefined}
+        target={isExternalLink ? '__blank' : undefined}
         className={cx('link', className, {
-          '--is-external': isExternal,
+          '--has-external-indicator': hasExternalIndicator,
         })}
       >
-        {isExternal ? (
+        {hasExternalIndicator ? (
           <>
             <span>{children}</span>
             <GoLinkExternal />

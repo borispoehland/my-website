@@ -16,7 +16,7 @@ export interface IBreadCrumb {
 }
 
 const convertBreadcrumb = (string: string): string => {
-  return capitalizeFirstLetter(urlToWord(string));
+  return capitalizeFirstLetter(decodeURI(string));
 };
 
 const Breadcrumbs = ({ className }: IProps): JSX.Element => {

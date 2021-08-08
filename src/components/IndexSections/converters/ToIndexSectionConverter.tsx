@@ -1,11 +1,21 @@
 import Image from 'next/image';
-import { IIndexSection } from '../IndexSections';
-import { ElementType } from 'react';
+import { ElementType, ReactNode } from 'react';
+
+export interface IIndexSection {
+  actionButton?: ReactNode;
+  heading: string;
+  imgSrc: string;
+  imgAlt: string;
+  imgPriority?: boolean;
+  tag?: keyof HTMLElementTagNameMap;
+  textContent: ReactNode;
+}
 
 const LeftLaneItem = ({
   heading,
   imgAlt,
   imgSrc,
+  imgPriority,
   textContent,
   actionButton,
   tag,
@@ -14,7 +24,13 @@ const LeftLaneItem = ({
   return (
     <div className="left-lane-item">
       <div className="left-lane-item__image">
-        <Image src={imgSrc} width={1920} height={1080} alt={imgAlt} />
+        <Image
+          src={imgSrc}
+          width={1920}
+          height={1080}
+          alt={imgAlt}
+          priority={imgPriority}
+        />
       </div>
       <div className="left-lane-item__heading">
         <h1>{heading}</h1>
@@ -27,9 +43,15 @@ const LeftLaneItem = ({
   );
 };
 
-const RightLaneItem = ({ imgAlt, imgSrc }: IIndexSection) => (
+const RightLaneItem = ({ imgAlt, imgSrc, imgPriority }: IIndexSection) => (
   <div className="right-lane-item">
-    <Image src={imgSrc} alt={imgAlt} layout="fill" objectFit="contain" />
+    <Image
+      src={imgSrc}
+      alt={imgAlt}
+      layout="fill"
+      objectFit="contain"
+      priority={imgPriority}
+    />
   </div>
 );
 
