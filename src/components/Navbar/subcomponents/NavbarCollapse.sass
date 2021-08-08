@@ -1,20 +1,23 @@
 @use "styles/abstracts" as *
 
 $collapse-border-width: 1px
+$collapse-right: calc(#{$layout-x-gap} + #{$collapse-border-width})
 
 .navbar-collapse
-  position: absolute
-  right: calc(#{$layout-x-gap} + #{$collapse-border-width})
-  transform: translateY(0)
+  position: fixed
+  right: $collapse-right
+  transform: translateX(0)
   border-radius: 5px
+  z-index: 1
   transition: transform 0.4s ease-out, opacity 0.2s ease-out
   background: $c-background
-  border: $collapse-border-width solid $c-text
+  border: $collapse-border-width solid $c-light-border
 
   +from(md)
     position: static
     justify-content: flex-end
     border: none
+    box-shadow: none
 
 .navbar-nav
   padding: 0 0.75rem
@@ -36,7 +39,7 @@ $collapse-border-width: 1px
 .navbar-collapse
   &:not(.show)
     display: block
-    transform: translateY(-100%)
+    transform: translateX(calc(100% + #{$collapse-right}))
 
     +from(md)
       transform: none
