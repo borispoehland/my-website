@@ -1,0 +1,21 @@
+$portfolio-image-border-radius: 10px
+
+.portfolio-image
+  display: flex
+  align-items: center
+  height: 100%
+  &__blurred-wrapper
+    position: absolute
+    border-radius: $portfolio-image-border-radius
+    overflow: hidden
+    display: flex // prevent weird offset
+  &__blurred
+    filter: blur(5px)
+  &__image
+    border-radius: $portfolio-image-border-radius
+    transform: scale(0.9)
+    transition: transform 200ms ease-out
+  &:hover
+    .portfolio-image__image
+      transform: none
+

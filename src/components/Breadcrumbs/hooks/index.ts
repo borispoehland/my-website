@@ -36,6 +36,7 @@ export const useSetBreadcrumbsTop = () => {
 
     const setBreadcrumbsTop = () => {
       const navbarHeight = $navbar.outerHeight(false) as number;
+      // TODO: offset().top
       const spaceFromTop = navbarHeight + pxToNumber(layoutGridGap); // above nav
 
       $breadcrumbs.css('top', `${spaceFromTop}px`);

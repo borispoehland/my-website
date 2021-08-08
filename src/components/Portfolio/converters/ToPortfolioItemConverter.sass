@@ -1,0 +1,57 @@
+@use "styles/abstracts" as *
+
+// TODO: Refactoring (vor allem mit dem external link)
+// TODO: Menü neu machen
+
+.portfolio-item
+  max-width: 1100px
+  padding: 20px
+  border-radius: 34px
+  box-shadow: 0 0 20px -12px $c-text
+  background: linear-gradient(135deg, $c-portfolio-fog 0, $c-background 70%)
+
+  display: grid
+  grid-template-areas: "name" "tags" "image" "appetizer" "action"
+  gap: $sm-gap
+
+  +from(md)
+    grid-template-areas: "image name" "image tags" "image appetizer" "image action"
+    grid-template-rows: auto auto 1fr auto
+    grid-template-columns: 1fr 1fr
+    row-gap: $lg-gap
+    column-gap: $xl-gap
+    padding: 30px
+
+  &__name
+    grid-area: name
+
+  &__tags
+    grid-area: tags
+    display: flex
+    overflow-x: auto
+    +gap(sm, false)
+
+    +from(md)
+      +gap(md, false)
+
+    .portfolio-tag
+      padding: $sm-gap $lg-gap
+      border-radius: 34px
+      border: 2px solid
+      flex-shrink: 0
+
+  &__image
+    grid-area: image
+    position: relative
+
+  &__appetizer
+    grid-area: appetizer
+    max-height: 250px
+    overflow-y: auto
+    height: 100%
+
+  &__action
+    grid-area: action
+
+
+

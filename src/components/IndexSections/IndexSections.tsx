@@ -13,15 +13,6 @@ interface IProps {
   topOffset: number;
 }
 
-export interface IIndexSection {
-  actionButton?: ReactNode;
-  heading: string;
-  imgSrc: string;
-  imgAlt: string;
-  tag?: keyof HTMLElementTagNameMap;
-  textContent: ReactNode;
-}
-
 const IndexSections = ({
   startRightLaneTransitionAtPercent,
   topOffset,

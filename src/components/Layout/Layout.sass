@@ -11,10 +11,13 @@ $max-page-width: 1600px
   position: relative
   max-width: $max-page-width
   margin: 0 auto
-  grid-gap: $nprogress-height
+  gap: $nprogress-height
 
   &__content
     grid-area: content
+    display: flex
+    flex-direction: column
+    align-items: center
 
   &__navbar
     grid-area: navbar
@@ -22,14 +25,11 @@ $max-page-width: 1600px
     top: $nprogress-height
     background: inherit
     font-size: 1.3rem
-    z-index: 1
+    z-index: 2 // to overlap the breadcrumbs
 
   &__breadcrumbs
     grid-area: breadcrumbs
-    display: none
-
-    +from(sm)
-      display: flex
+    z-index: 1
 
   &__footer
     grid-area: footer
@@ -41,9 +41,12 @@ $max-page-width: 1600px
     position: sticky
     top: 0
     background: inherit
-    z-index: 2 // to overlap the mobile menu
+    z-index: 3 // to overlap the mobile menu
     margin-top: -$nprogress-height // to not have grid gap + height of nprogress
 
-  &__content, &__navbar, &__footer, &__breadcrumbs
-    margin: 0 1rem
+  &__content, &__navbar, &__footer
+    padding: 0 $layout-x-gap
+
+  &__breadcrumbs
+    padding: 0 $layout-x-gap 0.5rem $layout-x-gap
 
