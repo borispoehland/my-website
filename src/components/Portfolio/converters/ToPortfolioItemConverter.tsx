@@ -9,10 +9,11 @@ import PortfolioImage from '../subcomponents/PortfolioImage';
 export interface IPortfolioItem {
   appetizer: ReactNode;
   name: string;
-  href?: string;
   tags: ITechnology[];
   imgFolder: string;
   imgFilename: string;
+  href?: string;
+  customActionButton?: ReactNode;
 }
 
 const ToPortfolioItemConverter = ({
@@ -22,6 +23,7 @@ const ToPortfolioItemConverter = ({
   imgFolder,
   imgFilename,
   href,
+  customActionButton,
 }: IPortfolioItem): JSX.Element => {
   const openLinkInNewTab = useCallbackOne((href: string) => {
     window.open(href, '__blank');
@@ -61,10 +63,14 @@ const ToPortfolioItemConverter = ({
         </ConditionalWrapper>
       </div>
       <div className="portfolio-item__appetizer">{appetizer}</div>
-      {href && (
-        <div className="portfolio-item__action">
-          <Button onClick={() => openLinkInNewTab(href)}>Enter site</Button>
-        </div>
+      {customActionButton ? (
+        <div className="portfolio-item__action">{customActionButton}</div>
+      ) : (
+        href && (
+          <div className="portfolio-item__action">
+            <Button onClick={() => openLinkInNewTab(href)}>Enter site</Button>
+          </div>
+        )
       )}
     </section>
   );

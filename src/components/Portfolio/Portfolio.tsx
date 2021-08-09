@@ -1,12 +1,20 @@
 import getPortfolio from '../../staticdata/portfolio';
 import ToPortfolioItemConverter from './converters/ToPortfolioItemConverter';
+import Emoji from '../Emoji/Emoji';
 
-interface IProps {}
+const portfolioItems = getPortfolio();
+const amountOfPortfolioItems = portfolioItems.length;
 
 const Portfolio = (): JSX.Element => {
   return (
     <div className="portfolio">
-      {getPortfolio().map(ToPortfolioItemConverter)}
+      <h1>Websites I&#39;ve coded</h1>
+      <p>
+        Apart from this website I coded <b>{amountOfPortfolioItems}</b> other
+        website{amountOfPortfolioItems > 1 && 's'} besides my studies. Check
+        them out below <Emoji symbol="👇🏼" />
+      </p>
+      {portfolioItems.map(ToPortfolioItemConverter)}
     </div>
   );
 };

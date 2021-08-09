@@ -20,7 +20,7 @@ export const useFetchBreadcrumbs = () => {
       if (pathArray.length === 1 && pathArray[0].href === '/') {
         setBreadcrumbs([]); // index page, we don't want breadcrumbs here
       } else {
-        setBreadcrumbs([{ label: 'Boris Pöhland', href: '/' }, ...pathArray]);
+        setBreadcrumbs([{ label: 'Home', href: '/' }, ...pathArray]);
       }
     }
   }, [router]);
