@@ -11,7 +11,7 @@ export interface IPortfolioItem {
   name: string;
   tags: ITechnology[];
   imgFolder: string;
-  imgFilename: string;
+  imgFilename?: string;
   href?: string;
   customActionButton?: ReactNode;
 }
@@ -57,7 +57,9 @@ const ToPortfolioItemConverter = ({
           )}
         >
           <PortfolioImage
-            src={`/img/portfolio-page/${imgFolder}/${imgFilename}.png`}
+            src={`/img/portfolio-page/${imgFolder}/${
+              imgFilename ?? 'main'
+            }.png`}
             alt={`Image of the ${name}`}
           />
         </ConditionalWrapper>

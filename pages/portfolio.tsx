@@ -38,7 +38,7 @@ export async function getStaticProps() {
       if (href) {
         const dir = getFullpathFromFilename(imgFolder);
         await mkdirp(dir);
-        const file = path.resolve(dir, imgFilename + '.png');
+        const file = path.resolve(dir, `${imgFilename ?? 'main'}.png`);
         await page.goto(href, { waitUntil: 'networkidle2' });
         await page.screenshot({ path: file });
       }

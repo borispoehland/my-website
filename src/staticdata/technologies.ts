@@ -3,7 +3,7 @@ export interface ITechnology {
   borderColor: string;
 }
 
-type Techs = 'NextAndReact' | 'Typescript' | 'Javascript' | 'Sass';
+type Techs = 'NextAndReact' | 'Typescript' | 'Javascript' | 'Sass' | 'Unknown';
 
 const Technologies: { [key in Techs]: ITechnology } = {
   NextAndReact: {
@@ -21,6 +21,10 @@ const Technologies: { [key in Techs]: ITechnology } = {
   Sass: {
     name: 'SASS',
     borderColor: '#ce6999',
+  },
+  Unknown: {
+    name: '???',
+    borderColor: '#1def27',
   },
 };
 
