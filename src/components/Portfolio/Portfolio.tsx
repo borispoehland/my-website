@@ -8,13 +8,15 @@ const amountOfPortfolioItems = portfolioItems.length;
 const Portfolio = (): JSX.Element => {
   return (
     <div className="portfolio">
-      <h1>Websites I&#39;ve coded</h1>
+      <h1>Projects</h1>
       <p>
         Apart from this website I coded <b>{amountOfPortfolioItems}</b> other
-        website{amountOfPortfolioItems > 1 && 's'} besides my studies. Check
+        project{amountOfPortfolioItems > 1 && 's'} besides my studies. Check
         them out below <Emoji symbol="👇🏼" />
       </p>
       {portfolioItems.map(ToPortfolioItemConverter)}
+      <h1>Test</h1>
+      <div style={{ height: '100vh' }} />
     </div>
   );
 };

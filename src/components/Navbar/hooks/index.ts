@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
-import { pxToNumber } from '../../../utils/calc';
-import { layoutGridGap } from '../../../utils/css';
+import { getBottomOfElementRelativeToViewport } from '../../../utils/positions';
 
 export const useSetMobileNavTop = (): void => {
   useEffect(() => {
@@ -9,9 +8,9 @@ export const useSetMobileNavTop = (): void => {
     const $window = $(window);
 
     const setMobileNavTop = () => {
-      const navbarHeight =
-        ($navbar.outerHeight(false) as number) + pxToNumber(layoutGridGap);
-      $navbarCollapse.css('top', `${navbarHeight}px`);
+      const navbarBottomDistanceFromTop =
+        getBottomOfElementRelativeToViewport($navbar);
+      $navbarCollapse.css('top', `${navbarBottomDistanceFromTop}px`);
     };
 
     setMobileNavTop();
