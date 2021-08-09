@@ -13,7 +13,10 @@ export const useBreadcrumbs = (): State<IBreadCrumb[]> => {
       linkPath.shift();
 
       const pathArray = linkPath.map((path, i): IBreadCrumb => {
-        return { label: path, href: `/${linkPath.slice(0, i + 1).join('/')}` };
+        return {
+          label: path.split('#')[0],
+          href: `/${linkPath.slice(0, i + 1).join('/')}`,
+        };
       });
 
       if (pathArray.length === 1 && pathArray[0].href === '/') {
@@ -49,6 +52,7 @@ export const useSetBreadcrumbsTop = () => {
   });
 };
 
+const toleranceInPx = 50; // already puts the breadcrumb in the heading when it's 50px away from getting overscrolled
 export const useAddLatestH1ToBreadcrumbs = ([
   breadcrumbs,
   setBreadcrumbs,
@@ -65,11 +69,11 @@ export const useAddLatestH1ToBreadcrumbs = ([
         getBottomOfElementRelativeToViewport($breadcrumbs);
 
       $h1.each((index, heading) => {
-        const headingBottomDistanceFromTop =
-          heading.getBoundingClientRect().bottom;
+        const headingTopDistanceFromTop = heading.getBoundingClientRect().top;
 
         const headingIsOverscrolled =
-          headingBottomDistanceFromTop <= breadCrumbsBottomDistanceFromTop;
+          headingTopDistanceFromTop - breadCrumbsBottomDistanceFromTop <=
+          toleranceInPx;
 
         if (headingIsOverscrolled) {
           setBreadcrumbs((oldCrumbs: IBreadCrumb[]) => {
