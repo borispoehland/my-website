@@ -5,6 +5,7 @@ import ConditionalWrapper from '../../../helpers/ConditionalWrapper';
 import { useCallbackOne } from 'use-memo-one';
 import { ITechnology } from '../../../staticdata/technologies';
 import PortfolioImage from '../subcomponents/PortfolioImage';
+import { openResourceInNewTab } from '../../../utils/dom';
 
 export interface IPortfolioItem {
   appetizer: ReactNode;
@@ -25,10 +26,6 @@ const ToPortfolioItemConverter = ({
   href,
   customActionButton,
 }: IPortfolioItem): JSX.Element => {
-  const openLinkInNewTab = useCallbackOne((href: string) => {
-    window.open(href, '__blank');
-  }, []);
-
   return (
     <section key={name} className="portfolio-item">
       <div className="portfolio-item__name">
@@ -70,7 +67,9 @@ const ToPortfolioItemConverter = ({
       ) : (
         href && (
           <div className="portfolio-item__action">
-            <Button onClick={() => openLinkInNewTab(href)}>Enter site</Button>
+            <Button onClick={() => openResourceInNewTab(href)}>
+              Visit site
+            </Button>
           </div>
         )
       )}

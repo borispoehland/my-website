@@ -119,7 +119,7 @@ export const useAddLatestH1ToBreadcrumbs = ([
       });
     };
 
-    addLatestH1ToBreadcrumbs();
+    // addLatestH1ToBreadcrumbs(); // we don't want it initially, only when scrolling
     $window.on('scroll', addLatestH1ToBreadcrumbs);
 
     return () => {
