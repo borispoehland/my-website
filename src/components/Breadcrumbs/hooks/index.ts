@@ -1,10 +1,9 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { IBreadCrumb } from '../Breadcrumbs';
-import { pxToNumber } from '../../../utils/calc';
-import { layoutGridGap } from '../../../utils/css';
+import { getBottomOfElementRelativeToViewport } from '../../../utils/positions';
 
-export const useFetchBreadcrumbs = () => {
+export const useBreadcrumbs = (): State<IBreadCrumb[]> => {
   const router = useRouter();
   const [breadcrumbs, setBreadcrumbs] = useState<IBreadCrumb[]>([]);
 
@@ -25,7 +24,7 @@ export const useFetchBreadcrumbs = () => {
     }
   }, [router]);
 
-  return breadcrumbs;
+  return [breadcrumbs, setBreadcrumbs];
 };
 
 export const useSetBreadcrumbsTop = () => {
@@ -35,11 +34,10 @@ export const useSetBreadcrumbsTop = () => {
     const $window = $(window);
 
     const setBreadcrumbsTop = () => {
-      const navbarHeight = $navbar.outerHeight(false) as number;
-      // TODO: offset().top
-      const spaceFromTop = navbarHeight + pxToNumber(layoutGridGap); // above nav
+      const navbarBottomDistanceFromTop =
+        getBottomOfElementRelativeToViewport($navbar);
 
-      $breadcrumbs.css('top', `${spaceFromTop}px`);
+      $breadcrumbs.css('top', `${navbarBottomDistanceFromTop}px`);
     };
 
     setBreadcrumbsTop();
@@ -49,4 +47,79 @@ export const useSetBreadcrumbsTop = () => {
       $window.off('resize', setBreadcrumbsTop);
     };
   });
+};
+
+export const useAddLatestH1ToBreadcrumbs = ([
+  breadcrumbs,
+  setBreadcrumbs,
+]: State<IBreadCrumb[]>) => {
+  useEffect(() => {
+    const $window = $(window);
+    const $breadcrumbs = $('.breadcrumbs');
+    const $h1 = $('h1');
+
+    const addLatestH1ToBreadcrumbs = () => {
+      if (!breadcrumbs || !breadcrumbs.length) return;
+
+      const breadCrumbsBottomDistanceFromTop =
+        getBottomOfElementRelativeToViewport($breadcrumbs);
+
+      $h1.each((index, heading) => {
+        const headingBottomDistanceFromTop =
+          heading.getBoundingClientRect().bottom;
+
+        const headingIsOverscrolled =
+          headingBottomDistanceFromTop <= breadCrumbsBottomDistanceFromTop;
+
+        if (headingIsOverscrolled) {
+          setBreadcrumbs((oldCrumbs: IBreadCrumb[]) => {
+            const lastCrumb = oldCrumbs[oldCrumbs.length - 1];
+            const lastCrumbIsThisOne = lastCrumb.index === index;
+            const lastCrumbIsHeading = lastCrumb.index !== undefined;
+            const lastCrumbIsEarlierHeading =
+              lastCrumb.index !== undefined && lastCrumb.index < index;
+
+            if (lastCrumbIsThisOne) {
+              // if the current breadcrumb is already added, do nothing
+              return oldCrumbs;
+            } else if (lastCrumbIsEarlierHeading) {
+              // if the current breadcrumb is a newer heading, replace the old one with the new one
+              return [
+                ...oldCrumbs.slice(0, -1),
+                { href: '', index, label: heading.innerText },
+              ];
+            } else if (lastCrumbIsHeading) {
+              // if the current breadcrumb is a older heading, do nothing
+              return oldCrumbs;
+            } else {
+              // if no heading has been added yet, add the current breadcrumb
+              return [
+                ...oldCrumbs,
+                { href: '', index, label: heading.innerText },
+              ];
+            }
+          });
+        } else {
+          setBreadcrumbs((oldCrumbs: IBreadCrumb[]) => {
+            const lastCrumb = oldCrumbs[oldCrumbs.length - 1];
+            const lastCrumbIsThisOne = lastCrumb.index === index;
+
+            if (lastCrumbIsThisOne) {
+              // if the current breadcrumb is not scrolled past anymore, remove it from the breadcrumbs
+              return oldCrumbs.slice(0, -1);
+            }
+
+            return oldCrumbs;
+          });
+        }
+      });
+    };
+
+    addLatestH1ToBreadcrumbs();
+    $window.on('scroll', addLatestH1ToBreadcrumbs);
+
+    return () => {
+      $window.off('scroll', addLatestH1ToBreadcrumbs);
+    };
+  }, [breadcrumbs, setBreadcrumbs]);
 };

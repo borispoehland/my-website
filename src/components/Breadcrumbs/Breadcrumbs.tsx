@@ -4,7 +4,11 @@ import { BiRightArrow } from 'react-icons/bi';
 import NextLink from '../NextLink/NextLink';
 import { capitalizeFirstLetter, urlToWord } from '../../utils/strings';
 import cx from 'classnames';
-import { useFetchBreadcrumbs, useSetBreadcrumbsTop } from './hooks';
+import {
+  useAddLatestH1ToBreadcrumbs,
+  useBreadcrumbs,
+  useSetBreadcrumbsTop,
+} from './hooks';
 
 interface IProps {
   className: string;
@@ -13,6 +17,7 @@ interface IProps {
 export interface IBreadCrumb {
   label: string;
   href: string;
+  index?: number;
 }
 
 const convertBreadcrumb = (string: string): string => {
@@ -22,7 +27,9 @@ const convertBreadcrumb = (string: string): string => {
 const Breadcrumbs = ({ className }: IProps): JSX.Element => {
   useSetBreadcrumbsTop();
 
-  const breadcrumbs: IBreadCrumb[] = useFetchBreadcrumbs();
+  const [breadcrumbs, setBreadcrumbs] = useBreadcrumbs();
+
+  useAddLatestH1ToBreadcrumbs([breadcrumbs, setBreadcrumbs]);
 
   if (!breadcrumbs || !breadcrumbs.length) {
     return <></>;
@@ -31,17 +38,24 @@ const Breadcrumbs = ({ className }: IProps): JSX.Element => {
   return (
     <div className={cx(className, 'breadcrumbs')}>
       {breadcrumbs.map(
-        (breadcrumb: IBreadCrumb, i: number, arr): JSX.Element => {
+        (
+          breadcrumb: IBreadCrumb,
+          i: number,
+          arr: IBreadCrumb[]
+        ): JSX.Element => {
           const isLast = i === arr.length - 1;
+
+          const asLink = !isLast && arr[i + 1].href !== ''; // when the successor is a heading, don't make the breadcrumb as link, neither
+
           return (
             <Fragment key={breadcrumb.href}>
               <span>
-                {!isLast && (
+                {asLink && (
                   <NextLink href={breadcrumb.href}>
                     {convertBreadcrumb(breadcrumb.label)}
                   </NextLink>
                 )}
-                {isLast && convertBreadcrumb(breadcrumb.label)}
+                {!asLink && convertBreadcrumb(breadcrumb.label)}
               </span>
               {!isLast && <BiRightArrow />}
             </Fragment>
