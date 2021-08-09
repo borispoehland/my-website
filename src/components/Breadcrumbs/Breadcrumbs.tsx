@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { BiRightArrow } from 'react-icons/bi';
 import NextLink from '../NextLink/NextLink';
-import { capitalizeFirstLetter, urlToWord } from '../../utils/strings';
+import { capitalizeFirstLetter } from '../../utils/strings';
 import cx from 'classnames';
 import {
   useAddLatestH1ToBreadcrumbs,
