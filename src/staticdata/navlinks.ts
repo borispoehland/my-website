@@ -1,5 +1,3 @@
-// TODO: Translation
-
 interface NavItem {
   href: string;
   label: string;
@@ -7,23 +5,19 @@ interface NavItem {
 }
 
 const getTranslatedNavItems = (): NavItem[] => {
-  //const itemsT = prepend('items', t);
   return [
     {
       href: '/',
-      //label: itemsT('home'),
       label: 'Home',
       collapsedOnly: true,
     },
     {
-      href: '/portfolio',
-      //label: itemsT('portfolio'),
-      label: 'Portfolio',
+      href: '/services',
+      label: 'Services',
     },
     {
-      href: '/blog',
-      //label: itemsT('blog'),
-      label: 'Blog',
+      href: '/portfolio',
+      label: 'Portfolio',
     },
   ];
 };

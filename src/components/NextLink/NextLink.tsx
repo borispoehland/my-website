@@ -41,7 +41,7 @@ const NextLink = ({
 };
 
 NextLink.defaultProps = {
-  isExternal: false,
+  hasExternalIndicator: false,
 };
 
 export default NextLink;

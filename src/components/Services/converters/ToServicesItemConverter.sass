@@ -1,0 +1,31 @@
+@use "styles/abstracts" as *
+
+.services-item
+  display: grid
+  grid-template-areas: "heading" "image" "description" "divider"
+  justify-items: center
+  align-items: center
+  row-gap: $lg-gap
+  column-gap: $xl-gap
+
+  +from(md)
+    grid-template-areas: ". heading" "image description" "divider divider"
+
+    .generic-layout__section:nth-child(odd) &
+      grid-template-areas: "heading ." "description image" "divider divider"
+
+  &__heading
+    grid-area: heading
+    justify-self: start
+
+  &__image
+    grid-area: image
+
+  &__description
+    grid-area: description
+
+    h4
+      margin-top: $lg-gap
+
+  &__divider
+    grid-area: divider

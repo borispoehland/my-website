@@ -2,7 +2,6 @@ import { ReactNode } from 'react';
 import Button from '../../Button/Button';
 import NextLink from '../../NextLink/NextLink';
 import ConditionalWrapper from '../../../helpers/ConditionalWrapper';
-import { useCallbackOne } from 'use-memo-one';
 import { ITechnology } from '../../../staticdata/technologies';
 import PortfolioImage from '../subcomponents/PortfolioImage';
 import { openResourceInNewTab } from '../../../utils/dom';
