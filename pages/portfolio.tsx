@@ -8,11 +8,9 @@ import {
   getPortfolioImageWidth,
 } from '../src/utils/env';
 
-interface IProps {}
-
-const PortfolioPage = (): JSX.Element => {
+export default function PortfolioPage() {
   return <Portfolio />;
-};
+}
 
 export async function getStaticProps() {
   const portfolioItems = getPortfolio();
@@ -24,7 +22,7 @@ export async function getStaticProps() {
     );
   };
 
-  const capture = async () => {
+  const captureScreenshotsOfPortfolioPages = async () => {
     const browser = await puppeteer.launch({
       defaultViewport: {
         width: getPortfolioImageWidth(),
@@ -45,11 +43,9 @@ export async function getStaticProps() {
     }
     await browser.close();
   };
-  await capture();
+  await captureScreenshotsOfPortfolioPages();
 
   return {
     props: {}, // will be passed to the page component as props
   };
 }
-
-export default PortfolioPage;

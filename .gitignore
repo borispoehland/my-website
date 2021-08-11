@@ -36,3 +36,4 @@ yarn-error.log*
 # custom scripts
 removeUnusedDeps.sh
 unused-deps.txt
+services-code-screenshot.ts

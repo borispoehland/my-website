@@ -7,3 +7,29 @@
   cursor: pointer
   line-height: 0
   @extend %link
+
+$hr-margin-bottom: 1.5rem
+
+.generic-layout
+  // for safari, weirdly the parent of a grid also needs to be grid, see https://stackoverflow.com/a/63197330
+  display: grid
+  justify-items: center
+
+  &__section
+    display: grid
+    justify-items: center
+    row-gap: $lg-gap
+    max-width: 1100px
+    width: 100%
+
+    .anchor ~ h1
+      margin-top: -$lg-gap
+
+    h1
+      line-height: 1
+
+    hr
+      margin-bottom: 1.5rem
+      margin-top: calc(#{$hr-margin-bottom} - #{$lg-gap})
+      width: 100%
+
