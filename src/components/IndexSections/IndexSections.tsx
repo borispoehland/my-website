@@ -7,6 +7,7 @@ import { useAdaptLeftLaneItemHeight, useOpacityChangeOnScroll } from './hooks';
 import { Controller, Scene } from 'react-scrollmagic';
 import getIndexSections from '../../staticdata/indexsections';
 import ToIndexSectionConverter from './converters/ToIndexSectionConverter';
+import { useRouter } from 'next/router';
 
 interface IProps {
   startRightLaneTransitionAtPercent: number;
@@ -18,11 +19,14 @@ const IndexSections = ({
   topOffset,
 }: IProps): JSX.Element => {
   const theme = useRecoilValue(sTheme);
+  const router = useRouter();
 
   const [leftLane, rightLane] = useMemoOne(() => {
-    const pairs = getIndexSections(theme).map(ToIndexSectionConverter);
+    const pairs = getIndexSections(theme, router).map((props, i) =>
+      ToIndexSectionConverter({ ...props, imgPriority: i === 0 })
+    );
     return zip(...pairs); // [[left1, right1], [left2, right2]] => [[left1, left2], [right1, right2]]
-  }, [theme]);
+  }, [theme, router]);
 
   useOpacityChangeOnScroll(topOffset, startRightLaneTransitionAtPercent);
 

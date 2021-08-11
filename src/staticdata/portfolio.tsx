@@ -31,7 +31,7 @@ const getPortfolio = (): IPortfolioItem[] => {
           &quot;OCR4all&quot; with a tour system that was developed according to
           user requirements and with the aim of modularity. For more
           information, see the bachelor thesis below or{' '}
-          <NextLink href="https://github.com/OCR4all/OCR4all/compare/master...borispoehland:master">
+          <NextLink href="https://github.com/OCR4all/OCR4all/compare/dev...borispoehland:master">
             the source code
           </NextLink>
           .

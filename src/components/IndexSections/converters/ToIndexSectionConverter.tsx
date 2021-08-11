@@ -6,9 +6,12 @@ export interface IIndexSection {
   heading: string;
   imgSrc: string;
   imgAlt: string;
-  imgPriority?: boolean;
   tag?: keyof HTMLElementTagNameMap;
   textContent: ReactNode;
+}
+
+interface IProps extends IIndexSection {
+  imgPriority: boolean;
 }
 
 const LeftLaneItem = ({
@@ -19,7 +22,7 @@ const LeftLaneItem = ({
   textContent,
   actionButton,
   tag,
-}: IIndexSection) => {
+}: IProps) => {
   const Tag = tag as ElementType;
   return (
     <div className="left-lane-item">
@@ -43,7 +46,7 @@ const LeftLaneItem = ({
   );
 };
 
-const RightLaneItem = ({ imgAlt, imgSrc, imgPriority }: IIndexSection) => (
+const RightLaneItem = ({ imgAlt, imgSrc, imgPriority }: IProps) => (
   <div className="right-lane-item">
     <Image
       src={imgSrc}
@@ -55,7 +58,7 @@ const RightLaneItem = ({ imgAlt, imgSrc, imgPriority }: IIndexSection) => (
   </div>
 );
 
-const ToIndexSectionConverter = (props: IIndexSection) => {
+const ToIndexSectionConverter = (props: IProps) => {
   const { heading } = props;
   return [
     <LeftLaneItem key={heading} {...props} />,

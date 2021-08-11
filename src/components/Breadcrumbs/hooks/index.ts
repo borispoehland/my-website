@@ -60,7 +60,6 @@ export const useAddLatestH1ToBreadcrumbs = ([
   useEffect(() => {
     const $window = $(window);
     const $breadcrumbs = $('.breadcrumbs');
-    const $h1 = $('h1');
 
     const addLatestH1ToBreadcrumbs = () => {
       if (!breadcrumbs || !breadcrumbs.length) return;
@@ -68,7 +67,7 @@ export const useAddLatestH1ToBreadcrumbs = ([
       const breadCrumbsBottomDistanceFromTop =
         getBottomOfElementRelativeToViewport($breadcrumbs);
 
-      $h1.each((index, heading) => {
+      $('h1').each((index, heading) => {
         const headingTopDistanceFromTop = heading.getBoundingClientRect().top;
 
         const headingIsOverscrolled =
@@ -77,7 +76,9 @@ export const useAddLatestH1ToBreadcrumbs = ([
 
         if (headingIsOverscrolled) {
           setBreadcrumbs((oldCrumbs: IBreadCrumb[]) => {
+            if (!oldCrumbs) return;
             const lastCrumb = oldCrumbs[oldCrumbs.length - 1];
+            if (!lastCrumb) return;
             const lastCrumbIsThisOne = lastCrumb.index === index;
             const lastCrumbIsHeading = lastCrumb.index !== undefined;
             const lastCrumbIsEarlierHeading =
@@ -105,7 +106,9 @@ export const useAddLatestH1ToBreadcrumbs = ([
           });
         } else {
           setBreadcrumbs((oldCrumbs: IBreadCrumb[]) => {
+            if (!oldCrumbs) return;
             const lastCrumb = oldCrumbs[oldCrumbs.length - 1];
+            if (!lastCrumb) return;
             const lastCrumbIsThisOne = lastCrumb.index === index;
 
             if (lastCrumbIsThisOne) {
