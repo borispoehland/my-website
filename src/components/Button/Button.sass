@@ -1,18 +1,4 @@
 @use "styles/abstracts" as *
 
 .button
-  @extend %button-remove-style
-
-  color: white
-  line-height: 45px
-  text-decoration: none
-  text-transform: uppercase
-  padding: 0 $xl-gap
-  border-radius: 34px
-  border-color: $c-primary
-  transition: all 200ms ease-in-out
-  box-shadow: 0 0 40px 40px $c-primary inset, 0 0 0 0 $c-primary
-
-  &:hover
-    color: $c-text
-    box-shadow: 0 0 10px 0 $c-primary inset, 0 0 2px 3px $c-primary
+  @extend %button-style

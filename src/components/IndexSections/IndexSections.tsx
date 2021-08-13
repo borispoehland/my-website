@@ -5,7 +5,7 @@ import { sTheme } from '../../store';
 import { useMemoOne } from 'use-memo-one';
 import { useAdaptLeftLaneItemHeight, useOpacityChangeOnScroll } from './hooks';
 import { Controller, Scene } from 'react-scrollmagic';
-import getIndexSections from '../../staticdata/indexsections';
+import getIndexSections from '../../staticdata/indexSections';
 import ToIndexSectionConverter from './converters/ToIndexSectionConverter';
 import { useRouter } from 'next/router';
 

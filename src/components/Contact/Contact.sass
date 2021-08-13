@@ -1,0 +1,9 @@
+@use "styles/abstracts" as *
+
+@forward "src/components/Contact/converters/ToQuicklinkConverter"
+
+.quicklinks
+  display: flex
+  overflow-x: auto
+  max-width: 100%
+  +gap(lg, false)

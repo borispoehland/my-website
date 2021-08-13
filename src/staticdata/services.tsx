@@ -10,7 +10,7 @@ const getServices = (theme: ETheme): IServiceItem[] => [
         Besides my studies I enhanced my coding skills, especially in the web
         development area. Check my{' '}
         <NextLink href="/portfolio">portfolio</NextLink> for further reference.
-        <h4>Why choose me?</h4>
+        <h2>Why choose me?</h2>
         I&#39;m a very aesthetic person, I am bothered by visual inconsistencies
         and bugs that others don&#39;t even notice. That makes my products stand
         out in a way that they look seamless and clean. My high standard also
@@ -22,7 +22,7 @@ const getServices = (theme: ETheme): IServiceItem[] => [
         >
           the source code of this website
         </NextLink>
-        .<h4>Get in touch</h4>
+        .<h2>Get in touch</h2>
         If you&#39;re not sure whether your idea is actionable or if I&#39;m the
         right guy for your job, <NextLink href="/contact">
           contact me
@@ -39,13 +39,14 @@ const getServices = (theme: ETheme): IServiceItem[] => [
       <>
         I studied human-computer-interaction at the University of Würzburg in
         Bavaria, Germany. The degree program taught me to recognize, evaluate
-        and strive for the Usability of software.
-        <h4>What is usability?</h4>
-        Usability is the ease-of-use the user experiences when using a website.
-        A good usability is key to a enjoyable user experience (UX).
-        <h4>Get in touch</h4>I can analyze the Usability of your product, as
+        and strive for the usability of software.
+        <h2>What is usability?</h2>
+        Broadly spoken, usability is the ease-of-use you feel when using a
+        specific software. A good usability is key to a enjoyable user
+        experience (UX).
+        <h2>Get in touch</h2>I can analyze the usability of your product, as
         well as giving design implications to enhance it. If you&#39;re
-        interested in boosting the Usability of your product to the next level,{' '}
+        interested in boosting the usability of your product to the next level,{' '}
         <NextLink href="/contact">contact me</NextLink> today!
       </>
     ),
