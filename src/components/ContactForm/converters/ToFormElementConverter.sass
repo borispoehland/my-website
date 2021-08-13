@@ -15,11 +15,8 @@
     border: 2px solid $c-text
     transition: all 100ms ease-out
 
-    &:focus
-      //outline: 2px solid #48b9c7
-
     &.--has-error:not(:focus)
-      border-color: #e40000
+      border-color: $c-error
       border-left-width: 10px
 
   &__error
@@ -28,5 +25,5 @@
     border-radius: 5px
     margin: 5px 0
     text-align: center
-    background: #e40000
+    background: $c-error
     color: white
