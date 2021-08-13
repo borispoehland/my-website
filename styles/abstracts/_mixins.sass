@@ -23,19 +23,19 @@
 
 @mixin to($breakpoint)
   @if $breakpoint == xl
-    @media screen and (max-width: $breakpoint-xl)
+    @media screen and (max-width: $breakpoint-xl - 1)
     @content
 
   @else if $breakpoint == lg
-    @media screen and (max-width: $breakpoint-lg)
+    @media screen and (max-width: $breakpoint-lg - 1)
       @content
 
   @else if $breakpoint == md
-    @media screen and (max-width: $breakpoint-md)
+    @media screen and (max-width: $breakpoint-md - 1)
       @content
 
   @else if $breakpoint == sm
-    @media screen and (max-width: $breakpoint-sm)
+    @media screen and (max-width: $breakpoint-sm - 1)
       @content
 
   @else

@@ -3,8 +3,11 @@ import getTranslatedNavItems from '../../../staticdata/navLinks';
 import NextLink from '../../NextLink/NextLink';
 import cx from 'classnames';
 import ThemeSwitch from './Themeswitch';
+import { useRouter } from 'next/router';
 
 const NavbarCollapse = (): JSX.Element => {
+  const router = useRouter();
+
   return (
     <Navbar.Collapse timeout={0}>
       <Nav>
@@ -14,7 +17,8 @@ const NavbarCollapse = (): JSX.Element => {
               key={href}
               href={href}
               className={cx('nav-link', {
-                '--collapsed-only': collapsedOnly,
+                '--is-visible-collapsed-only': collapsedOnly,
+                '--is-active': router.pathname === href,
               })}
             >
               {label}

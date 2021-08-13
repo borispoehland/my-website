@@ -1,13 +1,22 @@
 @use "colors" as *
 @use "variables" as *
 
+%gradient-underline
+  background-image: linear-gradient(90deg, $c-primary, $c-primary-light)
+  background-size: 100% 3px
+  background-repeat: no-repeat
+  background-position: left bottom
+  transition: background-size 300ms ease-out
+
 %link
   font-weight: bold
   text-decoration: none
   color: $c-primary !important
+  @extend %gradient-underline
+  background-size: 0 3px
 
   &:hover
-    text-decoration: underline
+    background-size: 100% 3px
     color: $c-text !important
 
   &:focus

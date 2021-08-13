@@ -13,6 +13,7 @@ class MyDocument extends Document {
             href="/webfonts/NunitoSans-Regular.ttf"
             as="font"
           />
+          <link rel="preload" href="/webfonts/NunitoSans-Bold.ttf" as="font" />
           <meta
             name="description"
             content="Boris Pöhland is a freelance developer and Usability analyst from Germany. Hire him here!"
