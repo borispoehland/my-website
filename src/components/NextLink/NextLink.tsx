@@ -16,7 +16,7 @@ const NextLink = ({
   hasExternalIndicator,
 }: IProps): JSX.Element => {
   const isExternalLink = useMemoOne(() => {
-    return /^https?:\/\//i.test(href);
+    return /^https?:\/\//i.test(href) || /^mailto:/i.test(href);
   }, [href]);
 
   return (

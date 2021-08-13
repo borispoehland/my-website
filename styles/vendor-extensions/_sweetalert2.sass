@@ -1,0 +1,27 @@
+@use "../abstracts" as *
+
+.swal2-styled.swal2-confirm
+  @extend %button-style
+
+  &:focus:not(:hover)
+    box-shadow: 0 0 40px 40px $c-primary inset, 0 0 0 0 $c-primary
+
+  &:hover
+    background-image: none !important
+    color: black
+
+.swal2-icon.swal2-error
+  border-color: #e40000
+
+.swal2-icon.swal2-error [class^="swal2-x-mark-line"]
+  background-color: #e40000
+
+.swal2-html-container
+  a
+    @extend %link
+
+    &:hover
+      color: black !important
+
+.swal2-html-container, .swal2-title
+  color: black

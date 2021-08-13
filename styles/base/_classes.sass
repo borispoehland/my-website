@@ -18,18 +18,27 @@ $hr-margin-bottom: 1.5rem
   &__section
     display: grid
     justify-items: center
-    row-gap: $lg-gap
+    row-gap: $md-gap
     max-width: 1100px
     width: 100%
 
-    .anchor ~ h1
-      margin-top: -$lg-gap
+    +from(md)
+      row-gap: $lg-gap
+
+    .anchor + *
+      margin-top: -$md-gap
+
+      +from(md)
+        margin-top: -$lg-gap
 
     h1
       line-height: 1
 
     hr
       margin-bottom: 1.5rem
-      margin-top: calc(#{$hr-margin-bottom} - #{$lg-gap})
+      margin-top: calc(#{$hr-margin-bottom} - #{$md-gap})
       width: 100%
+
+      +from(md)
+        margin-top: calc(#{$hr-margin-bottom} - #{$lg-gap})
 

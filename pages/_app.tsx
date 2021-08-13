@@ -25,13 +25,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   useEffect(() => {
     const { startLoadingSpinner, endLoadingSpinner } = computedOnce.current;
 
-    const onComplete = () => {
-      endLoadingSpinner();
-    };
-
     router.events.on('routeChangeStart', startLoadingSpinner);
 
-    router.events.on('routeChangeComplete', onComplete);
+    router.events.on('routeChangeComplete', endLoadingSpinner);
 
     router.events.on('routeChangeError', endLoadingSpinner);
 
@@ -42,7 +38,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     return () => {
       router.events.off('routeChangeStart', startLoadingSpinner);
 
-      router.events.off('routeChangeComplete', onComplete);
+      router.events.off('routeChangeComplete', endLoadingSpinner);
 
       router.events.off('routeChangeError', endLoadingSpinner);
     };

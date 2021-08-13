@@ -1,4 +1,5 @@
 @use "colors" as *
+@use "variables" as *
 
 %link
   font-weight: bold
@@ -12,7 +13,7 @@
   &:focus
     color: $c-text !important
 
-%invisible-label
+%sr-only
   border: 0
   clip: rect(0 0 0 0)
   height: 1px
@@ -29,4 +30,27 @@
   font: inherit
   cursor: pointer
   outline: inherit
+
+%input-remove-style
+  appearance: none
+  border: none
+  box-shadow: none
+  // outline is okay
+
+%button-style
+  @extend %button-remove-style
+
+  color: white
+  line-height: 45px
+  text-decoration: none
+  text-transform: uppercase
+  padding: 0 $xl-gap
+  border-radius: 34px
+  border-color: $c-primary
+  transition: all 200ms ease-in-out
+  box-shadow: 0 0 40px 40px $c-primary inset, 0 0 0 0 $c-primary
+
+  &:hover
+    color: $c-text
+    box-shadow: 0 0 10px 0 $c-primary inset, 0 0 2px 3px $c-primary
 

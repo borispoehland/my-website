@@ -1,5 +1,5 @@
 import { Nav, Navbar } from 'react-bootstrap';
-import getTranslatedNavItems from '../../../staticdata/navlinks';
+import getTranslatedNavItems from '../../../staticdata/navLinks';
 import NextLink from '../../NextLink/NextLink';
 import cx from 'classnames';
 import ThemeSwitch from './Themeswitch';

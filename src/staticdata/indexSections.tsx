@@ -15,12 +15,12 @@ const getIndexSections = (
       heading: 'Hey,',
       textContent: (
         <>
-          I&#39;m Boris and I&#39;m Web Developer and Usability Analyst from
-          Germany. I have a keen eye for Usability, my{' '}
+          I&#39;m Boris and I&#39;m Web Developer from Germany. I also have a
+          keen eye for usability, my{' '}
           <NextLink href={'/services#usability'}>
-            studies in Human-Computer-Interaction
+            studies in human-computer interaction
           </NextLink>{' '}
-          helped me in developing that. Currently I really much enjoy coding
+          helped me developing that. Currently I really much enjoy coding
           websites - preferrably with <b>React</b>.
         </>
       ),
@@ -36,7 +36,7 @@ const getIndexSections = (
       textContent: (
         <>
           A good craftsman needs to master the right tools well. I specialised
-          myself in the Javascript ecosystem; with <b>Typescript</b>,{' '}
+          myself in the Javascript ecosystem - with <b>Typescript</b>,{' '}
           <b>SASS</b>, <b>React</b> and <b>Next.js</b> as my flagship
           technologies.
         </>

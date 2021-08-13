@@ -1,10 +1,10 @@
-interface NavItem {
+interface INavItem {
   href: string;
   label: string;
   collapsedOnly?: boolean;
 }
 
-const getTranslatedNavItems = (): NavItem[] => {
+const getTranslatedNavItems = (): INavItem[] => {
   return [
     {
       href: '/',
@@ -18,6 +18,10 @@ const getTranslatedNavItems = (): NavItem[] => {
     {
       href: '/portfolio',
       label: 'Portfolio',
+    },
+    {
+      href: '/contact',
+      label: 'Contact',
     },
   ];
 };

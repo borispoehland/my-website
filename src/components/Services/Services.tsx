@@ -17,8 +17,8 @@ const Services = (): JSX.Element => {
         <Anchor id="cv" />
         <h1>My qualification</h1>
         <p>
-          To conduct further due diligence on my suitability for your job,
-          download my CV below:
+          To conduct further due diligence on my background, download my CV
+          below:
         </p>
         <Button onClick={() => openResourceInNewTab('/files/cv.pdf')}>
           Download CV
