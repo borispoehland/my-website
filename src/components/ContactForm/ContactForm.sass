@@ -1,0 +1,19 @@
+@use "styles/abstracts" as *
+
+@forward "converters/ToFormElementConverter"
+
+.contact-form
+  display: grid
+  column-gap: $lg-gap
+  width: 100%
+  max-width: 600px
+
+  grid-template-areas: "firstName" "lastName" "email" "message" "submit"
+
+  +from(md)
+    grid-template-areas: "firstName lastName" "email email" "message message" "submit submit"
+
+  &__submit
+    grid-area: submit
+    justify-self: center
+    margin-top: $md-gap

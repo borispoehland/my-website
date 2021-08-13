@@ -16,7 +16,9 @@
 
   &__heading
     grid-area: heading
-    justify-self: start
+
+    +from(md)
+      justify-self: start
 
   &__image
     grid-area: image
@@ -24,7 +26,8 @@
   &__description
     grid-area: description
 
-    h4
+    h2
+      font-size: 1.5rem
       margin-top: $lg-gap
 
   &__divider

@@ -12,6 +12,8 @@
         return cb.call(el, Math.min(distInPercent, 1), i);
       }
 
+      visPx();
+
       $(win).on('resize.percentAboveBottom scroll.percentAboveBottom', visPx);
     });
   };

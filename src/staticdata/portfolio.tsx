@@ -29,10 +29,10 @@ const getPortfolio = (): IPortfolioItem[] => {
         <>
           In my bachelor thesis, I expanded the existing software
           &quot;OCR4all&quot; with a tour system that was developed according to
-          user requirements and with the aim of modularity. For more
-          information, see the bachelor thesis below or{' '}
+          user requirements and with the aim of modularity. For more information
+          see the bachelor thesis below or{' '}
           <NextLink href="https://github.com/OCR4all/OCR4all/compare/dev...borispoehland:master">
-            the source code
+            view the source code
           </NextLink>
           .
         </>
@@ -74,9 +74,8 @@ const getPortfolio = (): IPortfolioItem[] => {
       appetizer: (
         <>
           I&#39;d love to get in touch with you about <b>your</b> project idea.
-          You need no technical or design knowledge. When you take a look at{' '}
-          <NextLink href={'/tbd'}>how I work</NextLink>, you will see that we
-          will explore and flesh out your vision together!
+          You need no technical or design knowledge. We will explore and flesh
+          out your vision together!
         </>
       ),
       tags: [Technologies.Unknown],

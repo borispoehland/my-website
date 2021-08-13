@@ -15,7 +15,7 @@ const Portfolio = (): JSX.Element => {
         <p>
           Apart from this website I coded <b>{amountOfPortfolioItems}</b> other
           project{amountOfPortfolioItems > 1 && 's'} besides my studies. Check
-          {amountOfPortfolioItems > 1 ? ' them' : ' it'} out below:
+          {amountOfPortfolioItems > 1 ? ' them' : ' it'} out below!
         </p>
         {portfolioItems.map(ToPortfolioItemConverter)}
         <hr />
@@ -25,7 +25,7 @@ const Portfolio = (): JSX.Element => {
         <h1>Other work</h1>
         <p>
           My projects don&#39;t cover everything, because I also gained valuable
-          experience as an employee. Download my CV for the bigger picture:
+          experience as an employee. Download my CV for the bigger picture!
         </p>
         <Button onClick={() => openResourceInNewTab('/files/cv.pdf')}>
           Download CV
