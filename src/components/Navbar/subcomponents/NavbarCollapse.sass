@@ -30,11 +30,23 @@ $collapse-right: calc(#{$layout-x-gap} + #{$collapse-border-width})
     flex-direction: row
     padding: 0
     align-items: center
+    gap: $lg-gap
 
 .nav-link
-  &.--collapsed-only
+  +to(md)
+    padding-top: $lg-gap
+    padding-bottom: $sm-gap
+
+    &:last-child
+      padding-bottom: $lg-gap
+
+  &.--is-visible-collapsed-only
     +from(md)
       display: none
+  &.--is-active
+    @extend %gradient-underline
+    color: $c-text !important
+
 
 .navbar-collapse
   &:not(.show)
