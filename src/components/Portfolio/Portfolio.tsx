@@ -11,10 +11,10 @@ const Portfolio = (): JSX.Element => {
   return (
     <div className="generic-layout">
       <section className="generic-layout__section">
-        <h1>Projects</h1>
+        <h1>Standalone Projects</h1>
         <p>
           Apart from this website I coded <b>{amountOfPortfolioItems}</b> other
-          project{amountOfPortfolioItems > 1 && 's'} besides my studies. Check
+          project{amountOfPortfolioItems > 1 && 's'}. Check
           {amountOfPortfolioItems > 1 ? ' them' : ' it'} out below!
         </p>
         {portfolioItems.map(ToPortfolioItemConverter)}
