@@ -32,7 +32,6 @@ const Portfolio = (): JSX.Element => {
           Download CV
         </Button>
       </GenericSection>
-      <div style={{ height: '100vh' }} />
     </>
   );
 };
