@@ -28,6 +28,7 @@ const getMails = ({ firstName, lastName, email, message }: IInputs) => {
       templateId: 'd-ba91e852699844f891d90dd6fae44540',
       dynamicTemplateData: {
         subject,
+        fullName: `${firstName} ${lastName}`,
       },
     },
   ];
