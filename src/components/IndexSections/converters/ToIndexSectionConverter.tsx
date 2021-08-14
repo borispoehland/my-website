@@ -33,6 +33,7 @@ const LeftLaneItem = ({
           height={1080}
           alt={imgAlt}
           priority={imgPriority}
+          sizes="100vw"
         />
       </div>
       <div className="left-lane-item__heading">
@@ -54,6 +55,7 @@ const RightLaneItem = ({ imgAlt, imgSrc, imgPriority }: IProps) => (
       layout="fill"
       objectFit="contain"
       priority={imgPriority}
+      sizes="60vw"
     />
   </div>
 );

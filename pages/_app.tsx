@@ -31,10 +31,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
     router.events.on('routeChangeError', endLoadingSpinner);
 
-    if ('scrollRestoration' in history) {
-      history.scrollRestoration = 'manual';
-    }
-
     return () => {
       router.events.off('routeChangeStart', startLoadingSpinner);
 
