@@ -1,11 +1,10 @@
-import React, { Fragment, useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
+import React, { Fragment } from 'react';
 import { BiRightArrow } from 'react-icons/bi';
 import NextLink from '../NextLink/NextLink';
 import { capitalizeFirstLetter } from '../../utils/strings';
 import cx from 'classnames';
 import {
-  useAddLatestH1ToBreadcrumbs,
+  useAddLatestH2ToBreadcrumbs,
   useBreadcrumbs,
   useSetBreadcrumbsTop,
 } from './hooks';
@@ -29,7 +28,7 @@ const Breadcrumbs = ({ className }: IProps): JSX.Element => {
 
   const [breadcrumbs, setBreadcrumbs] = useBreadcrumbs();
 
-  useAddLatestH1ToBreadcrumbs([breadcrumbs, setBreadcrumbs]);
+  useAddLatestH2ToBreadcrumbs([breadcrumbs, setBreadcrumbs]);
 
   if (!breadcrumbs || !breadcrumbs.length) {
     return <></>;

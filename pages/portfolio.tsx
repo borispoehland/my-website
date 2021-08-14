@@ -7,9 +7,18 @@ import {
   getPortfolioImageHeight,
   getPortfolioImageWidth,
 } from '../src/utils/env';
+import GenericIntro from '../src/components/GenericIntro/GenericIntro';
 
 export default function PortfolioPage() {
-  return <Portfolio />;
+  return (
+    <>
+      <GenericIntro
+        catchPhrase="What I bring to the table"
+        heading="Portfolio"
+      />
+      <Portfolio />
+    </>
+  );
 }
 
 export async function getStaticProps() {

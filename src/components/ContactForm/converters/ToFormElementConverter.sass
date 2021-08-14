@@ -11,19 +11,18 @@
     @extend %input-remove-style
 
     padding: 5px 15px
-    border-radius: 4px
+    border-radius: 10px
     border: 2px solid $c-text
     transition: all 100ms ease-out
 
     &.--has-error:not(:focus)
       border-color: $c-error
-      border-left-width: 10px
 
   &__error
     opacity: 0
     transition: opacity 300ms ease-out
     border-radius: 5px
-    margin: 5px 0
+    margin: $contact-form-error-margin-top-and-bottom 0
     text-align: center
     background: $c-error
     color: white

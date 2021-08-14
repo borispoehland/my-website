@@ -1,0 +1,33 @@
+@use "styles/abstracts" as *
+
+$hr-margin-bottom: 2.5rem
+
+.generic-section
+  display: grid
+  justify-items: center
+  row-gap: $md-gap
+  max-width: 1100px
+  width: 100%
+
+  +from(md)
+    row-gap: $lg-gap
+
+  .anchor + *
+    margin-top: -$md-gap
+
+    +from(md)
+      margin-top: -$lg-gap
+
+  &__heading
+    line-height: 1
+
+  &__intro
+    text-align: center
+
+  hr
+    margin-bottom: $hr-margin-bottom
+    margin-top: calc(#{$hr-margin-bottom} - #{$md-gap})
+    width: 100%
+
+    +from(md)
+      margin-top: calc(#{$hr-margin-bottom} - #{$lg-gap})

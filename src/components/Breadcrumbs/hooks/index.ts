@@ -53,7 +53,7 @@ export const useSetBreadcrumbsTop = () => {
 };
 
 const toleranceInPx = 50; // already puts the breadcrumb in the heading when it's 50px away from getting overscrolled
-export const useAddLatestH1ToBreadcrumbs = ([
+export const useAddLatestH2ToBreadcrumbs = ([
   breadcrumbs,
   setBreadcrumbs,
 ]: State<IBreadCrumb[]>) => {
@@ -61,13 +61,13 @@ export const useAddLatestH1ToBreadcrumbs = ([
     const $window = $(window);
     const $breadcrumbs = $('.breadcrumbs');
 
-    const addLatestH1ToBreadcrumbs = () => {
+    const addLatesth2ToBreadcrumbs = () => {
       if (!breadcrumbs || !breadcrumbs.length) return;
 
       const breadCrumbsBottomDistanceFromTop =
         getBottomOfElementRelativeToViewport($breadcrumbs);
 
-      $('h1').each((index, heading) => {
+      $('h2').each((index, heading) => {
         const headingTopDistanceFromTop = heading.getBoundingClientRect().top;
 
         const headingIsOverscrolled =
@@ -122,11 +122,11 @@ export const useAddLatestH1ToBreadcrumbs = ([
       });
     };
 
-    // addLatestH1ToBreadcrumbs(); // we don't want it initially, only when scrolling
-    $window.on('scroll', addLatestH1ToBreadcrumbs);
+    // addLatesth2ToBreadcrumbs(); // we don't want it initially, only when scrolling
+    $window.on('scroll', addLatesth2ToBreadcrumbs);
 
     return () => {
-      $window.off('scroll', addLatestH1ToBreadcrumbs);
+      $window.off('scroll', addLatesth2ToBreadcrumbs);
     };
   }, [breadcrumbs, setBreadcrumbs]);
 };

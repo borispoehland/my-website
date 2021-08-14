@@ -28,7 +28,7 @@ const ToPortfolioItemConverter = ({
   return (
     <section key={name} className="portfolio-item">
       <div className="portfolio-item__name">
-        <h2>{name}</h2>
+        <h3>{name}</h3>
       </div>
       {tags.length && (
         <div className="portfolio-item__tags">
