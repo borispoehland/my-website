@@ -1,6 +1,6 @@
 import { zip } from 'lodash';
 import { useRecoilValue } from 'recoil';
-import { sTheme } from '../../store';
+import { sTheme } from '@store';
 import { useMemoOne } from 'use-memo-one';
 import { useAdaptLeftLaneItemHeight, useOpacityChangeOnScroll } from './hooks';
 import { Controller, Scene } from 'react-scrollmagic';

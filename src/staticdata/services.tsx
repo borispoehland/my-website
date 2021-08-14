@@ -1,6 +1,6 @@
-import { IServiceItem } from '../components/Services/converters/ToServicesItemConverter';
-import NextLink from '../components/NextLink/NextLink';
-import { ETheme } from '../../@types/enums';
+import { IServiceItem } from '@components/Services/converters/ToServicesItemConverter';
+import NextLink from '@components/NextLink/NextLink';
+import { ETheme } from '@enums';
 
 const getServices = (theme: ETheme): IServiceItem[] => [
   {

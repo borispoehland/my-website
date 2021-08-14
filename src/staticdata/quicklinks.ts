@@ -1,5 +1,5 @@
 import { FiMail, FiTwitter } from 'react-icons/fi';
-import { IQuicklink } from '../components/Contact/converters/ToQuicklinkConverter';
+import { IQuicklink } from '@components/QuicklinkBar/converters/ToQuicklinkConverter';
 
 const getQuicklinks = (): IQuicklink[] => [
   {

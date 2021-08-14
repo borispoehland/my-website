@@ -6,8 +6,9 @@ import ToFormElementConverter, {
 } from './converters/ToFormElementConverter';
 import Emoji from '../Emoji/Emoji';
 import axios from 'axios';
-import { fireSweetAlert } from '../../utils/dom';
+import { fireSweetAlert } from '@utils/dom';
 import { ISendMailResponse } from '../../../pages/api/sendContactForm';
+import { useCallbackOne } from 'use-memo-one';
 
 const ContactForm = (): JSX.Element => {
   const {
@@ -19,24 +20,27 @@ const ContactForm = (): JSX.Element => {
     mode: 'onBlur',
   });
 
-  const onSubmit: SubmitHandler<IInputs> = (data) => {
-    return axios
-      .post('/api/sendContactForm', data)
-      .then(async () => {
-        await fireSweetAlert(
-          'success',
-          'I received your message! You can close the window now.'
-        );
-        reset();
-      })
-      .catch((err) => {
-        const { myMail } = err.response.data as ISendMailResponse;
-        return fireSweetAlert(
-          'error',
-          `It's not your fault. Please try again later or directly send me an email to <a href='mailto:${myMail}'>${myMail}</a>. Thanks!`
-        );
-      });
-  };
+  const onSubmit: SubmitHandler<IInputs> = useCallbackOne(
+    (data) => {
+      return axios
+        .post('/api/sendContactForm', data)
+        .then(async () => {
+          await fireSweetAlert(
+            'success',
+            'I received your message! You can close the window now.'
+          );
+          reset();
+        })
+        .catch((err) => {
+          const { myMail } = err.response.data as ISendMailResponse;
+          return fireSweetAlert(
+            'error',
+            `It's not your fault. Please try again later or directly send me an email to <a href='mailto:${myMail}'>${myMail}</a>. Thanks!`
+          );
+        });
+    },
+    [reset]
+  );
 
   return (
     <>
@@ -46,13 +50,9 @@ const ContactForm = (): JSX.Element => {
         noValidate
       >
         {getContactFormFields()
-          .map((obj) => ({ ...obj, errors, register }))
+          .map((formElement) => ({ ...formElement, errors, register }))
           .map(ToFormElementConverter)}
-        <Button
-          onClick={() => {}}
-          type="submit"
-          className="contact-form__submit"
-        >
+        <Button type="submit" className="contact-form__submit">
           Send message
         </Button>
       </form>

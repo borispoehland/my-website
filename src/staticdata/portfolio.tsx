@@ -1,8 +1,8 @@
-import { IPortfolioItem } from '../components/Portfolio/converters/ToPortfolioItemConverter';
+import { IPortfolioItem } from '@components/Portfolio/converters/ToPortfolioItemConverter';
 import Technologies from './technologies';
-import Button from '../components/Button/Button';
-import NextLink from '../components/NextLink/NextLink';
-import { openResourceInNewTab } from '../utils/dom';
+import Button from '@components/Button/Button';
+import NextLink from '@components/NextLink/NextLink';
+import { openResourceInNewTab } from '@utils/dom';
 
 const getPortfolio = (): IPortfolioItem[] => {
   return [

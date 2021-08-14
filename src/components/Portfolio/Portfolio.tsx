@@ -1,7 +1,7 @@
 import getPortfolio from '../../staticdata/portfolio';
 import ToPortfolioItemConverter from './converters/ToPortfolioItemConverter';
 import Button from '../Button/Button';
-import { openResourceInNewTab } from '../../utils/dom';
+import { openResourceInNewTab } from '@utils/dom';
 import GenericSection from '../GenericSection/GenericSection';
 
 const portfolioItems = getPortfolio();

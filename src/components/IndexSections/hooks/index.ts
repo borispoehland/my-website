@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { layoutGridGap } from '../../../utils/css';
-import { pxToNumber } from '../../../utils/calc';
+import { layoutGridGap } from '@utils/css';
+import { pxToNumber } from '@utils/calc';
 
 const delayPercentValue = (percent: number, startAt: number): number => {
   const toReach = 1 - startAt;

@@ -2,9 +2,9 @@ import { ReactNode } from 'react';
 import Button from '../../Button/Button';
 import NextLink from '../../NextLink/NextLink';
 import ConditionalWrapper from '../../../helpers/ConditionalWrapper';
-import { ITechnology } from '../../../staticdata/technologies';
+import { ITechnology } from '@data/technologies';
 import PortfolioImage from '../subcomponents/PortfolioImage';
-import { openResourceInNewTab } from '../../../utils/dom';
+import { openResourceInNewTab } from '@utils/dom';
 
 export interface IPortfolioItem {
   appetizer: ReactNode;

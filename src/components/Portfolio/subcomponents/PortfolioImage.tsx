@@ -1,8 +1,5 @@
 import Image from 'next/image';
-import {
-  getPortfolioImageHeight,
-  getPortfolioImageWidth,
-} from '../../../utils/env';
+import { getPortfolioImageHeight, getPortfolioImageWidth } from '@utils/env';
 
 interface IProps {
   src: string;
