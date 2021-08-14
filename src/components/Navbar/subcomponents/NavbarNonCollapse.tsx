@@ -1,9 +1,9 @@
 import NextLink from '../../NextLink/NextLink';
 import Image from 'next/image';
 import NavToggler from './NavToggler';
-import { ETheme } from '../../../../@types/enums';
+import { ETheme } from '@enums';
 import { MouseEventHandler } from 'react';
-import { navLogoWidth } from '../../../utils/css';
+import { navLogoWidth } from '@utils/css';
 
 interface IProps {
   onTogglerClick: MouseEventHandler;

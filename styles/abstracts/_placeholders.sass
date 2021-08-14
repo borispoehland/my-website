@@ -14,6 +14,7 @@
   color: $c-primary !important
   @extend %gradient-underline
   background-size: 0 3px
+  transition: all 200ms ease-in-out
 
   &:hover
     background-size: 100% 3px
@@ -40,13 +41,18 @@
   cursor: pointer
   outline: inherit
 
+%button-as-link
+  @extend %button-remove-style
+  line-height: 0
+  @extend %link
+
 %input-remove-style
   appearance: none
   border: none
   box-shadow: none
   // outline is okay
 
-%button-style
+%button
   @extend %button-remove-style
 
   color: white

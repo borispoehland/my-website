@@ -1,23 +1,23 @@
 import { useEffect } from 'react';
-import { getBottomOfElementRelativeToViewport } from '../../../utils/positions';
+import { getBottomOfElementRelativeToViewport } from '@utils/positions';
 
-export const useSetMobileNavTop = (): void => {
+export const useSetMobileNavCollapseTop = (): void => {
   useEffect(() => {
     const $navbar = $('.navbar');
     const $navbarCollapse = $('.navbar-collapse');
     const $window = $(window);
 
-    const setMobileNavTop = () => {
+    const setMobileNavCollapseTop = () => {
       const navbarBottomDistanceFromTop =
         getBottomOfElementRelativeToViewport($navbar);
       $navbarCollapse.css('top', `${navbarBottomDistanceFromTop}px`);
     };
 
-    setMobileNavTop();
-    $window.on('resize', setMobileNavTop);
+    setMobileNavCollapseTop();
+    $window.on('resize', setMobileNavCollapseTop);
 
     return (): void => {
-      $window.off('resize', setMobileNavTop);
+      $window.off('resize', setMobileNavCollapseTop);
     };
   }, []);
 };

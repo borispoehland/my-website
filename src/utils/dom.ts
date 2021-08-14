@@ -1,6 +1,10 @@
 // @ts-ignore
 import Swal from 'sweetalert2/dist/sweetalert2';
 
+/**
+ * Contains functions that only work within useEffect, i.e. when the window is defined
+ */
+
 export const openResourceInNewTab = (path: string): void => {
   window.open(path, '__blank');
 };

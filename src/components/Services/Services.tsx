@@ -1,9 +1,9 @@
 import ToServicesItemConverter from './converters/ToServicesItemConverter';
 import getServices from '../../staticdata/services';
 import { useRecoilValue } from 'recoil';
-import { sTheme } from '../../store';
+import { sTheme } from '@store';
 import Button from '../Button/Button';
-import { openResourceInNewTab } from '../../utils/dom';
+import { openResourceInNewTab } from '@utils/dom';
 import GenericSection from '../GenericSection/GenericSection';
 import NextLink from '../NextLink/NextLink';
 

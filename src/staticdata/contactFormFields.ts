@@ -1,7 +1,7 @@
-import EmailInput from '../components/ContactForm/subcomponents/EmailInput';
-import NormalInput from '../components/ContactForm/subcomponents/NormalInput';
-import MessageInput from '../components/ContactForm/subcomponents/MessageInput';
-import { IFormElement } from '../components/ContactForm/converters/ToFormElementConverter';
+import EmailInput from '@components/ContactForm/subcomponents/EmailInput';
+import NormalInput from '@components/ContactForm/subcomponents/NormalInput';
+import MessageInput from '@components/ContactForm/subcomponents/MessageInput';
+import { IFormElement } from '@components/ContactForm/converters/ToFormElementConverter';
 
 const getContactFormFields = (): IFormElement[] => [
   {

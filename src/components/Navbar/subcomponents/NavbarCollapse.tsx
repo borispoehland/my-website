@@ -1,9 +1,8 @@
 import { Nav, Navbar } from 'react-bootstrap';
-import getTranslatedNavItems from '../../../staticdata/navLinks';
-import NextLink from '../../NextLink/NextLink';
-import cx from 'classnames';
+import getNavLinks from '../../../staticdata/navLinks';
 import ThemeSwitch from './Themeswitch';
 import { useRouter } from 'next/router';
+import ToNavLinkConverter from '../converters/ToNavLinkConverter';
 
 const NavbarCollapse = (): JSX.Element => {
   const router = useRouter();
@@ -11,20 +10,12 @@ const NavbarCollapse = (): JSX.Element => {
   return (
     <Navbar.Collapse timeout={0}>
       <Nav>
-        {getTranslatedNavItems().map(({ href, label, collapsedOnly }) => {
-          return (
-            <NextLink
-              key={href}
-              href={href}
-              className={cx('nav-link', {
-                '--is-visible-collapsed-only': collapsedOnly,
-                '--is-active': router.pathname === href,
-              })}
-            >
-              {label}
-            </NextLink>
-          );
-        })}
+        {getNavLinks()
+          .map((navLink) => ({
+            ...navLink,
+            isActive: router.pathname === navLink.href,
+          }))
+          .map(ToNavLinkConverter)}
         <ThemeSwitch className="nav-link" />
       </Nav>
     </Navbar.Collapse>

@@ -1,7 +1,7 @@
-import { ETheme } from '../../@types/enums';
-import NextLink from '../components/NextLink/NextLink';
-import Button from '../components/Button/Button';
-import { IIndexSection } from '../components/IndexSections/converters/ToIndexSectionConverter';
+import { ETheme } from '@enums';
+import NextLink from '@components/NextLink/NextLink';
+import Button from '@components/Button/Button';
+import { IIndexSection } from '@components/IndexSections/converters/ToIndexSectionConverter';
 import { NextRouter } from 'next/router';
 
 const getIndexSections = (

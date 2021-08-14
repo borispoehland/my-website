@@ -1,9 +1,8 @@
 import ContactForm from '../ContactForm/ContactForm';
-import getQuicklinks from '../../staticdata/quicklinks';
-import ToQuicklinkConverter from './converters/ToQuicklinkConverter';
 import GenericSection from '../GenericSection/GenericSection';
 import Button from '../Button/Button';
-import { openResourceInNewTab } from '../../utils/dom';
+import { openResourceInNewTab } from '@utils/dom';
+import QuicklinkBar from '../QuicklinkBar/QuicklinkBar';
 
 const Contact = (): JSX.Element => {
   return (
@@ -20,9 +19,7 @@ const Contact = (): JSX.Element => {
         heading="Contact me later"
         shortIntro="Add me to your contacts and reach out to me whenever you have time."
       >
-        <div className="quicklinks">
-          {getQuicklinks().map(ToQuicklinkConverter)}
-        </div>
+        <QuicklinkBar />
       </GenericSection>
       <GenericSection
         id="cv"
