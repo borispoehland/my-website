@@ -1,0 +1,28 @@
+@use "styles/abstracts" as *
+
+.footer
+  padding-top: $lg-gap
+  padding-bottom: $xl-gap
+
+  display: grid
+  justify-items: center
+  align-items: center
+  row-gap: $sm-gap
+
+  grid-template-areas: "contact" "copyright" "legal"
+
+  +from(md)
+    grid-template-areas: "copyright contact legal"
+    grid-template-columns: 1fr 1fr 1fr
+
+  &__contact
+    grid-area: contact
+
+  &__legal
+    grid-area: legal
+
+    display: flex
+    gap: $xl-gap
+
+  &__copyright
+    grid-area: copyright
