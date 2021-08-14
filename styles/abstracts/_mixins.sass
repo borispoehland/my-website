@@ -43,16 +43,6 @@
     @content
 
 
-@mixin gap($size, $row: true)
-  > *:not(:first-child)
-    $gap: map-get($gaps, $size)
-
-    @if $row
-      margin-top: #{$gap}
-    @else
-      margin-left: #{$gap}
-
-
 
 
 
