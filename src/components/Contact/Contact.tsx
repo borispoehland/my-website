@@ -27,7 +27,7 @@ const Contact = (): JSX.Element => {
       <GenericSection
         id="cv"
         heading="In case you missed it ..."
-        shortIntro="... you can download my CV below."
+        shortIntro="You can download my CV below."
       >
         <Button onClick={() => openResourceInNewTab('/files/cv.pdf')}>
           Download CV
