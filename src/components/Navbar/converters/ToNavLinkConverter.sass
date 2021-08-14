@@ -1,0 +1,17 @@
+@use "styles/abstracts" as *
+
+.nav-link
+  +to(md)
+    padding-top: $lg-gap
+    padding-bottom: $sm-gap
+
+    &:last-child
+      padding-bottom: $lg-gap
+
+  &.--is-visible-collapsed-only
+    +from(md)
+      display: none
+
+  &.--is-active
+    @extend %gradient-underline
+    color: $c-text !important

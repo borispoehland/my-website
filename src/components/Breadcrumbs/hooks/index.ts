@@ -1,29 +1,27 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { IBreadCrumb } from '../Breadcrumbs';
-import { getBottomOfElementRelativeToViewport } from '../../../utils/positions';
+import { getBottomOfElementRelativeToViewport } from '@utils/positions';
 
 export const useBreadcrumbs = (): State<IBreadCrumb[]> => {
   const router = useRouter();
   const [breadcrumbs, setBreadcrumbs] = useState<IBreadCrumb[]>([]);
 
   useEffect((): void => {
-    if (router) {
-      const linkPath = router.asPath.split('/');
-      linkPath.shift();
+    const linkPath = router.asPath.split('/');
+    linkPath.shift();
 
-      const pathArray = linkPath.map((path, i): IBreadCrumb => {
-        return {
-          label: path.split('#')[0],
-          href: `/${linkPath.slice(0, i + 1).join('/')}`,
-        };
-      });
+    const pathArray = linkPath.map((path, i): IBreadCrumb => {
+      return {
+        label: path.split('#')[0],
+        href: `/${linkPath.slice(0, i + 1).join('/')}`,
+      };
+    });
 
-      if (pathArray.length === 1 && pathArray[0].href === '/') {
-        setBreadcrumbs([]); // index page, we don't want breadcrumbs here
-      } else {
-        setBreadcrumbs([{ label: 'Home', href: '/' }, ...pathArray]);
-      }
+    if (pathArray.length === 1 && pathArray[0].href === '/') {
+      setBreadcrumbs([]); // index page, we don't want breadcrumbs here
+    } else {
+      setBreadcrumbs([{ label: 'Home', href: '/' }, ...pathArray]);
     }
   }, [router]);
 
@@ -49,7 +47,7 @@ export const useSetBreadcrumbsTop = () => {
     return (): void => {
       $window.off('resize', setBreadcrumbsTop);
     };
-  });
+  }, []);
 };
 
 const toleranceInPx = 50; // already puts the breadcrumb in the heading when it's 50px away from getting overscrolled

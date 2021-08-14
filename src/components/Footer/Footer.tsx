@@ -1,11 +1,9 @@
 import cx from 'classnames';
 import NextLink from '../NextLink/NextLink';
 import getQuicklinks from '../../staticdata/quicklinks';
-import ToQuicklinkConverter from '../Contact/converters/ToQuicklinkConverter';
+import ToQuicklinkConverter from '../QuicklinkBar/converters/ToQuicklinkConverter';
 
-interface IProps {
-  className: string;
-}
+interface IProps extends HasClassName {}
 
 const Footer = ({ className }: IProps): JSX.Element => {
   return (

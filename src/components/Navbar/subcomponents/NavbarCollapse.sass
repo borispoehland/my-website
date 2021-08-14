@@ -32,26 +32,13 @@ $collapse-right: calc(#{$layout-x-gap} + #{$collapse-border-width})
     align-items: center
     gap: $lg-gap
 
-.nav-link
-  +to(md)
-    padding-top: $lg-gap
-    padding-bottom: $sm-gap
-
-    &:last-child
-      padding-bottom: $lg-gap
-
-  &.--is-visible-collapsed-only
-    +from(md)
-      display: none
-  &.--is-active
-    @extend %gradient-underline
-    color: $c-text !important
-
 
 .navbar-collapse
-  &:not(.show)
-    display: block
-    transform: translateX(calc(100% + #{$collapse-right}))
+  display: block !important // because bootstrap makes it display none
+  transform: translateX(calc(100% + #{$collapse-right}))
 
-    +from(md)
-      transform: none
+  &.show
+    transform: translateX(0)
+
+  +from(md)
+    transform: none

@@ -13,7 +13,7 @@ const ToQuicklinkConverter = ({
   label,
 }: IQuicklink): JSX.Element => {
   return (
-    <NextLink key={href} href={href} className="quicklinks__link">
+    <NextLink key={href} href={href} className="quicklink-bar__link">
       <Icon />
       <span>{label}</span>
     </NextLink>

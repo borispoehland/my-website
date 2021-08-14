@@ -1,10 +1,10 @@
-interface INavItem {
+export interface INavLink {
   href: string;
   label: string;
   collapsedOnly?: boolean;
 }
 
-const getTranslatedNavItems = (): INavItem[] => {
+const getNavLinks = (): INavLink[] => {
   return [
     {
       href: '/',
@@ -26,4 +26,4 @@ const getTranslatedNavItems = (): INavItem[] => {
   ];
 };
 
-export default getTranslatedNavItems;
+export default getNavLinks;

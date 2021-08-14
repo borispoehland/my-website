@@ -29,7 +29,7 @@ const Switch = ({
   }, [action]);
 
   return (
-    <button type="button" className={cx('--as-link', className)}>
+    <button type="button" className={cx('switch-wrapper', className)}>
       <div className="switch">
         <label htmlFor={id}>{label}</label>
         <input

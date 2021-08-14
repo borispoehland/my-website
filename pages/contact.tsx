@@ -6,7 +6,7 @@ const ContactPage = (): JSX.Element => {
     <>
       <GenericIntro
         heading="Contact"
-        catchPhrase="Don&#39;t hesitate to contact me!"
+        catchPhrase="Don't hesitate to contact me!"
       />
       <Contact />
     </>

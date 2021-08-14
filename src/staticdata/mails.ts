@@ -1,4 +1,4 @@
-import { IInputs } from '../components/ContactForm/converters/ToFormElementConverter';
+import { IInputs } from '@components/ContactForm/converters/ToFormElementConverter';
 
 const getMails = ({ firstName, lastName, email, message }: IInputs) => {
   const subject = `[Inquiry received] Your contact inquiry at ${process.env.DOMAIN}`;

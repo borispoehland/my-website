@@ -5,7 +5,7 @@ type ButtonType = 'submit' | 'reset' | 'button';
 
 interface IProps extends HasChildren {
   className?: string;
-  onClick: MouseEventHandler;
+  onClick?: MouseEventHandler;
   type?: ButtonType;
 }
 
@@ -16,11 +16,7 @@ const Button = ({
   type,
 }: IProps): JSX.Element => {
   return (
-    <button
-      type={type}
-      className={cx('button', 'button-1', className)}
-      onClick={onClick}
-    >
+    <button type={type} className={cx('button', className)} onClick={onClick}>
       {children}
     </button>
   );

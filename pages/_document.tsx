@@ -6,7 +6,7 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           {/* TODO: next-seo, favicons */}
-          <script defer src="/scripts/jquery-3.6.0.js" />
+          <script defer src="/scripts/jquery-3.6.0.min.js" />
           <script defer src="/scripts/jQuery.inViewport.js" />
           <link
             rel="preload"

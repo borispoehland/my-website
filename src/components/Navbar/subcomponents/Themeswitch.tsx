@@ -1,14 +1,12 @@
 import { useRecoilState } from 'recoil';
 import { useEffect } from 'react';
-import { sTheme } from '../../../store';
+import { sTheme } from '@store';
 import Switch from '../../Switch/Switch';
-import { ETheme } from '../../../../@types/enums';
+import { ETheme } from '@enums';
 import { BiMoon, BiSun } from 'react-icons/bi';
 import { useCallbackOne } from 'use-memo-one';
 
-interface IProps {
-  className: string;
-}
+interface IProps extends HasClassName {}
 
 const ThemeSwitch = ({ className }: IProps): JSX.Element => {
   const [theme, setTheme] = useRecoilState(sTheme);
