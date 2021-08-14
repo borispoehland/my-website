@@ -10,20 +10,18 @@ interface IProps {
   theme: ETheme;
 }
 
-const logoSizes = `${navLogoWidth}`;
-
 const NavbarNonCollapse = ({ onTogglerClick, theme }: IProps): JSX.Element => {
   return (
     <div className="navbar-non-collapse">
       <NextLink href="/" className="navbar-brand">
         <Image
           src={`/img/bp-${theme}.png`}
+          alt="Logo of Boris Pöhland"
           width={912}
           height={169}
-          sizes={logoSizes}
           quality={100}
           priority
-          alt="Image of Boris Pöhland"
+          sizes={navLogoWidth}
         />
       </NextLink>
       <NavToggler onClick={onTogglerClick} />
