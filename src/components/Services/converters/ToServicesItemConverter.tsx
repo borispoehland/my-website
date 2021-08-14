@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { ReactNode } from 'react';
-import Anchor from '../../Anchor/Anchor';
+import GenericSection from '../../GenericSection/GenericSection';
 
 export interface IServiceItem {
   heading: string;
@@ -16,10 +16,9 @@ const ToServicesItemConverter = ({
   imgSrc,
 }: IServiceItem): JSX.Element => {
   return (
-    <section key={heading} className="generic-layout__section">
-      <Anchor id={anchorId} />
-      <div className="services-item">
-        <h1 className="services-item__heading">{heading}</h1>
+    <GenericSection key={anchorId} id={anchorId} heading="" shortIntro="">
+      <section className="services-item">
+        <h2 className="services-item__heading">{heading}</h2>
         <div className="services-item__image">
           <Image
             src={imgSrc}
@@ -31,9 +30,8 @@ const ToServicesItemConverter = ({
           />
         </div>
         <div className="services-item__description">{description}</div>
-        <hr className="services-item__divider" />
-      </div>
-    </section>
+      </section>
+    </GenericSection>
   );
 };
 

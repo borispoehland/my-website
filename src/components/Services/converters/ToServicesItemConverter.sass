@@ -11,7 +11,7 @@
   +from(md)
     grid-template-areas: ". heading" "image description" "divider divider"
 
-    .generic-layout__section:nth-child(odd) &
+    .generic-section:nth-child(even) &
       grid-template-areas: "heading ." "description image" "divider divider"
 
   &__heading
@@ -26,7 +26,7 @@
   &__description
     grid-area: description
 
-    h2
+    h3
       font-size: 1.5rem
       margin-top: $lg-gap
 

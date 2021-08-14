@@ -7,7 +7,6 @@ import ToFormElementConverter, {
 import Emoji from '../Emoji/Emoji';
 import axios from 'axios';
 import { fireSweetAlert } from '../../utils/dom';
-import { useEffect } from 'react';
 import { ISendMailResponse } from '../../../pages/api/sendContactForm';
 
 const ContactForm = (): JSX.Element => {
@@ -39,12 +38,8 @@ const ContactForm = (): JSX.Element => {
       });
   };
 
-  useEffect(() => {});
-
   return (
-    <section className="generic-layout__section">
-      <h1>Contact form</h1>
-      <p>Don&#39;t hesitate to drop me a message!</p>
+    <>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="contact-form"
@@ -64,7 +59,7 @@ const ContactForm = (): JSX.Element => {
       <p>
         * You can also write me in <b>german</b> <Emoji symbol="&#128521;" />
       </p>
-    </section>
+    </>
   );
 };
 

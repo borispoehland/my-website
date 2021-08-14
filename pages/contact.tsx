@@ -1,9 +1,16 @@
 import Contact from '../src/components/Contact/Contact';
-
-interface IProps {}
+import GenericIntro from '../src/components/GenericIntro/GenericIntro';
 
 const ContactPage = (): JSX.Element => {
-  return <Contact />;
+  return (
+    <>
+      <GenericIntro
+        heading="Contact"
+        catchPhrase="Don&#39;t hesitate to contact me!"
+      />
+      <Contact />
+    </>
+  );
 };
 
 export default ContactPage;
