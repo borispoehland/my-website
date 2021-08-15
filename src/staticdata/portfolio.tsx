@@ -3,8 +3,9 @@ import Technologies from './technologies';
 import Button from '@components/Button/Button';
 import NextLink from '@components/NextLink/NextLink';
 import { openResourceInNewTab } from '@utils/dom';
+import { NextRouter } from 'next/router';
 
-const getPortfolio = (): IPortfolioItem[] => {
+const getPortfolio = (router: NextRouter | undefined): IPortfolioItem[] => {
   return [
     {
       name: 'Website for Regina Pöhland',
@@ -31,7 +32,10 @@ const getPortfolio = (): IPortfolioItem[] => {
           &quot;OCR4all&quot; with a tour system that was developed according to
           user requirements and with the aim of modularity. For more information
           see the bachelor thesis below or{' '}
-          <NextLink href="https://github.com/OCR4all/OCR4all/compare/dev...borispoehland:master">
+          <NextLink
+            href="https://github.com/OCR4all/OCR4all/compare/dev...borispoehland:master"
+            hasExternalIndicator
+          >
             view the source code
           </NextLink>
           .
@@ -80,7 +84,11 @@ const getPortfolio = (): IPortfolioItem[] => {
       ),
       tags: [Technologies.Unknown],
       imgFolder: 'your-next-project-placeholder',
-      customActionButton: <Button onClick={() => {}}>Hire me today!</Button>,
+      customActionButton: (
+        <Button onClick={() => router && router.push('/contact')}>
+          Hire me today!
+        </Button>
+      ),
     },
   ];
 };

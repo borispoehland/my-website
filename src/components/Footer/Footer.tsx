@@ -16,7 +16,7 @@ const Footer = ({ className }: IProps): JSX.Element => {
       </div>
       <div className="footer__legal">
         <NextLink href="/imprint">Imprint</NextLink>
-        <NextLink href="/privacy-policy">Privacy Policy</NextLink>
+        <NextLink href="/privacy">Privacy Policy</NextLink>
       </div>
     </footer>
   );

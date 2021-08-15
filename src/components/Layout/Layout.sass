@@ -17,6 +17,9 @@ $max-page-width: 1600px
     display: grid
     justify-items: center
 
+    > div:not([class]) // next.js error div
+      width: 100%
+
   &__navbar
     grid-area: navbar
     position: sticky
