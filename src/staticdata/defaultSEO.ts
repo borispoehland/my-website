@@ -9,9 +9,9 @@ const getDefaultSEO = (): DefaultSeoProps => {
     openGraph: {
       type: 'website',
       locale: 'en',
-      url: 'https://borispoehland.com',
+      url: 'https://www.borispoehland.com',
       site_name: 'Boris Pöhland',
-      title: 'Boris Pöhland | Web Developer | Usability Consultant',
+      title: 'Boris Pöhland | Web Developer and Usability Consultant',
       images: [
         {
           url: 'https://boris-webseite.vercel.app/img/seo/opengraph.png',

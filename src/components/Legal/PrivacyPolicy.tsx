@@ -264,7 +264,7 @@ const PrivacyPolicy = (): JSX.Element => {
           automatically transmits to us. These are:
           <ul>
             <li>
-              Domain from which you are accessing (i.e. borispoehland.com)
+              Domain from which you are accessing (i.e. www.borispoehland.com)
             </li>
             <li>Request line (the destination address without the domain)</li>
             <li>Status code (e.g. 200 or 404)</li>
