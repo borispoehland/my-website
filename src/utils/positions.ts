@@ -4,9 +4,6 @@ const getPositionRelativeToViewport = (position: number): number => {
 };
 
 export const getBottomOfElementRelativeToViewport = ($el: JQuery): number => {
-  console.log('element top offset: ', $el.offset()?.top);
-  console.log('element height: ', $el.height());
-  console.log('viewportPosition: ', $(window).scrollTop());
   const bottomOfEl = ($el.offset()?.top as number) + ($el.height() as number);
   return getPositionRelativeToViewport(bottomOfEl);
 };
