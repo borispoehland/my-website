@@ -5,19 +5,8 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          {/* TODO: next-seo, favicons */}
           <script defer src="/scripts/jquery-3.6.0.min.js" />
           <script defer src="/scripts/jQuery.inViewport.js" />
-          <link
-            rel="preload"
-            href="/webfonts/NunitoSans-Regular.ttf"
-            as="font"
-          />
-          <link rel="preload" href="/webfonts/NunitoSans-Bold.ttf" as="font" />
-          <meta
-            name="description"
-            content="Boris Pöhland is a freelance developer and Usability analyst from Germany. Hire him here!"
-          />
         </Head>
         <body>
           <Main />

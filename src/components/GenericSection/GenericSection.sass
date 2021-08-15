@@ -2,10 +2,12 @@
 
 $hr-margin-bottom: 2.5rem
 
+$generic-section-md-gap: $md-gap + 0.2rem
+
 .generic-section
   display: grid
   justify-items: center
-  row-gap: $md-gap
+  row-gap: $generic-section-md-gap
   max-width: 1100px
   width: 100%
 
@@ -17,7 +19,7 @@ $hr-margin-bottom: 2.5rem
     row-gap: $lg-gap
 
   .anchor + *
-    margin-top: -$md-gap
+    margin-top: -$generic-section-md-gap
 
     +from(md)
       margin-top: -$lg-gap
@@ -30,7 +32,7 @@ $hr-margin-bottom: 2.5rem
 
   hr
     margin-bottom: $hr-margin-bottom
-    margin-top: calc(#{$hr-margin-bottom} - #{$md-gap})
+    margin-top: calc(#{$hr-margin-bottom} - #{$generic-section-md-gap})
     width: 100%
 
     +from(md)

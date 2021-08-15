@@ -27,7 +27,7 @@ const ContactForm = (): JSX.Element => {
         .then(async () => {
           await fireSweetAlert(
             'success',
-            'I received your message! You can close the window now.'
+            `I received your message and sent you a confirmation mail. Please make sure to also check your <b>Junk</b> folder. You can close the window now.`
           );
           reset();
         })
