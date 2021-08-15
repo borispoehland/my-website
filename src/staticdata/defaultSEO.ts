@@ -59,7 +59,7 @@ const getDefaultSEO = (): DefaultSeoProps => {
       {
         name: 'keywords',
         content:
-          'developer, programming, react, next, react.js, next.js, frontend, javascript, html, css, wertheim, würzburg, consulting, typescript, prototyping, usability, ux, ui, design, development, software, website, seo, sass, scss, portfolio, design, designer, intellij, germany, entwickler, programmierer, software-developer, software-entwickler, inventor, IT, computer science, creator ',
+          'developer, programming, react, next, react.js, next.js, frontend, javascript, html, css, wertheim, würzburg, consulting, typescript, prototyping, usability, ux, ui, design, development, software, website, seo, sass, scss, portfolio, design, designer, intellij, germany, entwickler, programmierer, software-developer, software-entwickler, inventor, IT, computer science, creator, freelancer, freelancing',
       },
     ],
     additionalLinkTags: [
