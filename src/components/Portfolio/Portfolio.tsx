@@ -3,11 +3,20 @@ import ToPortfolioItemConverter from './converters/ToPortfolioItemConverter';
 import Button from '../Button/Button';
 import { openResourceInNewTab } from '@utils/dom';
 import GenericSection from '../GenericSection/GenericSection';
-
-const portfolioItems = getPortfolio();
-const amountOfPortfolioItems = portfolioItems.length - 1; // the advertisment doesn't count
+import { useRouter } from 'next/router';
+import { useMemoOne } from 'use-memo-one';
 
 const Portfolio = (): JSX.Element => {
+  const router = useRouter();
+
+  const portfolioItems = useMemoOne(() => {
+    return getPortfolio(router);
+  }, [router]);
+
+  const amountOfPortfolioItems = useMemoOne(() => {
+    return portfolioItems.length - 1; // the advertisment doesn't count
+  }, [portfolioItems]);
+
   return (
     <>
       <GenericSection

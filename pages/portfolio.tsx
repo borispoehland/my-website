@@ -24,7 +24,7 @@ export default function PortfolioPage() {
 }
 
 export async function getStaticProps() {
-  const portfolioItems = getPortfolio();
+  const portfolioItems = getPortfolio(undefined);
 
   const captureScreenshotsOfPortfolioPages = async () => {
     const getPortfolioImgFolder = (imgFolder: string) => {

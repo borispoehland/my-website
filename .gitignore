@@ -37,3 +37,6 @@ yarn-error.log*
 removeUnusedDeps.sh
 unused-deps.txt
 services-code-screenshot.ts
+
+# sitemap
+public/sitemap.xml
