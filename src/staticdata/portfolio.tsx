@@ -10,7 +10,7 @@ const getPortfolio = (): IPortfolioItem[] => {
       name: 'Website for Regina Pöhland',
       appetizer: (
         <>
-          In the first website I coded along, I created the web presence for my
+          In the first website I coded alone, I created the web presence for my
           mother and german artist Regina Pöhland. Back then I used Javascript
           to code the React components, today I work with <b>Typescript</b>.
         </>
