@@ -5,6 +5,7 @@ interface IProps extends HasChildren {
   id: string;
   heading: string;
   shortIntro: string | ReactNode;
+  [props: string]: any;
 }
 
 const GenericSection = ({

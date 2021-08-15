@@ -34,7 +34,7 @@ const getServices = (theme: ETheme): IServiceItem[] => [
     anchorId: 'coding',
   },
   {
-    heading: 'Usability consulting',
+    heading: 'Usability Consulting',
     description: (
       <>
         I studied human-computer-interaction at the University of Würzburg in
