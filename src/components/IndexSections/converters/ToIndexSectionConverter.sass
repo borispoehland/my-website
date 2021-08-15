@@ -22,7 +22,11 @@
       display: none
 
   &__heading
+    margin-top: $md-gap
     margin-bottom: $md-gap
+
+    +from(md)
+      margin-top: 0
 
   &__text
     overflow-y: auto
