@@ -7,6 +7,8 @@ import { RecoilRoot } from 'recoil';
 import Head from 'next/head';
 import { UIDReset } from 'react-uid';
 import { useLoadingSpinner } from '@utils/pagesHooks';
+import { DefaultSeo } from 'next-seo';
+import getDefaultSEO from '@data/defaultSEO';
 
 NProgress.configure({ showSpinner: false, parent: '.page__progress' });
 
@@ -20,6 +22,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <Head>
         <title>Boris Pöhland | Web Developer | Usability Analyst</title>
       </Head>
+      <DefaultSeo {...getDefaultSEO()} />
       <UIDReset prefix="uid_">
         <RecoilRoot>
           <Layout>

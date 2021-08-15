@@ -5,10 +5,15 @@ import puppeteer from 'puppeteer';
 import mkdirp from 'mkdirp';
 import { getPortfolioImageHeight, getPortfolioImageWidth } from '@utils/env';
 import GenericIntro from '../src/components/GenericIntro/GenericIntro';
+import { NextSeo } from 'next-seo';
 
 export default function PortfolioPage() {
   return (
     <>
+      <NextSeo
+        title="Portfolio"
+        description="Boris Pöhland is Web Developer and Usability Consultant from Würzburg, Germany. See the IT projects he has been working on!"
+      />
       <GenericIntro
         catchPhrase="What I bring to the table"
         heading="Portfolio"
