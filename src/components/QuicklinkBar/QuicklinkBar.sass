@@ -4,6 +4,9 @@
 
 .quicklink-bar
   display: flex
-  overflow-x: auto
-  max-width: 100%
-  gap: $lg-gap
+  flex-direction: column
+  gap: $md-gap
+
+  +from(md)
+    flex-direction: row
+    gap: $xl-gap
