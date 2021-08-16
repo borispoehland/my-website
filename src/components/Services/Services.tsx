@@ -6,6 +6,7 @@ import Button from '../Button/Button';
 import { openResourceInNewTab } from '@utils/dom';
 import GenericSection from '../GenericSection/GenericSection';
 import NextLink from '../NextLink/NextLink';
+import { CV_PATH } from '@utils/paths';
 
 const Services = (): JSX.Element => {
   const theme = useRecoilValue(sTheme);
@@ -23,7 +24,7 @@ const Services = (): JSX.Element => {
           </>
         }
       >
-        <Button onClick={() => openResourceInNewTab('/files/cv.pdf')}>
+        <Button onClick={() => openResourceInNewTab(CV_PATH)}>
           Download CV
         </Button>
       </GenericSection>

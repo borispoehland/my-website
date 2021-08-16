@@ -3,6 +3,7 @@ import GenericSection from '../GenericSection/GenericSection';
 import Button from '../Button/Button';
 import { openResourceInNewTab } from '@utils/dom';
 import QuicklinkBar from '../QuicklinkBar/QuicklinkBar';
+import { CV_PATH } from '@utils/paths';
 
 const Contact = (): JSX.Element => {
   return (
@@ -19,7 +20,7 @@ const Contact = (): JSX.Element => {
         heading="In case you missed it ..."
         shortIntro="You can download my CV below."
       >
-        <Button onClick={() => openResourceInNewTab('/files/cv.pdf')}>
+        <Button onClick={() => openResourceInNewTab(CV_PATH)}>
           Download CV
         </Button>
       </GenericSection>
