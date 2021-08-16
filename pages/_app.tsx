@@ -6,9 +6,13 @@ import { useRouter } from 'next/router';
 import { RecoilRoot } from 'recoil';
 import Head from 'next/head';
 import { UIDReset } from 'react-uid';
-import { useLoadingSpinner } from '@utils/pagesHooks';
+import {
+  useLoadingSpinner,
+  usePassiveJqueryEventListeners,
+} from '@utils/pagesHooks';
 import { DefaultSeo } from 'next-seo';
 import getDefaultSEO from '@data/defaultSEO';
+import { useEffect } from 'react';
 
 NProgress.configure({ showSpinner: false, parent: '.page__progress' });
 
@@ -16,6 +20,8 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
 
   useLoadingSpinner(router);
+
+  usePassiveJqueryEventListeners();
 
   return (
     <>
