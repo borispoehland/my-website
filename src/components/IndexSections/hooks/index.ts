@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { layoutGridGap } from '@utils/css';
 import { pxToNumber } from '@utils/calc';
 
@@ -27,10 +27,6 @@ export const useOpacityChangeOnScroll = (
         $visualizer.css(
           'opacity',
           delayPercentValue(percent, startVisualizerAtPercent)
-        );
-        $visualizer.css(
-          'pointer-events',
-          top < 0.2 * topOffset ? 'all' : 'none'
         );
       }
     });
