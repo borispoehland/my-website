@@ -32,11 +32,21 @@ const ContactForm = (): JSX.Element => {
           reset();
         })
         .catch((err) => {
-          const { myMail } = err.response.data as ISendMailResponse;
-          return fireSweetAlert(
-            'error',
-            `It's not your fault. Please try again later or directly send me an email to <a href='mailto:${myMail}'>${myMail}</a>. Thanks!`
-          );
+          const { status } = err.response;
+
+          switch (status) {
+            case 429:
+              return fireSweetAlert(
+                'error',
+                'You already contacted me twice in the last hour. Please reply to the confirmation mail I sent you or try again later!'
+              );
+            default:
+              const { myMail } = err.response.data as ISendMailResponse;
+              return fireSweetAlert(
+                'error',
+                `It's not your fault. Please try again later or directly send me an email to <a href='mailto:${myMail}'>${myMail}</a>. Thanks!`
+              );
+          }
         });
     },
     [reset]
