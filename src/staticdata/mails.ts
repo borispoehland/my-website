@@ -25,7 +25,7 @@ const getMails = ({ firstName, lastName, email, message }: IInputs) => {
       },
       to: email,
       replyTo: process.env.MY_EMAIL,
-      templateId: 'd-ba91e852699844f891d90dd6fae44540',
+      templateId: process.env.SENDGRID_TEMPLATE_ID,
       dynamicTemplateData: {
         subject,
         fullName: `${firstName} ${lastName}`,
