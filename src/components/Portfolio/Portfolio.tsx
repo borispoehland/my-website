@@ -5,6 +5,7 @@ import { openResourceInNewTab } from '@utils/dom';
 import GenericSection from '../GenericSection/GenericSection';
 import { useRouter } from 'next/router';
 import { useMemoOne } from 'use-memo-one';
+import { CV_PATH } from '@utils/paths';
 
 const Portfolio = (): JSX.Element => {
   const router = useRouter();
@@ -37,7 +38,7 @@ const Portfolio = (): JSX.Element => {
         shortIntro="My projects don't cover everything, because I also gained valuable
           experience as an employee. Download my CV for the bigger picture!"
       >
-        <Button onClick={() => openResourceInNewTab('/files/cv.pdf')}>
+        <Button onClick={() => openResourceInNewTab(CV_PATH)}>
           Download CV
         </Button>
       </GenericSection>
