@@ -7,7 +7,6 @@ import ToFormElementConverter, {
 import Emoji from '../Emoji/Emoji';
 import axios from 'axios';
 import { fireSweetAlert } from '@utils/dom';
-import { ISendMailResponse } from '@pages/api/sendContactForm';
 import { useCallbackOne } from 'use-memo-one';
 
 const ContactForm = (): JSX.Element => {
@@ -21,33 +20,16 @@ const ContactForm = (): JSX.Element => {
   });
 
   const onSubmit: SubmitHandler<IInputs> = useCallbackOne(
-    (data) => {
-      return axios
-        .post('/api/sendContactForm', data)
-        .then(async () => {
-          await fireSweetAlert(
-            'success',
-            `I received your message and sent you a confirmation mail. Please make sure to also check your <b>Junk</b> folder. You can close the window now.`
-          );
-          reset();
-        })
-        .catch((err) => {
-          const { status } = err.response;
-
-          switch (status) {
-            case 429:
-              return fireSweetAlert(
-                'error',
-                'You already contacted me twice in the last hour. Please reply to the confirmation mail I sent you or try again later!'
-              );
-            default:
-              const { myMail } = err.response.data as ISendMailResponse;
-              return fireSweetAlert(
-                'error',
-                `It's not your fault. Please try again later or directly send me an email to <a href='mailto:${myMail}'>${myMail}</a>. Thanks!`
-              );
-          }
+    async (data) => {
+      try {
+        const res = await axios.post('/api/sendContactForm', data, {
+          responseType: 'text',
         });
+        await fireSweetAlert(res.data);
+        reset();
+      } catch (err) {
+        await fireSweetAlert(err.response.data);
+      }
     },
     [reset]
   );
