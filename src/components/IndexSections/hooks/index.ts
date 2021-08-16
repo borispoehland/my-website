@@ -62,7 +62,7 @@ export const useAdaptLeftLaneItemHeight = () => {
       const leftLaneHeightAsCss = `calc(100vh - ${doubleSpaceFromTop}px)`;
       $leftLaneItem.css('height', leftLaneHeightAsCss);
       $leftLaneItem.css('min-height', leftLaneHeightAsCss);
-      $('.right-lane-wrapper').css('minHeight', leftLaneHeightAsCss);
+      $leftLaneItem.css('visibility', 'visible'); // to prevent FOUC
 
       const leftLaneHeightAsPx = $leftLaneItem.height() as number;
       const windowHeightAsPx = $window.height() as number;
