@@ -21,9 +21,12 @@ const IndexSections = ({
   const router = useRouter();
 
   const [leftLane, rightLane] = useMemoOne(() => {
-    const pairs = getIndexSections(theme, router).map((props, i) =>
-      ToIndexSectionConverter({ ...props, imgPriority: i === 0 })
-    );
+    const pairs = getIndexSections(theme, router)
+      .map((indexSection, i) => ({
+        ...indexSection,
+        imgPriority: i === 0,
+      }))
+      .map(ToIndexSectionConverter);
     return zip(...pairs); // [[left1, right1], [left2, right2]] => [[left1, left2], [right1, right2]]
   }, [theme, router]);
 
