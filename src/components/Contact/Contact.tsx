@@ -15,13 +15,6 @@ const Contact = (): JSX.Element => {
         <ContactForm />
       </GenericSection>
       <GenericSection
-        id="links"
-        heading="Contact me later"
-        shortIntro="Add me to your contacts and reach out to me whenever you have time."
-      >
-        <QuicklinkBar />
-      </GenericSection>
-      <GenericSection
         id="cv"
         heading="In case you missed it ..."
         shortIntro="You can download my CV below."
@@ -29,6 +22,13 @@ const Contact = (): JSX.Element => {
         <Button onClick={() => openResourceInNewTab('/files/cv.pdf')}>
           Download CV
         </Button>
+      </GenericSection>
+      <GenericSection
+        id="links"
+        heading="Contact me later"
+        shortIntro="Add me to your contacts and reach out to me whenever you have time."
+      >
+        <QuicklinkBar />
       </GenericSection>
     </>
   );
