@@ -25,14 +25,20 @@
       "@components/*": [
         "components/*"
       ],
-      "@enums": [
-        "../@types/enums"
+      "@data/*": [
+        "staticdata/*"
+      ],
+      "@helpers/*": [
+        "helpers/*"
       ],
       "@store": [
         "store"
       ],
-      "@data/*": [
-        "staticdata/*"
+      "@enums": [
+        "../@types/enums"
+      ],
+      "@pages/*": [
+        "../pages/*"
       ]
     }
   },

@@ -1,4 +1,4 @@
-import NextLink from '../../NextLink/NextLink';
+import NextLink from '@components/NextLink/NextLink';
 import Image from 'next/image';
 import NavToggler from './NavToggler';
 import { ETheme } from '@enums';

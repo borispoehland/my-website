@@ -1,4 +1,4 @@
-import NextLink from '../../NextLink/NextLink';
+import NextLink from '@components/NextLink/NextLink';
 import { BiRightArrow } from 'react-icons/bi';
 import React, { Fragment } from 'react';
 import { IBreadCrumb } from '../Breadcrumbs';

@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
-import Button from '../../Button/Button';
-import NextLink from '../../NextLink/NextLink';
-import ConditionalWrapper from '../../../helpers/ConditionalWrapper';
+import Button from '@components/Button/Button';
+import NextLink from '@components/NextLink/NextLink';
+import ConditionalWrapper from '@helpers/ConditionalWrapper';
 import { ITechnology } from '@data/technologies';
 import PortfolioImage from '../subcomponents/PortfolioImage';
 import { openResourceInNewTab } from '@utils/dom';

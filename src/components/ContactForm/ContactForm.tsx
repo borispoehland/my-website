@@ -1,5 +1,5 @@
 import { useForm, SubmitHandler } from 'react-hook-form';
-import getContactFormFields from '../../staticdata/contactFormFields';
+import getContactFormFields from '@data/contactFormFields';
 import Button from '../Button/Button';
 import ToFormElementConverter, {
   IInputs,
@@ -7,7 +7,7 @@ import ToFormElementConverter, {
 import Emoji from '../Emoji/Emoji';
 import axios from 'axios';
 import { fireSweetAlert } from '@utils/dom';
-import { ISendMailResponse } from '../../../pages/api/sendContactForm';
+import { ISendMailResponse } from '@pages/api/sendContactForm';
 import { useCallbackOne } from 'use-memo-one';
 
 const ContactForm = (): JSX.Element => {
