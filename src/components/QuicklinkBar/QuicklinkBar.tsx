@@ -1,4 +1,4 @@
-import getQuicklinks from '../../staticdata/quicklinks';
+import getQuicklinks from '@data/quicklinks';
 import ToQuicklinkConverter from './converters/ToQuicklinkConverter';
 
 const QuicklinkBar = (): JSX.Element => {

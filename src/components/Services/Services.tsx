@@ -1,5 +1,5 @@
 import ToServicesItemConverter from './converters/ToServicesItemConverter';
-import getServices from '../../staticdata/services';
+import getServices from '@data/services';
 import { useRecoilValue } from 'recoil';
 import { sTheme } from '@store';
 import Button from '../Button/Button';

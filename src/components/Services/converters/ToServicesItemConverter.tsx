@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { ReactNode } from 'react';
-import GenericSection from '../../GenericSection/GenericSection';
+import GenericSection from '@components/GenericSection/GenericSection';
 
 export interface IServiceItem {
   heading: string;

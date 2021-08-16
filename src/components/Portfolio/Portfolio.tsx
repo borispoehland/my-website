@@ -1,4 +1,4 @@
-import getPortfolio from '../../staticdata/portfolio';
+import getPortfolio from '@data/portfolio';
 import ToPortfolioItemConverter from './converters/ToPortfolioItemConverter';
 import Button from '../Button/Button';
 import { openResourceInNewTab } from '@utils/dom';

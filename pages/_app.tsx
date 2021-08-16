@@ -12,7 +12,6 @@ import {
 } from '@utils/pagesHooks';
 import { DefaultSeo } from 'next-seo';
 import getDefaultSEO from '@data/defaultSEO';
-import { useEffect } from 'react';
 
 NProgress.configure({ showSpinner: false, parent: '.page__progress' });
 

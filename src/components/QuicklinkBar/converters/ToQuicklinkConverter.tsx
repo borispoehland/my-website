@@ -1,4 +1,4 @@
-import NextLink from '../../NextLink/NextLink';
+import NextLink from '@components/NextLink/NextLink';
 import { IconType } from 'react-icons';
 
 export interface IQuicklink {

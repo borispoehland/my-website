@@ -1,6 +1,6 @@
 import cx from 'classnames';
 import NextLink from '../NextLink/NextLink';
-import getQuicklinks from '../../staticdata/quicklinks';
+import getQuicklinks from '@data/quicklinks';
 import ToQuicklinkConverter from '../QuicklinkBar/converters/ToQuicklinkConverter';
 
 interface IProps extends HasClassName {}

@@ -1,5 +1,5 @@
 import { Nav, Navbar } from 'react-bootstrap';
-import getNavLinks from '../../../staticdata/navLinks';
+import getNavLinks from '@data/navLinks';
 import ThemeSwitch from './Themeswitch';
 import { useRouter } from 'next/router';
 import ToNavLinkConverter from '../converters/ToNavLinkConverter';

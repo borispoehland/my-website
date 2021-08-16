@@ -1,5 +1,5 @@
 import cx from 'classnames';
-import NextLink from '../../NextLink/NextLink';
+import NextLink from '@components/NextLink/NextLink';
 import { INavLink } from '@data/navLinks';
 
 interface IProps extends INavLink {

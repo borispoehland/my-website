@@ -1,7 +1,7 @@
 import { useRecoilState } from 'recoil';
 import { useEffect } from 'react';
 import { sTheme } from '@store';
-import Switch from '../../Switch/Switch';
+import Switch from '@components/Switch/Switch';
 import { ETheme } from '@enums';
 import { BiMoon, BiSun } from 'react-icons/bi';
 import { useCallbackOne } from 'use-memo-one';
