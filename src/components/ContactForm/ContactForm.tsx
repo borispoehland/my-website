@@ -14,7 +14,7 @@ const ContactForm = (): JSX.Element => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
     reset,
   } = useForm<IInputs>({
     mode: 'onBlur',
@@ -62,7 +62,11 @@ const ContactForm = (): JSX.Element => {
         {getContactFormFields()
           .map((formElement) => ({ ...formElement, errors, register }))
           .map(ToFormElementConverter)}
-        <Button type="submit" className="contact-form__submit">
+        <Button
+          type="submit"
+          className="contact-form__submit"
+          disabled={isSubmitting}
+        >
           Send message
         </Button>
       </form>

@@ -23,17 +23,15 @@ export default async function handler(
   try {
     await rateLimiter.consume(Array.isArray(clientIP) ? clientIP[0] : clientIP);
   } catch (err) {
-    res.status(429).send({});
+    return res.status(429).send({});
   }
 
-  return mailer
-    .send(getMails(req.body))
-    .then(() => {
-      return res.status(200).send({});
-    })
-    .catch((err) => {
-      console.log('Contact form', err, req.body);
-      if (err.response) console.log(err.response.body.errors);
-      return res.status(502).send({ myMail: process.env.MY_EMAIL });
-    });
+  try {
+    await mailer.send(getMails(req.body));
+    return res.status(200).send({});
+  } catch (err) {
+    console.log('Contact form', err, req.body);
+    if (err.response) console.log(err.response.body.errors);
+    return res.status(502).send({ myMail: process.env.MY_EMAIL });
+  }
 }
