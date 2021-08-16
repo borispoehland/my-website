@@ -7,6 +7,7 @@ interface IProps extends HasChildren {
   className?: string;
   onClick?: MouseEventHandler;
   type?: ButtonType;
+  [props: string]: any;
 }
 
 const Button = ({
@@ -14,9 +15,15 @@ const Button = ({
   className,
   onClick,
   type,
+  ...props
 }: IProps): JSX.Element => {
   return (
-    <button type={type} className={cx('button', className)} onClick={onClick}>
+    <button
+      type={type}
+      className={cx('button', className)}
+      onClick={onClick}
+      {...props}
+    >
       {children}
     </button>
   );
