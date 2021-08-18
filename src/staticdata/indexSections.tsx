@@ -15,9 +15,9 @@ const getIndexSections = (
       textContent: (
         <>
           I&#39;m Boris and I&#39;m Web Developer from Germany. I also have a
-          keen eye for usability, my studies in human-computer interaction
-          helped me developing that. Currently I really much enjoy coding
-          websites - preferrably with <b>React</b>.
+          keen eye for <b>Usability</b>, my studies in human-computer
+          interaction helped me developing that. Currently I really much enjoy
+          creating websites - preferrably with <b>React</b>.
         </>
       ),
       actionButton: (
