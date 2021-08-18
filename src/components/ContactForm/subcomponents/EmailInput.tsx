@@ -9,7 +9,6 @@ const EmailInput = ({
   return (
     <input
       type="email"
-      id={id}
       placeholder={placeholder}
       className="form-element__input"
       {...register(id, rules)}

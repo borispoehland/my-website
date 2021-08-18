@@ -5,7 +5,7 @@ import NextLink from '@components/NextLink/NextLink';
 const Imprint = (): JSX.Element => {
   return (
     <div className="legal">
-      <GenericSection id="general" heading="General information" shortIntro="">
+      <GenericSection heading="General information" shortIntro="">
         <LegalItem heading="According to § 5 TMG">
           Boris Pöhland <br /> Student, Web Developer, Usability Consultant
           <br /> Friedleinsgasse 17 <br /> 97877 Wertheim, Germany
@@ -21,11 +21,7 @@ const Imprint = (): JSX.Element => {
           <br /> Friedleinsgasse 17 <br /> 97877 Wertheim, Germany
         </LegalItem>
       </GenericSection>
-      <GenericSection
-        id="disclaimer"
-        heading="Liability and Copyright"
-        shortIntro=""
-      >
+      <GenericSection heading="Liability and Copyright" shortIntro="">
         <LegalItem heading="Liability for content">
           As a service provider, we are responsible for our own content on these
           pages according to § 7 (1) TMG (German Telemedia Act) and general

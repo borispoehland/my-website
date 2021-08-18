@@ -8,7 +8,6 @@ const MessageInput = ({
 }: IConcreteInputProps): JSX.Element => {
   return (
     <textarea
-      id={id}
       rows={4}
       placeholder={placeholder}
       className="form-element__input"

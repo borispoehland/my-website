@@ -31,7 +31,6 @@ const getServices = (theme: ETheme): IServiceItem[] => [
       </>
     ),
     imgSrc: `/img/services-page/code-${theme}.png`,
-    anchorId: 'coding',
   },
   {
     heading: 'Usability Consulting',
@@ -51,7 +50,6 @@ const getServices = (theme: ETheme): IServiceItem[] => [
       </>
     ),
     imgSrc: '/img/services-page/usability.png',
-    anchorId: 'usability',
   },
 ];
 

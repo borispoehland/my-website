@@ -14,7 +14,6 @@ const Services = (): JSX.Element => {
     <>
       {getServices(theme).map(ToServicesItemConverter)}
       <GenericSection
-        id="cv"
         heading="My qualification"
         shortIntro={
           <>

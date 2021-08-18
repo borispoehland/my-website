@@ -9,14 +9,12 @@ const Contact = (): JSX.Element => {
   return (
     <>
       <GenericSection
-        id="form"
         heading="Contact me now"
         shortIntro="I'll reply within 24 hours"
       >
         <ContactForm />
       </GenericSection>
       <GenericSection
-        id="cv"
         heading="In case you missed it ..."
         shortIntro="You can download my CV below."
       >
@@ -25,7 +23,6 @@ const Contact = (): JSX.Element => {
         </Button>
       </GenericSection>
       <GenericSection
-        id="links"
         heading="Contact me later"
         shortIntro="Add me to your contacts and reach out to me whenever you have time."
       >

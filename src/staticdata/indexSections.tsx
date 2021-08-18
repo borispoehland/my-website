@@ -1,5 +1,4 @@
 import { ETheme } from '@enums';
-import NextLink from '@components/NextLink/NextLink';
 import Button from '@components/Button/Button';
 import { IIndexSection } from '@components/IndexSections/converters/ToIndexSectionConverter';
 import { NextRouter } from 'next/router';
@@ -16,10 +15,7 @@ const getIndexSections = (
       textContent: (
         <>
           I&#39;m Boris and I&#39;m Web Developer from Germany. I also have a
-          keen eye for usability, my{' '}
-          <NextLink href={'/services#usability'}>
-            studies in human-computer interaction
-          </NextLink>{' '}
+          keen eye for usability, my studies in human-computer interaction
           helped me developing that. Currently I really much enjoy coding
           websites - preferrably with <b>React</b>.
         </>

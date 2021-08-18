@@ -1,10 +1,8 @@
-import Anchor from '../Anchor/Anchor';
 import { ReactNode } from 'react';
 import cx from 'classnames';
 import useInView from 'react-cool-inview';
 
 interface IProps extends HasChildren {
-  id: string;
   heading: string;
   shortIntro: string | ReactNode;
 
@@ -14,7 +12,6 @@ interface IProps extends HasChildren {
 const GenericSection = ({
   children,
   heading,
-  id,
   shortIntro,
   ...props
 }: IProps): JSX.Element => {
@@ -30,7 +27,6 @@ const GenericSection = ({
       ref={observe}
       {...props}
     >
-      <Anchor id={id} />
       {heading && <h2 className="generic-section__heading">{heading}</h2>}
       {shortIntro && <p className="generic-section__intro">{shortIntro}</p>}
       {children}

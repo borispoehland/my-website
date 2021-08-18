@@ -22,7 +22,6 @@ const Portfolio = (): JSX.Element => {
     <>
       <GenericSection
         heading="Projects"
-        id="projects"
         shortIntro={
           <>
             Apart from this website I coded <b>{amountOfPortfolioItems}</b>{' '}
@@ -33,7 +32,6 @@ const Portfolio = (): JSX.Element => {
         {portfolioItems.map(ToPortfolioItemConverter)}
       </GenericSection>
       <GenericSection
-        id="cv"
         heading="Other work"
         shortIntro="My projects don't cover everything, because I also gained valuable
           experience as an employee. Download my CV for the bigger picture!"

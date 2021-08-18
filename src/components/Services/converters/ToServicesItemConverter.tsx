@@ -6,17 +6,15 @@ export interface IServiceItem {
   heading: string;
   description: ReactNode;
   imgSrc: string;
-  anchorId: string;
 }
 
 const ToServicesItemConverter = ({
-  anchorId,
   description,
   heading,
   imgSrc,
 }: IServiceItem): JSX.Element => {
   return (
-    <GenericSection key={anchorId} id={anchorId} heading="" shortIntro="">
+    <GenericSection key={heading} heading="" shortIntro="">
       <section className="services-item">
         <h2 className="services-item__heading">{heading}</h2>
         <div className="services-item__image">
