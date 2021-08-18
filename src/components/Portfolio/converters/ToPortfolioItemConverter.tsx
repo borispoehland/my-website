@@ -1,10 +1,12 @@
-import { ReactNode } from 'react';
+import { ReactNode, useRef, useState } from 'react';
 import Button from '@components/Button/Button';
 import NextLink from '@components/NextLink/NextLink';
 import ConditionalWrapper from '@helpers/ConditionalWrapper';
 import { ITechnology } from '@data/technologies';
 import PortfolioImage from '../subcomponents/PortfolioImage';
 import { openResourceInNewTab } from '@utils/dom';
+import { useFadeInTag } from '@utils/sharedHooks';
+import cx from 'classnames';
 
 export interface IPortfolioItem {
   appetizer: ReactNode;
@@ -25,8 +27,18 @@ const ToPortfolioItemConverter = ({
   href,
   customActionButton,
 }: IPortfolioItem): JSX.Element => {
+  const fadeInRef = useRef<HTMLElement>(null);
+
+  const [isVisible, setVisible] = useState(false);
+
+  useFadeInTag(fadeInRef, setVisible);
+
   return (
-    <section key={name} className="portfolio-item">
+    <section
+      key={name}
+      className={cx('portfolio-item', { '--is-visible': isVisible })}
+      ref={fadeInRef}
+    >
       <div className="portfolio-item__name">
         <h3>{name}</h3>
       </div>

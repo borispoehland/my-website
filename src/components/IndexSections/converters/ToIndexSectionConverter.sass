@@ -7,6 +7,19 @@
   justify-content: center
   visibility: hidden
 
+  &__heading
+    margin-top: $md-gap
+    margin-bottom: $md-gap
+    +genericAnimation(slideInFromLeft)
+
+  &__text
+    overflow-y: auto
+    margin-bottom: $lg-gap
+    +genericAnimation(slideInFromLeft)
+
+  &__action
+    +genericAnimation(slideInFromBelow)
+
   +to(md)
     height: auto !important
 
@@ -15,28 +28,21 @@
 
     &__heading
       padding-top: $lg-gap
+      margin-top: 0
+
     &__action
       padding-bottom: $lg-gap
 
-  &__image
-    +from(md)
+    &__image
       display: none
 
-  &__heading
-    margin-top: $md-gap
-    margin-bottom: $md-gap
 
-    +from(md)
-      margin-top: 0
-
-  &__text
-    overflow-y: auto
-    margin-bottom: $lg-gap
 
 .right-lane-item
   opacity: 0
 
   &:first-child
+    +genericAnimation(scaleIn)
     opacity: 1
 
 

@@ -11,6 +11,8 @@
   gap: $sm-gap
   align-items: center
 
+  +fadeIn(translateX(-20%))
+
   +from(md)
     grid-template-areas: "image name" "image tags" "image appetizer" "image action"
     grid-template-rows: auto auto 1fr auto
