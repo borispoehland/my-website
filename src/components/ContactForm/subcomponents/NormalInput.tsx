@@ -9,7 +9,6 @@ const NormalInput = ({
   return (
     <input
       type="text"
-      id={id}
       placeholder={placeholder}
       className="form-element__input"
       {...register(id, rules)}

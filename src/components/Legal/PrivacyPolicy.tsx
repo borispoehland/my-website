@@ -5,11 +5,7 @@ import NextLink from '@components/NextLink/NextLink';
 const PrivacyPolicy = (): JSX.Element => {
   return (
     <div className="legal">
-      <GenericSection
-        id="overview"
-        heading="An overview of data protection"
-        shortIntro=""
-      >
+      <GenericSection heading="An overview of data protection" shortIntro="">
         <LegalItem heading="General information">
           The following gives a simple overview of what happens to your personal
           information when you visit our website. Personal information is any
@@ -49,7 +45,6 @@ const PrivacyPolicy = (): JSX.Element => {
         </LegalItem>
       </GenericSection>
       <GenericSection
-        id="cdn"
         heading="Hosting and Content Delivery Networks (CDN)"
         shortIntro=""
       >
@@ -73,11 +68,7 @@ const PrivacyPolicy = (): JSX.Element => {
           concluded a data processing agreement with our hoster.
         </LegalItem>
       </GenericSection>
-      <GenericSection
-        id="mandatory"
-        heading="General and mandatory information"
-        shortIntro=""
-      >
+      <GenericSection heading="General and mandatory information" shortIntro="">
         <LegalItem heading="Data protection">
           The operators of this website take the protection of your personal
           data very seriously. We treat your personal data as confidential and
@@ -210,11 +201,7 @@ const PrivacyPolicy = (): JSX.Element => {
           interest the European Union or a Member State.
         </LegalItem>
       </GenericSection>
-      <GenericSection
-        id="data"
-        heading="Data collection on our website"
-        shortIntro=""
-      >
+      <GenericSection heading="Data collection on our website" shortIntro="">
         <LegalItem heading="Cookies">
           <b>Currently our website uses no cookies</b>. Cookies are small text
           files and do no damage to your device. They are either stored
