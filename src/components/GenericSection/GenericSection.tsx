@@ -1,12 +1,13 @@
 import Anchor from '../Anchor/Anchor';
-import { ReactNode, useEffect, useRef, useState } from 'react';
+import { ReactNode } from 'react';
 import cx from 'classnames';
-import { useFadeInTag } from '@utils/sharedHooks';
+import useInView from 'react-cool-inview';
 
 interface IProps extends HasChildren {
   id: string;
   heading: string;
   shortIntro: string | ReactNode;
+
   [props: string]: any;
 }
 
@@ -17,16 +18,16 @@ const GenericSection = ({
   shortIntro,
   ...props
 }: IProps): JSX.Element => {
-  const fadeInRef = useRef<HTMLElement>(null);
-
-  const [isVisible, setVisible] = useState(false);
-
-  useFadeInTag(fadeInRef, setVisible);
+  const { observe, inView } = useInView({
+    unobserveOnEnter: true,
+  });
 
   return (
     <section
-      className={cx('generic-section', { '--is-visible': isVisible })}
-      ref={fadeInRef}
+      className={cx('generic-section', {
+        '--in-view': inView,
+      })}
+      ref={observe}
       {...props}
     >
       <Anchor id={id} />
