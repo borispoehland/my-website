@@ -42,14 +42,14 @@
     @media screen and (max-width: #{$breakpoint})
     @content
 
-@mixin fadeIn($transform: translateY(20%))
+@mixin fadeIn($transform: translateY(150px))
   opacity: 0
   transform: #{$transform}
   visibility: hidden
   transition: opacity 400ms ease-out, transform 400ms ease-out
   will-change: opacity, visibility
 
-  &.--is-visible
+  &.--in-view
     opacity: 1
     transform: none
     visibility: visible

@@ -7,6 +7,7 @@ interface IProps extends HasChildren {
   className?: string;
   onClick?: MouseEventHandler;
   type?: ButtonType;
+
   [props: string]: any;
 }
 

@@ -5,8 +5,8 @@ import ConditionalWrapper from '@helpers/ConditionalWrapper';
 import { ITechnology } from '@data/technologies';
 import PortfolioImage from '../subcomponents/PortfolioImage';
 import { openResourceInNewTab } from '@utils/dom';
-import { useFadeInTag } from '@utils/sharedHooks';
 import cx from 'classnames';
+import useInView from 'react-cool-inview';
 
 export interface IPortfolioItem {
   appetizer: ReactNode;
@@ -27,17 +27,15 @@ const ToPortfolioItemConverter = ({
   href,
   customActionButton,
 }: IPortfolioItem): JSX.Element => {
-  const fadeInRef = useRef<HTMLElement>(null);
-
-  const [isVisible, setVisible] = useState(false);
-
-  useFadeInTag(fadeInRef, setVisible);
+  const { observe, inView } = useInView({
+    unobserveOnEnter: true,
+  });
 
   return (
     <section
       key={name}
-      className={cx('portfolio-item', { '--is-visible': isVisible })}
-      ref={fadeInRef}
+      className={cx('portfolio-item', { '--in-view': inView })}
+      ref={observe}
     >
       <div className="portfolio-item__name">
         <h3>{name}</h3>

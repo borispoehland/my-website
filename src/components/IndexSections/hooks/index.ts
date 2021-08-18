@@ -14,7 +14,7 @@ export const useOpacityChangeOnScroll = (
 ) => {
   useEffect(() => {
     $('.left-lane-item').percentAboveBottom(function callback(
-      this: JQuery,
+      this: HTMLElement,
       percent,
       index
     ): void {
