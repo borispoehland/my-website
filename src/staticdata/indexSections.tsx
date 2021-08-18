@@ -12,7 +12,7 @@ const getIndexSections = (
     {
       imgSrc: '/img/index-page/me.png',
       imgAlt: '',
-      heading: 'Hey,',
+      heading: 'Hey',
       textContent: (
         <>
           I&#39;m Boris and I&#39;m Web Developer from Germany. I also have a
@@ -46,7 +46,7 @@ const getIndexSections = (
       ),
     },
     {
-      imgSrc: `/img/index-page/zoom.png`,
+      imgSrc: '/img/index-page/zoom.png',
       imgAlt: '',
       heading: 'My vision',
       textContent: (

@@ -13,12 +13,12 @@ export const useBreadcrumbs = (): State<IBreadCrumb[]> => {
 
     const pathArray = linkPath.map((path, i): IBreadCrumb => {
       return {
-        label: path.split('#')[0],
+        label: path.split('#')[0].split('?')[0],
         href: `/${linkPath.slice(0, i + 1).join('/')}`,
       };
     });
 
-    if (pathArray.length === 1 && pathArray[0].href === '/') {
+    if (router.pathname === '/') {
       setBreadcrumbs([]); // index page, we don't want breadcrumbs here
     } else {
       setBreadcrumbs([{ label: 'Home', href: '/' }, ...pathArray]);

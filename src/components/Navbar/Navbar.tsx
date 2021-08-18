@@ -2,7 +2,11 @@ import { Navbar as BootstrapNavbar } from 'react-bootstrap';
 import { useRef, useState } from 'react';
 import { useRecoilValue } from 'recoil';
 import { sTheme } from '@store';
-import { useCloseNavAutomatically, useSetMobileNavCollapseTop } from './hooks';
+import {
+  useCloseNavAutomatically,
+  useNavbarCollapseTransitionButNotInitially,
+  useSetMobileNavCollapseTop,
+} from './hooks';
 import NavbarCollapse from './subcomponents/NavbarCollapse';
 import NavbarNonCollapse from './subcomponents/NavbarNonCollapse';
 
@@ -20,6 +24,8 @@ const Navbar = ({ className }: IProps): JSX.Element => {
   useCloseNavAutomatically(computedOnce.current.closeMenu);
 
   useSetMobileNavCollapseTop();
+
+  useNavbarCollapseTransitionButNotInitially(isOpen);
 
   return (
     <BootstrapNavbar className={className} expand="md" expanded={isOpen}>

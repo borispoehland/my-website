@@ -42,6 +42,22 @@
     @media screen and (max-width: #{$breakpoint})
     @content
 
+@mixin fadeIn($transform: translateY(20%))
+  opacity: 0
+  transform: #{$transform}
+  visibility: hidden
+  transition: opacity 400ms ease-out, transform 400ms ease-out
+  will-change: opacity, visibility
+
+  &.--is-visible
+    opacity: 1
+    transform: none
+    visibility: visible
+
+@mixin genericAnimation($name)
+  animation: #{$name} 0.5s ease-out
+
+
 
 
 
