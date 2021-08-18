@@ -20,14 +20,7 @@ const ToServicesItemConverter = ({
       <section className="services-item">
         <h2 className="services-item__heading">{heading}</h2>
         <div className="services-item__image">
-          <Image
-            src={imgSrc}
-            alt=""
-            width="1920"
-            height="1080"
-            quality={100}
-            priority
-          />
+          <Image src={imgSrc} alt="" width="1920" height="1080" priority />
         </div>
         <div className="services-item__description">{description}</div>
       </section>

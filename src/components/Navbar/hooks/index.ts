@@ -37,3 +37,16 @@ export const useCloseNavAutomatically = (
     };
   }, [closeMenu]);
 };
+
+/**
+ * When we do the transition initially, Brave browser on Android causes problems.
+ * So we only add it once the user opens the navbar
+ * @param isOpen
+ */
+export const useNavbarCollapseTransitionButNotInitially = (isOpen: boolean) => {
+  useEffect(() => {
+    if (isOpen) {
+      $('.navbar-collapse').css('transition', 'transform 0.4s ease-out');
+    }
+  }, [isOpen]);
+};
