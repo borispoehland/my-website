@@ -1,29 +1,46 @@
 @keyframes slideInFromLeft
-  0%
+  from
     transform: translateX(-20px)
     opacity: 0
-  100%
+  to
     transform: none
     opacity: 1
 
 @keyframes slideInFromRight
-  0%
+  from
     transform: translateX(20px)
     opacity: 0
-  100%
+  to
     transform: none
     opacity: 1
 
 @keyframes slideInFromBelow
-  0%
-    transform: translateY(20px)
+  from
+    transform: translateY(150px)
     opacity: 0
-  100%
+  to
+    transform: none
+    opacity: 1
+
+@keyframes slideInFromLeftHard
+  from
+    transform: translateX(-150px)
+    opacity: 0
+  to
     transform: none
     opacity: 1
 
 @keyframes scaleIn
-  0%
+  from
     transform: scale(0.7)
-  100%
+  to
     transform: none
+
+@keyframes spin
+  0%
+    transform: rotate(0turn)
+  100%
+    transform: rotate(1turn)
+
+
+

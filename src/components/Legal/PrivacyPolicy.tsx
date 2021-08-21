@@ -1,6 +1,7 @@
 import GenericSection from '@components/GenericSection/GenericSection';
 import LegalItem from '@components/Legal/subcomponents/LegalItem';
 import NextLink from '@components/NextLink/NextLink';
+import MyEmail from '@components/Legal/subcomponents/MyEmail';
 
 const PrivacyPolicy = (): JSX.Element => {
   return (
@@ -94,10 +95,7 @@ const PrivacyPolicy = (): JSX.Element => {
           Friedleinsgasse 17 <br />
           97877 Wertheim, Germany <br />
           Phone: +49 174 733 03 69 <br />
-          E-Mail:{' '}
-          <NextLink href="mailto:me@borispoehland.com">
-            me@borispoehland.com
-          </NextLink>{' '}
+          E-Mail: <MyEmail />
           <br /> <br />
           The responsible authority is the natural or legal person who decides,
           alone or together with others, about the purposes and means of

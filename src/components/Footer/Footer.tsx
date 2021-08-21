@@ -5,15 +5,15 @@ import ToQuicklinkConverter from '../QuicklinkBar/converters/ToQuicklinkConverte
 
 interface IProps extends HasClassName {}
 
+const EmailQuicklink = ToQuicklinkConverter(getQuicklinks()[0]);
+
 const Footer = ({ className }: IProps): JSX.Element => {
   return (
     <footer className={cx('footer', className)}>
       <div className="footer__copyright">
         Copyright &copy; Boris Pöhland {new Date().getFullYear()}
       </div>
-      <div className="footer__contact">
-        {ToQuicklinkConverter(getQuicklinks()[0])}
-      </div>
+      <div className="footer__contact">{EmailQuicklink}</div>
       <div className="footer__legal">
         <NextLink href="/imprint">Imprint</NextLink>
         <NextLink href="/privacy">Privacy Policy</NextLink>

@@ -7,8 +7,7 @@ interface IProps extends HasChildren {
   className?: string;
   onClick?: MouseEventHandler;
   type?: ButtonType;
-
-  [props: string]: any;
+  isLoading?: boolean;
 }
 
 const Button = ({
@@ -16,22 +15,23 @@ const Button = ({
   className,
   onClick,
   type,
-  ...props
+  isLoading,
 }: IProps): JSX.Element => {
   return (
     <button
       type={type}
-      className={cx('button', className)}
+      className={cx('button', className, { '--is-loading': isLoading })}
       onClick={onClick}
-      {...props}
+      disabled={isLoading}
     >
-      {children}
+      <span className="button__text">{children}</span>
     </button>
   );
 };
 
 Button.defaultProps = {
   type: 'button',
+  isLoading: false,
 };
 
 export default Button;
