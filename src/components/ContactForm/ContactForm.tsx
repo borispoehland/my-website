@@ -47,7 +47,7 @@ const ContactForm = (): JSX.Element => {
         <Button
           type="submit"
           className="contact-form__submit"
-          disabled={isSubmitting}
+          isLoading={isSubmitting}
         >
           Send message
         </Button>

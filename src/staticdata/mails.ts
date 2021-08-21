@@ -11,7 +11,7 @@ const getMails = ({ firstName, lastName, email, message }: IInputs) => {
     {
       from: {
         name: 'Boris Pöhland',
-        email: process.env.MY_EMAIL,
+        email: process.env.NEXT_PUBLIC_MY_EMAIL,
       },
       to: process.env.MY_REDIRECT_EMAIL,
       replyTo: email,
@@ -21,10 +21,10 @@ const getMails = ({ firstName, lastName, email, message }: IInputs) => {
     {
       from: {
         name: 'Boris Pöhland',
-        email: process.env.MY_EMAIL,
+        email: process.env.NEXT_PUBLIC_MY_EMAIL,
       },
       to: email,
-      replyTo: process.env.MY_EMAIL,
+      replyTo: process.env.NEXT_PUBLIC_MY_EMAIL,
       templateId: process.env.SENDGRID_TEMPLATE_ID,
       dynamicTemplateData: {
         subject,
