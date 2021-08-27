@@ -1,0 +1,63 @@
+@use "styles/abstracts" as *
+
+$blog-item-breakpoint: 500px
+$blog-item-appetizer-breakpoint: 620px
+
+.blog-item
+  @extend %common-card
+
+  +fadeIn(translateX(-150px))
+
+  justify-self: stretch // override wrapping generic section style
+
+  display: grid
+  grid-template-areas: "title" "image" "tags" "appetizer" "action"
+  align-items: center
+  justify-items: start
+  column-gap: $lg-gap
+  row-gap: $sm-gap
+
+  +from($blog-item-breakpoint)
+    grid-template-areas: "title title" "image image" "appetizer appetizer" "action tags"
+    grid-template-columns: auto 1fr
+
+  +from(md)
+    grid-template-areas: "image title title" "image appetizer appetizer" "image action tags"
+    grid-template-columns: 300px auto 1fr
+
+  &__tags
+    grid-area: tags
+
+    display: flex
+    gap: $md-gap
+    font-size: 0.85rem
+
+    overflow-x: auto
+    max-width: 100%
+
+    +from($blog-item-breakpoint)
+      margin: 0 auto
+
+    .blog-tag
+      +tag
+
+  &__image
+    grid-area: image
+
+    display: none
+
+    +from(md)
+      display: flex
+
+  &__appetizer
+    grid-area: appetizer
+    display: none
+
+    +from($blog-item-appetizer-breakpoint)
+      display: block
+
+  &__title
+    grid-area: title
+
+  &__action
+    grid-area: action

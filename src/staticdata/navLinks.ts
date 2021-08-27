@@ -20,6 +20,10 @@ const getNavLinks = (): INavLink[] => {
       label: 'Portfolio',
     },
     {
+      href: '/blog',
+      label: 'Blog',
+    },
+    {
       href: '/contact',
       label: 'Contact',
     },
