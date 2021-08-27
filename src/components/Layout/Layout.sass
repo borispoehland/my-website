@@ -16,6 +16,7 @@ $max-page-width: 1600px
     grid-area: content
     display: grid
     justify-items: center
+    align-items: start
 
     overflow-y: hidden // overflow could happen because of the fade in tags
 
@@ -46,6 +47,10 @@ $max-page-width: 1600px
     background: inherit
     z-index: 1
     margin-top: -$nprogress-height // to not have grid gap + height of nprogress
+
+  &__bottom
+    height: 100px
+    position: relative
 
   &__content, &__navbar, &__footer
     padding: 0 $layout-x-gap

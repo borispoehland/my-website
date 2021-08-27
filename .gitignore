@@ -36,8 +36,13 @@ yarn-error.log*
 
 # custom scripts
 removeUnusedDeps.sh
-unused-deps.txt
-services-code-screenshot.ts
+unusedDeps.txt
+servicesCodeScreenshot.ts
 
 # sitemap
 public/sitemap.xml
+
+# blog
+cms/node_modules
+cms/.env.development
+public/cms

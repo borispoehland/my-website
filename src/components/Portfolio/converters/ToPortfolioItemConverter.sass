@@ -1,10 +1,7 @@
 @use "styles/abstracts" as *
 
 .portfolio-item
-  padding: 20px
-  border-radius: 34px
-  box-shadow: 0 0 10px -6px $c-text
-  background: linear-gradient(135deg, $c-portfolio-fog 0, $c-background 70%)
+  @extend %common-card
 
   display: grid
   grid-template-areas: "name" "tags" "image" "appetizer" "action"
@@ -35,13 +32,7 @@
       gap: $md-gap
 
     .portfolio-tag
-      padding: $sm-gap $lg-gap
-      border-radius: 34px
-      border: 1px solid
-      flex-shrink: 0
-
-      +from(md)
-        border-width: 2px
+      +tag
 
   &__image
     grid-area: image

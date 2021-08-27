@@ -57,6 +57,14 @@
 @mixin genericAnimation($name)
   animation: #{$name} 0.5s ease-out
 
+@mixin tag($border-radius: 10px)
+  padding: $sm-gap $lg-gap
+  border-radius: #{$border-radius}
+  border: 1px solid
+  flex-shrink: 0
+
+  +from(md)
+    border-width: 2px
 
 
 

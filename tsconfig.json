@@ -25,6 +25,9 @@
       "@components/*": [
         "components/*"
       ],
+      "@cmsclient/*": [
+        "cms-client/*"
+      ],
       "@data/*": [
         "staticdata/*"
       ],
