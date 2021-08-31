@@ -19,7 +19,7 @@
 
   @else
     @media screen and (min-width: #{$breakpoint})
-    @content
+      @content
 
 @mixin to($breakpoint)
   @if $breakpoint == xl
@@ -42,11 +42,12 @@
     @media screen and (max-width: #{$breakpoint})
     @content
 
-@mixin fadeIn($transform: translateY(150px))
+@mixin fadeIn($transform: translateY(150px), $delay: 0s)
   opacity: 0
   transform: #{$transform}
   visibility: hidden
   transition: opacity 400ms ease-out, transform 400ms ease-out
+  transition-delay: #{$delay}
   will-change: opacity, visibility
 
   &.--in-view

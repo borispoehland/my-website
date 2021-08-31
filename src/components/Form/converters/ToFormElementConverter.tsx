@@ -1,36 +1,43 @@
 import { createElement, FunctionComponent } from 'react';
-import { FieldErrors } from 'react-hook-form';
+import { FieldError, FieldErrors } from 'react-hook-form';
 import { UseFormRegister } from 'react-hook-form/dist/types/form';
 import { useFormError } from '../hooks';
 
-export interface IInputs {
+export interface IContactFormFields {
   firstName: string;
   lastName: string;
   email: string;
   message: string;
 }
 
-export interface IConcreteInputProps {
-  id: keyof IInputs;
-  register: UseFormRegister<IInputs>;
+export interface ICommentFormFields {
+  name: string;
+  comment: string;
+}
+
+export type IFormFields = IContactFormFields | ICommentFormFields;
+
+export interface IInputProps<T> {
+  id: keyof T;
+  register: UseFormRegister<T>;
   rules: RulesType;
   placeholder: string;
 }
 
-export interface IFormElement {
+export interface IFormElement<T> {
   label: string;
-  id: keyof IInputs;
+  id: keyof T;
   rules: RulesType;
-  Component: FunctionComponent<IConcreteInputProps>;
+  Component: FunctionComponent<IInputProps<T>>;
   placeholder: string;
 }
 
-interface IProps extends IFormElement {
-  register: UseFormRegister<IInputs>;
-  errors: FieldErrors<IInputs>;
+interface IProps<T> extends IFormElement<T> {
+  register: UseFormRegister<T>;
+  errors: FieldErrors<T>;
 }
 
-const ToFormElementConverter = ({
+const ToFormElementConverter = <T extends IFormFields>({
   id,
   register,
   rules,
@@ -38,8 +45,8 @@ const ToFormElementConverter = ({
   errors,
   label,
   Component,
-}: IProps): JSX.Element => {
-  const errorMessage = errors[id]?.message;
+}: IProps<T>): JSX.Element => {
+  const errorMessage = (errors[id] as FieldError)?.message;
 
   useFormError(id, errorMessage);
 

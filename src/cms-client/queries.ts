@@ -1,10 +1,10 @@
 const postFields = `
+  "postId": _id,
   title,
   mainImage,
   shortDescription,
   tags,
   "slug": slug.current,
-  "author": author->{name, picture},
 `;
 
 export const indexQuery = `
@@ -15,11 +15,25 @@ export const indexQuery = `
 export const postQuery = `
 {
   "post": *[_type == "post" && slug.current == $slug] | order(_updatedAt desc) | [0] {
-    content,
+    publishedAt,
+    body,
+    metaDescription,
+    "author": author->{name, image, bio},
+    "comments": 
+      *[
+        _type == "comment" && 
+        post._ref == ^._id && 
+        approved == true
+        ] | order(_createdAt desc)
+        {
+          _id, 
+          name, 
+          comment, 
+          _createdAt
+        },
     ${postFields}
   },
   "morePosts": *[_type == "post" && slug.current != $slug] | order(publishedAt desc, _updatedAt desc) | [0...2] {
-    content,
     ${postFields}
   }
 }`;

@@ -7,10 +7,9 @@ import BlogOverview from '@components/BlogOverview/BlogOverview';
 
 interface IProps {
   allPosts: any[];
-  preview: boolean;
 }
 
-const BlogPage = ({ allPosts, preview }: IProps): JSX.Element => {
+const BlogPage = ({ allPosts }: IProps): JSX.Element => {
   return (
     <>
       <NextSeo title="Blog" description="Boris Pöhland's personal blog" />
@@ -25,8 +24,8 @@ export async function getStaticProps({
 }): Promise<GetStaticPropsResult<IProps>> {
   const allPosts = await getClient(preview).fetch(indexQuery);
   return {
-    props: { allPosts, preview },
-    revalidate: 1,
+    props: { allPosts },
+    revalidate: 60,
   };
 }
 

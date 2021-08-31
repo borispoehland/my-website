@@ -1,0 +1,24 @@
+@use "styles/abstracts" as *
+
+.code-box
+  position: relative
+
+  &__copy
+
+    position: absolute
+    z-index: 1
+    right: 1.25rem
+    top: 1.25rem
+
+    display: none
+    align-items: center
+    gap: $sm-gap
+
+    @extend %button-remove-style
+    border-radius: 10px
+    background: $c-primary
+    color: white
+    padding: 5px
+
+    +from(md)
+      display: flex

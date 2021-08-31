@@ -2,7 +2,7 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import getContactFormFields from '@data/contactFormFields';
 import Button from '../Button/Button';
 import ToFormElementConverter, {
-  IInputs,
+  IContactFormFields,
 } from './converters/ToFormElementConverter';
 import Emoji from '../Emoji/Emoji';
 import axios from 'axios';
@@ -15,11 +15,11 @@ const ContactForm = (): JSX.Element => {
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
-  } = useForm<IInputs>({
+  } = useForm<IContactFormFields>({
     mode: 'onBlur',
   });
 
-  const onSubmit: SubmitHandler<IInputs> = useCallbackOne(
+  const onSubmit: SubmitHandler<IContactFormFields> = useCallbackOne(
     async (data) => {
       try {
         const res = await axios.post('/api/sendContactForm', data, {
@@ -38,17 +38,13 @@ const ContactForm = (): JSX.Element => {
     <>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="contact-form"
+        className="form contact-form"
         noValidate
       >
         {getContactFormFields()
           .map((formElement) => ({ ...formElement, errors, register }))
           .map(ToFormElementConverter)}
-        <Button
-          type="submit"
-          className="contact-form__submit"
-          isLoading={isSubmitting}
-        >
+        <Button type="submit" className="form__submit" isLoading={isSubmitting}>
           Send message
         </Button>
       </form>

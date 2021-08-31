@@ -1,0 +1,27 @@
+@use "styles/abstracts" as *
+
+.comment
+  @extend %comment-card
+
+  justify-self: stretch
+
+  display: grid
+  grid-template-areas: "name" "comment" "date"
+  column-gap: $lg-gap
+
+  +from(md)
+    grid-template-areas: "name date" "comment comment"
+    grid-template-columns: 1fr auto
+
+  &__name
+    grid-area: name
+
+    color: $c-pale-text
+
+  &__date
+    grid-area: date
+
+    color: $c-pale-text
+
+  &__comment
+    grid-area: comment

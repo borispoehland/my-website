@@ -43,6 +43,11 @@ export default {
       type: 'datetime',
     },
     {
+      name: 'metaDescription',
+      title: 'Meta description',
+      type: 'text',
+    },
+    {
       name: 'shortDescription',
       title: 'Short Description',
       type: 'array',

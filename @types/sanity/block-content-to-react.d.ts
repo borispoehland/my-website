@@ -1,5 +1,6 @@
 declare module '@sanity/block-content-to-react' {
   import * as React from 'react';
+  import { ReactNode } from 'react';
 
   export interface BlockContentProps {
     /**
@@ -101,7 +102,7 @@ declare module '@sanity/block-content-to-react' {
        */
       hardBreak?: React.Component;
       /** Serializer for the container wrapping the blocks */
-      container?: React.Component;
+      container?: ReactNode;
     };
     /**
      * When encountering image blocks,

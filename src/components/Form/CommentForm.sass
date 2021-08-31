@@ -1,0 +1,13 @@
+@use "styles/abstracts" as *
+
+.comment-form
+  @extend %comment-card
+
+  grid-template-areas: "heading" "name" "comment" "submit"
+
+  overflow-x: hidden
+  grid-template-columns: 100%
+
+  &__heading
+    grid-area: heading
+    margin-bottom: 2 * $contact-form-error-margin-top-and-bottom

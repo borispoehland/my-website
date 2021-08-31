@@ -55,9 +55,9 @@ const ToBlogOverviewItemConverter = ({
           />
         </NextLink>
       </div>
-      <div className="blog-item__appetizer">
+      <p className="blog-item__appetizer">
         <CMSBlockContent blocks={shortDescription} />
-      </div>
+      </p>
       {tags?.length && (
         <div className="blog-item__tags">
           {tags.map((tag) => {

@@ -5,12 +5,14 @@ import useInView from 'react-cool-inview';
 interface IProps extends HasChildren {
   heading: string;
   shortIntro: string | ReactNode;
+  className?: string;
 
   [props: string]: any;
 }
 
 const GenericSection = ({
   children,
+  className,
   heading,
   shortIntro,
   ...props
@@ -21,7 +23,7 @@ const GenericSection = ({
 
   return (
     <section
-      className={cx('generic-section', {
+      className={cx(className, 'generic-section', {
         '--in-view': inView,
       })}
       ref={observe}

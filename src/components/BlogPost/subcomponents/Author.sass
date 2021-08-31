@@ -1,0 +1,30 @@
+@use "styles/abstracts" as *
+
+.author
+  @extend %common-card
+
+  display: grid
+  grid-template-areas: "image" "name" "bio"
+  column-gap: $lg-gap
+  row-gap: $md-gap
+
+  +from(650px)
+    grid-template-areas: "image name" "image bio"
+    grid-template-columns: auto auto
+
+  &__name
+    grid-area: name
+
+    +from(650px)
+      align-self: end
+
+  &__bio
+    grid-area: bio
+
+  &__image
+    grid-area: image
+    justify-self: center
+    position: relative
+
+    width: 200px
+    height: 200px

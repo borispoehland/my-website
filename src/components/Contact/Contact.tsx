@@ -1,4 +1,4 @@
-import ContactForm from '../ContactForm/ContactForm';
+import ContactForm from '../Form/ContactForm';
 import GenericSection from '../GenericSection/GenericSection';
 import Button from '../Button/Button';
 import { openResourceInNewTab } from '@utils/dom';

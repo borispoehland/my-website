@@ -6,7 +6,9 @@ import {
 } from './hooks';
 import ToBreadcrumbConverter from './converters/ToBreadcrumbConverter';
 
-interface IProps extends HasClassName {}
+interface IProps extends HasClassName {
+  maxDepth: number;
+}
 
 export interface IBreadCrumb {
   label: string;
@@ -14,7 +16,7 @@ export interface IBreadCrumb {
   index?: number;
 }
 
-const Breadcrumbs = ({ className }: IProps): JSX.Element => {
+const Breadcrumbs = ({ className, maxDepth }: IProps): JSX.Element => {
   useSetBreadcrumbsTop();
 
   const [breadcrumbs, setBreadcrumbs] = useBreadcrumbs();
@@ -24,6 +26,7 @@ const Breadcrumbs = ({ className }: IProps): JSX.Element => {
   return (
     <div className={cx(className, 'breadcrumbs')}>
       {breadcrumbs
+        .slice(0, maxDepth)
         .map((crumb, i, arr) => ({
           ...crumb,
           isLast: i === arr.length - 1,
@@ -32,6 +35,10 @@ const Breadcrumbs = ({ className }: IProps): JSX.Element => {
         .map(ToBreadcrumbConverter)}
     </div>
   );
+};
+
+Breadcrumbs.defaultProps = {
+  maxDepth: 3,
 };
 
 export default Breadcrumbs;

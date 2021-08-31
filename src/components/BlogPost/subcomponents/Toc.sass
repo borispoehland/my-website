@@ -1,0 +1,13 @@
+@use "styles/abstracts" as *
+
+.toc
+  list-style: none
+  padding-left: 0
+
+  &__item
+    padding: $sm-gap 0
+
+    &.--is-active
+      .link
+        @extend %gradient-underline
+        color: $c-text !important

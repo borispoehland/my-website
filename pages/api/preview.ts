@@ -2,7 +2,7 @@ import { postBySlugQuery } from '@cmsclient/queries';
 import { previewClient } from '@cmsclient/sanity.server';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-export default async function preview(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {

@@ -1,6 +1,11 @@
-import { IInputs } from '@components/ContactForm/converters/ToFormElementConverter';
+import { IContactFormFields } from '@components/Form/converters/ToFormElementConverter';
 
-const getMails = ({ firstName, lastName, email, message }: IInputs) => {
+const getMails = ({
+  firstName,
+  lastName,
+  email,
+  message,
+}: IContactFormFields) => {
   const subject = `[Inquiry received] Your contact inquiry at Boris Pöhland`;
   const htmlForMe = `${firstName} ${lastName} wrote on ${new Date().toLocaleString(
     'en-GB',

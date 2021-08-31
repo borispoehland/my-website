@@ -1,0 +1,54 @@
+@use "styles/abstracts" as *
+
+@forward "subcomponents/Author"
+@forward "subcomponents/Comments"
+@forward "subcomponents/Toc"
+@forward "subcomponents/InfoBar"
+
+.blogpost
+  width: 100%
+  max-width: 1100px
+
+  display: grid
+  grid-template-areas: "content" "divider"
+  column-gap: $xl-gap
+
+  +from(md)
+    grid-template-areas: "toc content" "divider divider"
+    grid-template-columns: 250px 1fr
+
+  &__content
+    grid-area: content
+
+    display: flex
+    flex-direction: column
+    gap: $lg-gap
+
+    max-width: 100%
+    overflow: hidden
+
+  &__toc
+    grid-area: toc
+
+    display: none
+
+    position: sticky
+    top: 130px
+
+    margin-bottom: 5rem
+
+    align-self: start // to make the sticky working
+
+    +from(md)
+      display: block
+
+  hr
+    grid-area: divider
+
+
+.blogpost-block
+  //@extend %comment-card
+  //border-radius: 0
+  h2
+    padding-top: 130px
+    margin-top: -130px
