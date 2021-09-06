@@ -6,12 +6,13 @@
 
 html
   &[data-theme="1"]
-    --background-color: black
+    --background-color: #121212
     --text-color: white
     --switch-1: white
     --switch-2: #c60ac4
     --light-border-color: rgba(255, 255, 255, 0.2)
     --pale-text-color: lightgrey
+    --menu-blur-color: rgba(18, 18, 18, 0.4)
 
   &[data-theme="0"]
     --background-color: white
@@ -20,6 +21,7 @@ html
     --switch-2: white
     --light-border-color: rgba(0, 0, 0, 0.2)
     --pale-text-color: grey
+    --menu-blur-color: rgba(255, 255, 255, 0.4)
 
 $c-primary: var(--primary-color)
 $c-primary-light: var(--primary-color-light)
@@ -31,3 +33,4 @@ $c-portfolio-fog: var(--portfolio-fog-color)
 $c-light-border: var(--light-border-color)
 $c-error: var(--error-color)
 $c-pale-text: var(--pale-text-color)
+$c-menu-blur-color: var(--menu-blur-color)

@@ -13,5 +13,9 @@
       display: none
 
   &.--is-active
-    @extend %gradient-underline
     color: $c-text !important
+
+    @extend %gradient-underline
+
+    +to(md)
+      background-image: none

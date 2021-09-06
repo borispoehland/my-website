@@ -2,13 +2,15 @@ declare module '@sanity/block-content-to-react' {
   import * as React from 'react';
   import { ReactNode } from 'react';
 
+  export type BlockContentType = any[] | any;
+
   export interface BlockContentProps {
     /**
      * Pass in either an array or a single object of [Portable Text](https://github.com/portabletext/portabletext)
      *
      * *This is the only required prop*
      */
-    blocks: any[] | any;
+    blocks: BlockContentType;
     /**
      * When more than one block is given, a container node has to be created. Passing a className will pass it on to the container.
      * @note see `renderContainerOnSingleChild`

@@ -1,9 +1,9 @@
 import BlockContent from '@sanity/block-content-to-react';
-import GenericSection from '@components/GenericSection/GenericSection';
 import { createElement } from 'react';
 
 interface INodeProps {
   style: string;
+  children: any;
 }
 
 interface IProps extends HasChildren {
@@ -13,7 +13,9 @@ interface IProps extends HasChildren {
 const BlockContentSerializer = (props: IProps): JSX.Element => {
   const style = props.node.style;
 
-  if (/^h\d/.test(style)) {
+  const isHeading = /^h\d/.test(style);
+
+  if (isHeading) {
     return createElement(
       style,
       {

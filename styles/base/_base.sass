@@ -23,6 +23,9 @@ body
   font-family: 'Nunito Sans', var(--bs-font-sans-serif)
   font-size: 17px
 
+  &.--overflow-y-hidden
+    overflow-y: hidden
+
 *
   box-sizing: border-box
 
@@ -31,7 +34,7 @@ a
   text-decoration: none
 
 #__next
-  background: linear-gradient(90deg, $c-background 0%, $c-text 50%, $c-background 100%)
+  background: $c-background
   color: $c-text
 
 h1, h2, h3, h4, h5, p, ul

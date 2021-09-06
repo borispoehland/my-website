@@ -1,17 +1,16 @@
 import GenericSection from '@components/GenericSection/GenericSection';
 import ToBlogOverviewItemConverter from '@components/BlogOverview/converters/ToBlogOverviewItemConverter';
+import { ICommonBlog } from '@cmsclient/queries';
 
 interface IProps {
-  blogPosts: any[];
+  blogPosts: ICommonBlog[];
 }
 
 const BlogOverview = ({ blogPosts }: IProps): JSX.Element => {
   return (
-    <>
-      <GenericSection heading="Latest blogposts" shortIntro="">
-        {blogPosts.map(ToBlogOverviewItemConverter)}
-      </GenericSection>
-    </>
+    <GenericSection heading="Latest blogposts">
+      {blogPosts.map(ToBlogOverviewItemConverter)}
+    </GenericSection>
   );
 };
 

@@ -14,8 +14,8 @@ const getIndexSections = (
       heading: 'Hey',
       textContent: (
         <>
-          I&#39;m Boris and I&#39;m Web Developer from Germany. I also have a
-          keen eye for <b>Usability</b>, my studies in human-computer
+          I&#39;m Boris Pöhland and I&#39;m Web Developer from Germany. I also
+          have a keen eye for <b>Usability</b>, my studies in human-computer
           interaction helped me developing that. Currently I really much enjoy
           creating websites - preferrably with <b>React</b>.
         </>

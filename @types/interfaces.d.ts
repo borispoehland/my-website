@@ -1,4 +1,4 @@
-import { CSSProperties, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 declare global {
   interface HasChildren {
@@ -7,9 +7,5 @@ declare global {
 
   interface HasClassName {
     className: string;
-  }
-
-  interface HasStyle {
-    style: CSSProperties;
   }
 }

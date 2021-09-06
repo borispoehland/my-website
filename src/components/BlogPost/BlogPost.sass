@@ -1,28 +1,25 @@
 @use "styles/abstracts" as *
 
-@forward "subcomponents/Author"
-@forward "subcomponents/Comments"
-@forward "subcomponents/Toc"
-@forward "subcomponents/InfoBar"
+@forward "converters/ToBlogPostBlockConverter"
+
+@forward "subcomponents/BlogAuthor"
+@forward "subcomponents/BlogComments"
+@forward "subcomponents/BlogToc"
+@forward "subcomponents/BlogInfo"
+@forward "subcomponents/BlogTags"
+@forward "subcomponents/BlogReadingTime"
+@forward "subcomponents/BlogHashTags"
 
 .blogpost
-  width: 100%
-  max-width: 1100px
-
-  display: grid
   grid-template-areas: "content" "divider"
   column-gap: $xl-gap
 
   +from(md)
-    grid-template-areas: "toc content" "divider divider"
-    grid-template-columns: 250px 1fr
+    grid-template-areas: "content toc" "divider divider"
+    grid-template-columns: 1fr 250px
 
   &__content
     grid-area: content
-
-    display: flex
-    flex-direction: column
-    gap: $lg-gap
 
     max-width: 100%
     overflow: hidden
@@ -33,9 +30,9 @@
     display: none
 
     position: sticky
-    top: 130px
+    top: $approxSpaceFromTop
 
-    margin-bottom: 5rem
+    margin-bottom: 5rem // 2.5rem divider bottom, 1.5 rem divider top, 1rem gap
 
     align-self: start // to make the sticky working
 
@@ -46,9 +43,4 @@
     grid-area: divider
 
 
-.blogpost-block
-  //@extend %comment-card
-  //border-radius: 0
-  h2
-    padding-top: 130px
-    margin-top: -130px
+

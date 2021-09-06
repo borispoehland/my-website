@@ -8,8 +8,6 @@ $max-page-width: 1600px
   min-height: 100vh
   grid-template-rows: auto auto auto 1fr auto
   background: $c-background
-  max-width: $max-page-width
-  margin: 0 auto
   gap: $nprogress-height
 
   &__content
@@ -17,8 +15,6 @@ $max-page-width: 1600px
     display: grid
     justify-items: center
     align-items: start
-
-    // overflow-y: hidden // overflow could happen because of the fade in tags
 
     > div:not([class]) // next.js error div
       width: 100%
@@ -29,12 +25,10 @@ $max-page-width: 1600px
     top: $nprogress-height
     background: inherit
     font-size: 1.3rem
-    z-index: 2 // to overlap the breadcrumbs
-    overflow: hidden
+    z-index: 2 // to make collapse overlap breadcrumbs
 
   &__breadcrumbs
     grid-area: breadcrumbs
-    z-index: 1
 
   &__footer
     grid-area: footer
@@ -45,10 +39,9 @@ $max-page-width: 1600px
     position: sticky
     top: 0
     background: inherit
-    z-index: 1
     margin-top: -$nprogress-height // to not have grid gap + height of nprogress
 
-  &__bottom
+  &__bottom-waves
     height: 100px
     position: relative
 
@@ -57,4 +50,12 @@ $max-page-width: 1600px
 
   &__breadcrumbs
     padding: 0 $layout-x-gap 0.5rem $layout-x-gap
+
+  &__content, &__navbar, &__footer, &__breadcrumbs
+    width: 100%
+    max-width: $max-page-width
+    margin: 0 auto
+
+  &__progress, &__breadcrumbs
+    z-index: 1
 

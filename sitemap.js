@@ -5,7 +5,7 @@ sitemap({
   pagesDirectory: `${__dirname}/pages`,
   targetDirectory: `${__dirname}/public`,
   ignoreIndexFiles: true,
-  ignoredPaths: ['api', 'privacy', 'imprint'],
+  ignoredPaths: ['api', 'privacy', 'imprint', 'blog/[slug]'],
   sitemapStylesheet: [
     {
       type: 'text/xsl',

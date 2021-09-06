@@ -1,12 +1,14 @@
-import BlockContent from '@sanity/block-content-to-react';
+import BlockContent, { BlockContentType } from '@sanity/block-content-to-react';
 import LinkSerializer from '@components/CMSBlockContent/subcomponents/LinkSerializer';
 import CodeSerializer from '@components/CMSBlockContent/subcomponents/CodeSerializer';
 import BlockContentSerializer from '@components/CMSBlockContent/subcomponents/BlockContentSerializer';
 import { PropsWithChildren } from 'react';
 import ImageSerializer from '@components/CMSBlockContent/subcomponents/ImageSerializer';
+import HighlightedBoxSerializer from '@components/CMSBlockContent/subcomponents/HighlightedBoxSerializer';
+import BreakSerializer from '@components/CMSBlockContent/subcomponents/BreakSerializer';
 
 interface IProps {
-  blocks: any[];
+  blocks: BlockContentType;
 }
 
 const EmptyWrapper = ({ children }: PropsWithChildren<{}>) => <>{children}</>;
@@ -16,14 +18,16 @@ const serializers = {
     link: LinkSerializer,
   },
   types: {
-    code: CodeSerializer,
+    codeWithHighlightedLines: CodeSerializer,
     block: BlockContentSerializer,
     image: ImageSerializer,
+    highlightedBox: HighlightedBoxSerializer,
+    break: BreakSerializer,
   },
   container: EmptyWrapper,
 };
 
-const CMSBlockContent = ({ blocks, ...props }: IProps): JSX.Element => {
+const CMSBlockContent = ({ blocks }: IProps): JSX.Element => {
   return (
     <BlockContent
       blocks={blocks}

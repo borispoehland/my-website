@@ -1,16 +1,19 @@
 import Image from 'next/image';
 import { urlForImage } from '@cmsclient/sanity';
+import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 
-interface IProps {}
+interface ISanityImageProps {
+  asset: SanityImageSource;
+  alt: string;
+}
 
-const ImageSerializer = ({ node: { asset } }: any): JSX.Element => {
+interface IProps {
+  node: ISanityImageProps;
+}
+
+const ImageSerializer = ({ node: { asset, alt } }: IProps): JSX.Element => {
   return (
-    <Image
-      src={urlForImage(asset).height(1080).width(1920).url() as string}
-      alt=""
-      width={1920}
-      height={1080}
-    />
+    <Image src={urlForImage(asset)} alt={alt} width={1920} height={1080} />
   );
 };
 

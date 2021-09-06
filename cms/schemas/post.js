@@ -27,9 +27,13 @@ export default {
       name: 'mainImage',
       title: 'Main image',
       type: 'image',
-      options: {
-        hotspot: true,
-      },
+      fields: [
+        {
+          title: 'Alternative Text',
+          name: 'alt',
+          type: 'string',
+        },
+      ],
     },
     {
       name: 'tags',
@@ -64,6 +68,12 @@ export default {
       name: 'body',
       title: 'Body',
       type: 'blockContent',
+    },
+    {
+      name: 'hashTags',
+      title: 'HashTags',
+      type: 'array',
+      of: [{ type: 'string' }],
     },
   ],
 

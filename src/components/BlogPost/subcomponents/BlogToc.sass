@@ -1,0 +1,25 @@
+@use "styles/abstracts" as *
+
+.blog-toc
+  list-style: none
+  padding-left: 0
+
+  &__indicator
+    margin-right: $sm-gap
+    position: absolute
+    left: 0
+    top: 50%
+    transform: translateY(-50%) scale(0.5)
+    transition: transform 0.2s ease-out
+
+  &__item
+    padding: $sm-gap 0 $sm-gap 1.5rem
+    position: relative
+
+    &.--is-active
+      .blog-toc__link
+        color: $c-text !important
+
+      .blog-toc__indicator
+        transform: translateY(-50%)
+

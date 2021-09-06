@@ -7,18 +7,20 @@ import { Controller, Scene } from 'react-scrollmagic';
 import getIndexSections from '@data/indexSections';
 import ToIndexSectionConverter from './converters/ToIndexSectionConverter';
 import { useRouter } from 'next/router';
+import { MutableRefObject, useRef } from 'react';
 
-interface IProps {
-  startRightLaneTransitionAtPercent: number;
-  topOffset: number;
+export interface IIndexSectionProps {
+  rightLaneCliff: number;
+  leftLaneOffset: number;
 }
 
 const IndexSections = ({
-  startRightLaneTransitionAtPercent,
-  topOffset,
-}: IProps): JSX.Element => {
+  rightLaneCliff,
+  leftLaneOffset,
+}: IIndexSectionProps): JSX.Element => {
   const theme = useRecoilValue(sTheme);
   const router = useRouter();
+  const container = useRef() as MutableRefObject<HTMLDivElement>;
 
   const [leftLane, rightLane] = useMemoOne(() => {
     const pairs = getIndexSections(theme, router)
@@ -30,13 +32,13 @@ const IndexSections = ({
     return zip(...pairs); // [[left1, right1], [left2, right2]] => [[left1, left2], [right1, right2]]
   }, [theme, router]);
 
-  useOpacityChangeOnScroll(topOffset, startRightLaneTransitionAtPercent);
+  useOpacityChangeOnScroll({ leftLaneOffset, rightLaneCliff });
 
   const { indexSectionHeight, indexSectionStartFromTopInPercent } =
-    useAdaptLeftLaneItemHeight();
+    useAdaptLeftLaneItemHeight(container);
 
   return (
-    <div className="index">
+    <div className="index" ref={container}>
       <div className="index__left-lane">{leftLane}</div>
       <div className="index__right-lane">
         <Controller>
@@ -60,8 +62,8 @@ const IndexSections = ({
 };
 
 IndexSections.defaultProps = {
-  startRightLaneTransitionAtPercent: 0.5,
-  topOffset: 200,
+  rightLaneCliff: 0.5,
+  leftLaneOffset: 200,
 };
 
 export default IndexSections;

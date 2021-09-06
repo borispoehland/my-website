@@ -3,12 +3,12 @@ import { useRef, useState } from 'react';
 import { useRecoilValue } from 'recoil';
 import { sTheme } from '@store';
 import {
+  useBackgroundBlurWhenNavIsOpen,
   useCloseNavAutomatically,
-  useNavbarCollapseTransitionButNotInitially,
-  useSetMobileNavCollapseTop,
 } from './hooks';
 import NavbarCollapse from './subcomponents/NavbarCollapse';
 import NavbarNonCollapse from './subcomponents/NavbarNonCollapse';
+import NavbarBlurrer from '@components/Navbar/subcomponents/NavbarBlurrer';
 
 interface IProps extends HasClassName {}
 
@@ -23,9 +23,7 @@ const Navbar = ({ className }: IProps): JSX.Element => {
 
   useCloseNavAutomatically(computedOnce.current.closeMenu);
 
-  useSetMobileNavCollapseTop();
-
-  useNavbarCollapseTransitionButNotInitially(isOpen);
+  useBackgroundBlurWhenNavIsOpen(isOpen);
 
   return (
     <BootstrapNavbar className={className} expand="md" expanded={isOpen}>
@@ -34,6 +32,7 @@ const Navbar = ({ className }: IProps): JSX.Element => {
         theme={theme}
       />
       <NavbarCollapse />
+      <NavbarBlurrer />
     </BootstrapNavbar>
   );
 };

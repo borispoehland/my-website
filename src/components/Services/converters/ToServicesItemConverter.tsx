@@ -14,7 +14,7 @@ const ToServicesItemConverter = ({
   imgSrc,
 }: IServiceItem): JSX.Element => {
   return (
-    <GenericSection key={heading} heading="" shortIntro="">
+    <GenericSection key={heading}>
       <section className="services-item">
         <h2 className="services-item__heading">{heading}</h2>
         <div className="services-item__image">

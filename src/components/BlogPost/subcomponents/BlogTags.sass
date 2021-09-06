@@ -1,0 +1,14 @@
+@use "styles/abstracts" as *
+
+.blog-tags
+  grid-area: tags
+
+  display: flex
+  gap: $md-gap
+  font-size: 0.85rem
+
+  overflow-x: auto
+  max-width: 100%
+
+  .blog-tag
+    +tag

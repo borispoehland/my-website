@@ -6,7 +6,11 @@ import blockContent from './blockContent';
 import post from './post';
 import author from './author';
 import comment from './comment';
-import sectionBreak from './sectionBreak';
+import aBreak from './break';
+import highlightedBox from './highlightedBox';
+import codeWithHighlightedLines, {
+  codeHighlightRange,
+} from './codeWithHighlightedLines';
 
 export default createSchema({
   name: 'default',
@@ -15,6 +19,9 @@ export default createSchema({
     author,
     blockContent,
     comment,
-    sectionBreak,
+    aBreak,
+    highlightedBox,
+    codeWithHighlightedLines,
+    codeHighlightRange,
   ]),
 });

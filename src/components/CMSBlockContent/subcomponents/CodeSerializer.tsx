@@ -1,44 +1,66 @@
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { materialDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
-import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { useState } from 'react';
-import { IoMdCopy } from 'react-icons/io';
-import { ImCheckmark } from 'react-icons/im';
+import { HTMLProps } from 'react';
+import { useCallbackOne, useMemoOne } from 'use-memo-one';
+import { arrayRange } from '@utils/arrays';
+import CopyToClipboardButton from '@components/CopyToClipboardButton/CopyToClipboardButton';
 
-interface INodeProps {
+interface ICodeHighlightRangeProps {
+  start: number;
+  end: number;
+}
+
+interface ICodeProps {
   code: string;
   language: string;
+}
+
+interface INodeProps {
+  codeBox: ICodeProps;
+  codeHighlightRange: ICodeHighlightRangeProps;
 }
 
 interface IProps {
   node: INodeProps;
 }
 
-const CodeSerializer = ({ node }: IProps): JSX.Element => {
-  const [isCopied, setIsCopied] = useState(false);
+const CodeSerializer = ({
+  node: { codeBox, codeHighlightRange },
+}: IProps): JSX.Element => {
+  const lineHighlighterRange: number[] | undefined = useMemoOne(() => {
+    if (codeHighlightRange?.start && codeHighlightRange?.end) {
+      return arrayRange(codeHighlightRange.start, codeHighlightRange.end);
+    }
+    return undefined;
+  }, [codeHighlightRange]);
 
-  if (!node || !node.code) {
-    return <></>;
-  }
-  const { language, code } = node;
+  const lineHighlighter = useCallbackOne(
+    (lineNumber: number): HTMLProps<HTMLElement> => {
+      if (lineHighlighterRange?.includes(lineNumber)) {
+        return {
+          style: {
+            display: 'table-row',
+            background: '#630462',
+          },
+        };
+      }
+      return {};
+    },
+    [lineHighlighterRange]
+  );
+
+  const { code, language } = codeBox;
+
   return (
-    <div className="code-box">
-      <CopyToClipboard text={code} onCopy={() => setIsCopied(true)}>
-        <button className="code-box__copy">
-          {isCopied ? (
-            <>
-              <ImCheckmark />
-              Copied!
-            </>
-          ) : (
-            <>
-              <IoMdCopy />
-              Copy to clipboard
-            </>
-          )}
-        </button>
-      </CopyToClipboard>
-      <SyntaxHighlighter language={language || 'text'} style={materialDark}>
+    <div className="blog-code-box">
+      <CopyToClipboardButton className="blog-code-box__copy" text={code} />
+      <SyntaxHighlighter
+        language={language || 'text'}
+        style={materialDark}
+        wrapLines
+        showLineNumbers
+        lineProps={lineHighlighter}
+      >
         {code}
       </SyntaxHighlighter>
     </div>
