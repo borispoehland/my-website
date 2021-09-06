@@ -5,10 +5,9 @@
 
   position: relative
 
-  &[disabled]
-    pointer-events: none
-
   &.--is-loading
+    pointer-events: none
+    box-shadow: 0 0 40px 40px $c-primary inset, 0 0 0 0 $c-primary // to fix ios error where disabled buttons style have the hover style
 
     .button__text
       visibility: hidden
