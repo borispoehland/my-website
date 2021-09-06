@@ -1,0 +1,23 @@
+@use "styles/abstracts" as *
+
+.blog-code-box
+  position: relative
+  margin-bottom: $md-gap
+
+  &__copy
+    position: absolute
+    z-index: 1
+    right: 1rem
+    top: 1rem
+
+    visibility: hidden
+
+    +from(md)
+      visibility: visible
+
+  pre
+    border-radius: 10px
+
+  code
+    display: inline-table
+    width: 100%

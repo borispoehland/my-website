@@ -1,6 +1,7 @@
-import Navbar from '../Navbar/Navbar';
 import Breadcrumbs from '../Breadcrumbs/Breadcrumbs';
 import Footer from '../Footer/Footer';
+import Image from 'next/image';
+import Navbar from '@components/Navbar/Navbar';
 
 interface IProps extends HasChildren {}
 
@@ -12,6 +13,9 @@ const Layout = ({ children }: IProps): JSX.Element => {
       <Breadcrumbs className="page__breadcrumbs" />
       <div className="page__content">{children}</div>
       <Footer className="page__footer" />
+      <div className="page__bottom-waves">
+        <Image src="/img/wave.svg" alt="" layout="fill" objectFit="cover" />
+      </div>
     </div>
   );
 };

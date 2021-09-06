@@ -1,0 +1,28 @@
+@use "styles/abstracts" as *
+
+.form-element
+  display: flex
+  flex-direction: column
+
+  label
+    font-size: 1.2rem
+
+  &__input
+    @extend %input-remove-style
+
+    padding: 5px 15px
+    border-radius: 5px
+    border: 1px solid $c-text
+    transition: all 100ms ease-out
+
+    &.--has-error:not(:focus)
+      border-color: $c-error
+
+  &__error
+    opacity: 0
+    transition: opacity 300ms ease-out
+    border-radius: 5px
+    margin: $contact-form-error-margin-top-and-bottom 0
+    text-align: center
+    background: $c-error
+    color: white

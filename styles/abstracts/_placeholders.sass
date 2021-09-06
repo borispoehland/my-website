@@ -69,3 +69,13 @@
     color: $c-text
     box-shadow: 0 0 10px 0 $c-primary inset, 0 0 2px 3px $c-primary
 
+%common-card
+  padding: 20px
+  border-radius: 34px
+  box-shadow: 0 0 10px -6px $c-text
+  background: linear-gradient(135deg, $c-portfolio-fog 0, $c-background 70%)
+
+%card-1
+  @extend %common-card
+  background: none
+  border: 1px solid $c-portfolio-fog

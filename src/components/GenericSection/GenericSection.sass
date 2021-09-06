@@ -1,7 +1,5 @@
 @use "styles/abstracts" as *
 
-$hr-margin-bottom: 2.5rem
-
 $generic-section-md-gap: $md-gap + 0.2rem
 
 .generic-section
@@ -26,7 +24,7 @@ $generic-section-md-gap: $md-gap + 0.2rem
   &__intro
     text-align: center
 
-  hr
+  > hr
     margin-bottom: $hr-margin-bottom
     margin-top: calc(#{$hr-margin-bottom} - #{$generic-section-md-gap})
     width: 100%

@@ -7,18 +7,16 @@
   justify-content: center
   visibility: hidden
 
+  > *:not(.left-lane-item__image)
+    +genericAnimation(slideInFromBelow)
+
   &__heading
     margin-top: $md-gap
     margin-bottom: $md-gap
-    +genericAnimation(slideInFromLeftHard)
 
   &__text
     overflow-y: auto
     margin-bottom: $lg-gap
-    +genericAnimation(slideInFromLeftHard)
-
-  &__action
-    +genericAnimation(slideInFromBelow)
 
   +to(md)
     height: auto !important

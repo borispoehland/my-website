@@ -1,0 +1,27 @@
+@use "styles/abstracts" as *
+
+.blogpost-block
+  h2
+    padding-top: $approxSpaceFromTop
+    margin-top: -$approxSpaceFromTop
+    margin-bottom: $lg-gap
+
+  h3
+    margin-bottom: $md-gap
+
+    &:not(:first-child)
+      margin-top: $lg-gap
+
+  hr
+    margin: $hr-margin-bottom 0
+
+  code
+    color: $c-text
+    background: $c-light-border
+
+  img
+    margin-top: $md-gap !important
+
+  &:last-child
+    hr
+      display: none

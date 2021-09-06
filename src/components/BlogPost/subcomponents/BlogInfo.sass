@@ -1,0 +1,19 @@
+@use "styles/abstracts" as *
+
+.blog-info
+  display: grid
+  grid-template-areas: "published-at reading-time" "tags tags"
+  row-gap: $md-gap
+
+  margin-bottom: $lg-gap
+
+  overflow-x: auto
+
+  max-width: 1100px
+  width: 100%
+
+  +from(md)
+    grid-template-areas: "published-at reading-time" "tags reading-time"
+
+  &__published-at
+    grid-area: published-at

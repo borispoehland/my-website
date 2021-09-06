@@ -43,7 +43,7 @@ export default async function handler(
     if (err.response) console.log(err.response.body.errors);
     return res.status(502).send({
       swalTitle: 'Something went wrong!',
-      swalDescription: `It's not your fault. Please try again later or directly send me an email to <a href='mailto:${process.env.MY_EMAIL}'>${process.env.MY_EMAIL}</a>. Thanks!`,
+      swalDescription: `It's not your fault. Please try again later or directly send me an email to <a href='mailto:${process.env.NEXT_PUBLIC_MY_EMAIL}'>${process.env.NEXT_PUBLIC_MY_EMAIL}</a>. Thanks!`,
       swalType: 'error',
     });
   }

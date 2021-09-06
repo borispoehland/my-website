@@ -1,0 +1,61 @@
+@use "styles/abstracts" as *
+
+$blog-item-breakpoint: 500px
+$blog-item-appetizer-breakpoint: 620px
+
+.blog-item
+  @extend %common-card
+
+  +fadeIn(translateX(-150px), 0.3s)
+
+  justify-self: stretch // override wrapping generic section style
+
+  display: grid
+  grid-template-areas: "title title" "image image" "tags tags" "appetizer appetizer" "action reading-time"
+  grid-template-columns: auto 1fr
+  align-items: center
+  justify-items: start
+  column-gap: $lg-gap
+  row-gap: $sm-gap
+
+  +from($blog-item-breakpoint)
+    grid-template-areas: "title title" "reading-time reading-time" "action tags"
+
+  +from($blog-item-appetizer-breakpoint)
+    grid-template-areas: "title title title" "appetizer appetizer appetizer" "action tags reading-time"
+    grid-template-columns: auto 1fr auto
+
+  +from(md)
+    grid-template-areas: "image title title title" "image appetizer appetizer appetizer" "image action tags reading-time"
+    grid-template-columns: 300px auto 1fr auto
+
+  .blog-reading-time
+    font-size: 0.9rem
+
+    +from(md)
+      font-size: 1rem
+
+  &__image
+    grid-area: image
+
+    display: none
+
+    +from(md)
+      display: flex
+
+  &__appetizer
+    grid-area: appetizer
+    display: none
+
+    +from($blog-item-appetizer-breakpoint)
+      display: block
+
+  &__title
+    grid-area: title
+
+  &__action
+    grid-area: action
+
+  .blog-tags
+    +from($blog-item-breakpoint)
+      margin: 0 auto

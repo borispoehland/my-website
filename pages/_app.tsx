@@ -7,7 +7,6 @@ import Layout from '../src/components/Layout/Layout';
 import NProgress from 'nprogress';
 import { useRouter } from 'next/router';
 import { RecoilRoot } from 'recoil';
-import Head from 'next/head';
 import { UIDReset } from 'react-uid';
 import {
   useLoadingSpinner,
@@ -27,9 +26,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
   return (
     <>
-      <Head>
-        <title>Boris Pöhland | Web Developer | Usability Analyst</title>
-      </Head>
       <DefaultSeo {...getDefaultSEO()} />
       <UIDReset prefix="uid_">
         <RecoilRoot>

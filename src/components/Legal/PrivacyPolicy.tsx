@@ -6,7 +6,7 @@ import MyEmail from '@components/Legal/subcomponents/MyEmail';
 const PrivacyPolicy = (): JSX.Element => {
   return (
     <div className="legal">
-      <GenericSection heading="An overview of data protection" shortIntro="">
+      <GenericSection heading="An overview of data protection">
         <LegalItem heading="General information">
           The following gives a simple overview of what happens to your personal
           information when you visit our website. Personal information is any
@@ -45,10 +45,7 @@ const PrivacyPolicy = (): JSX.Element => {
           97877 Wertheim, Germany
         </LegalItem>
       </GenericSection>
-      <GenericSection
-        heading="Hosting and Content Delivery Networks (CDN)"
-        shortIntro=""
-      >
+      <GenericSection heading="Hosting and Content Delivery Networks (CDN)">
         <LegalItem heading="External hosting">
           This website is hosted by an external service provider (hoster). The
           personal data that is collected on this website is stored on the
@@ -69,7 +66,7 @@ const PrivacyPolicy = (): JSX.Element => {
           concluded a data processing agreement with our hoster.
         </LegalItem>
       </GenericSection>
-      <GenericSection heading="General and mandatory information" shortIntro="">
+      <GenericSection heading="General and mandatory information">
         <LegalItem heading="Data protection">
           The operators of this website take the protection of your personal
           data very seriously. We treat your personal data as confidential and
@@ -199,7 +196,7 @@ const PrivacyPolicy = (): JSX.Element => {
           interest the European Union or a Member State.
         </LegalItem>
       </GenericSection>
-      <GenericSection heading="Data collection on our website" shortIntro="">
+      <GenericSection heading="Data collection on our website">
         <LegalItem heading="Cookies">
           <b>Currently our website uses no cookies</b>. Cookies are small text
           files and do no damage to your device. They are either stored

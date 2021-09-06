@@ -1,0 +1,46 @@
+@use "styles/abstracts" as *
+
+@forward "converters/ToBlogPostBlockConverter"
+
+@forward "subcomponents/BlogAuthor"
+@forward "subcomponents/BlogComments"
+@forward "subcomponents/BlogToc"
+@forward "subcomponents/BlogInfo"
+@forward "subcomponents/BlogTags"
+@forward "subcomponents/BlogReadingTime"
+@forward "subcomponents/BlogHashTags"
+
+.blogpost
+  grid-template-areas: "content" "divider"
+  column-gap: $xl-gap
+
+  +from(md)
+    grid-template-areas: "content toc" "divider divider"
+    grid-template-columns: 1fr 250px
+
+  &__content
+    grid-area: content
+
+    max-width: 100%
+    overflow: hidden
+
+  &__toc
+    grid-area: toc
+
+    display: none
+
+    position: sticky
+    top: $approxSpaceFromTop
+
+    margin-bottom: 5rem // 2.5rem divider bottom, 1.5 rem divider top, 1rem gap
+
+    align-self: start // to make the sticky working
+
+    +from(md)
+      display: block
+
+  hr
+    grid-area: divider
+
+
+

@@ -1,11 +1,14 @@
+import { CSSProperties, ReactNode } from 'react';
+
 interface IProps {
-  catchPhrase: string;
+  catchPhrase: string | ReactNode;
   heading: string;
+  style?: CSSProperties;
 }
 
-const GenericIntro = ({ catchPhrase, heading }: IProps): JSX.Element => {
+const GenericIntro = ({ catchPhrase, heading, style }: IProps): JSX.Element => {
   return (
-    <main className="generic-intro">
+    <main className="generic-intro" style={style}>
       <h1 className="generic-intro__heading">{heading}</h1>
       <p className="generic-intro__catchphrase">{catchPhrase}</p>
     </main>

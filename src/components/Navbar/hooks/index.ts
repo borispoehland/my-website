@@ -1,52 +1,36 @@
 import { useEffect } from 'react';
-import { getBottomOfElementRelativeToViewport } from '@utils/positions';
-
-export const useSetMobileNavCollapseTop = (): void => {
-  useEffect(() => {
-    const $navbar = $('.navbar');
-    const $navbarCollapse = $('.navbar-collapse');
-    const $window = $(window);
-
-    const setMobileNavCollapseTop = () => {
-      const navbarBottomDistanceFromTop =
-        getBottomOfElementRelativeToViewport($navbar);
-      $navbarCollapse.css('top', `${navbarBottomDistanceFromTop}px`);
-    };
-
-    setMobileNavCollapseTop();
-    $window.on('resize', setMobileNavCollapseTop);
-
-    return (): void => {
-      $window.off('resize', setMobileNavCollapseTop);
-    };
-  }, []);
-};
 
 export const useCloseNavAutomatically = (
   closeMenu: JQuery.EventHandler<unknown, void>
 ): void => {
   useEffect(() => {
     const $window = $(window);
-    const navLinks = $('.nav-link.link, .navbar-brand');
+    const $navLinks = $('.nav-link.link, .navbar-brand');
+    const $navbarBlurrer = $('.navbar-blurrer');
+
     $window.on('resize', closeMenu);
-    navLinks.on('click', closeMenu);
+    $navLinks.on('click', closeMenu);
+    $navbarBlurrer.on('click', closeMenu);
 
     return (): void => {
       $window.off('resize', closeMenu);
-      navLinks.off('click', closeMenu);
+      $navLinks.off('click', closeMenu);
+      $navbarBlurrer.off('click', closeMenu);
     };
   }, [closeMenu]);
 };
 
-/**
- * When we do the transition initially, Brave browser on Android causes problems.
- * So we only add it once the user opens the navbar
- * @param isOpen
- */
-export const useNavbarCollapseTransitionButNotInitially = (isOpen: boolean) => {
+export const useBackgroundBlurWhenNavIsOpen = (isOpen: boolean) => {
   useEffect(() => {
+    const $blurrer = $('.navbar-blurrer');
+    const $body = $('body');
+
     if (isOpen) {
-      $('.navbar-collapse').css('transition', 'transform 0.4s ease-out');
+      $blurrer.show();
+      $body.addClass('--overflow-y-hidden');
+    } else {
+      $blurrer.hide();
+      $body.removeClass('--overflow-y-hidden');
     }
   }, [isOpen]);
 };

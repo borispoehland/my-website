@@ -1,0 +1,15 @@
+@use "styles/abstracts" as *
+
+@forward "CommentForm"
+@forward "ContactForm"
+@forward "converters/ToFormElementConverter"
+
+.form
+  display: grid
+  column-gap: $lg-gap
+  width: 100%
+
+  &__submit
+    grid-area: submit
+    justify-self: center
+    margin-top: 2 * $contact-form-error-margin-top-and-bottom
