@@ -15,7 +15,7 @@ export const useCloseNavAutomatically = (
     return (): void => {
       $window.off('resize', closeMenu);
       $navLinks.off('click', closeMenu);
-      $navbarBlurrer.off('click');
+      $navbarBlurrer.off('click', closeMenu);
     };
   }, [closeMenu]);
 };

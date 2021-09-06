@@ -10,7 +10,7 @@ interface IProps {
 
 const HighlightedBoxSerializer = ({ node: { text } }: IProps): JSX.Element => {
   return (
-    <div className="highlight">
+    <div className="highlight-box">
       <CMSBlockContent blocks={text} />
     </div>
   );

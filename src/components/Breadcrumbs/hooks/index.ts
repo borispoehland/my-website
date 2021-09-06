@@ -120,7 +120,6 @@ export const useAddLatestH2ToBreadcrumbs = ([
       });
     };
 
-    // addLatesth2ToBreadcrumbs(); // we don't want it initially, only when scrolling
     $window.on('scroll', addLatesth2ToBreadcrumbs);
 
     return () => {
