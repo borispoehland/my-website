@@ -1,3 +1,8 @@
 {
-  "rewrites": [{ "source": "/cms/(.*)", "destination": "/cms/index.html" }]
+  "rewrites": [
+    {
+      "source": "/cms/(.*)",
+      "destination": "/cms/index.html"
+    }
+  ]
 }

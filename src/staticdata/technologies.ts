@@ -15,9 +15,19 @@ type Techs =
   | 'Postgres'
   | 'Hibernate'
   | 'JavaFX'
-  | 'GDrive';
+  | 'GDrive'
+  | 'Tailwind'
+  | 'Sanity';
 
 const Technologies: { [key in Techs]: ITechnology } = {
+  Sanity: {
+    name: 'Sanity.io',
+    borderColor: '#e93c2e',
+  },
+  Tailwind: {
+    name: 'Tailwind',
+    borderColor: '#15b7c4',
+  },
   GDrive: {
     name: 'Google Drive API',
     borderColor: '#34a853',
