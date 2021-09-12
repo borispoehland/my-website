@@ -70,8 +70,8 @@ const BlogPostPage = ({ data, preview }: IProps): JSX.Element => {
         <ImageSerializer node={mainImage} />
       </GenericSection>
       <BlogPost content={body} />
-      <BlogAuthor author={author} />
       <BlogHashTags hashTags={hashTags} />
+      <BlogAuthor author={author} />
       <BlogComments comments={comments} postId={postId} />
     </>
   );

@@ -7,12 +7,13 @@ $blog-author-breakpoint: 650px
 
   display: grid
   grid-template-areas: "image" "name" "bio"
-  column-gap: $lg-gap
+  column-gap: $xl-gap
   row-gap: $md-gap
 
   +from($blog-author-breakpoint)
     grid-template-areas: "image name" "image bio"
     grid-template-columns: auto auto
+    padding: 30px
 
   &__name
     grid-area: name
