@@ -1,5 +1,5 @@
 interface IBreakProps {
-  style: 'lineBreak' | 'newLineBreak';
+  style: 'lineBreak' | 'newLineBreak' | 'lightSectionBreak';
 }
 
 interface IProps {
@@ -8,6 +8,7 @@ interface IProps {
 
 const BreakSerializer = ({ node: { style } }: IProps): JSX.Element => {
   if (style === 'lineBreak') return <br />;
+  else if (style === 'lightSectionBreak') return <hr />;
   else
     return (
       <>

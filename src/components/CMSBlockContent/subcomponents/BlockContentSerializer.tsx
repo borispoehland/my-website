@@ -26,7 +26,7 @@ const BlockContentSerializer = (props: IProps): JSX.Element => {
   }
 
   if (style === 'normal') {
-    return <>{props.children}</>;
+    return <span>{props.children}</span>;
   }
 
   // Fall back to default handling
