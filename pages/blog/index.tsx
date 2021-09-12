@@ -25,7 +25,7 @@ export async function getStaticProps({
   const blogPosts = await getClient(preview).fetch(indexQuery);
   return {
     props: { blogPosts },
-    revalidate: 60,
+    revalidate: 10,
   };
 }
 

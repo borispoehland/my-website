@@ -93,7 +93,7 @@ export async function getStaticProps({
         morePosts,
       },
     },
-    revalidate: 60,
+    revalidate: 10,
   };
 }
 
