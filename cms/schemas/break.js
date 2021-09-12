@@ -7,7 +7,12 @@ export default {
       name: 'style',
       type: 'string',
       options: {
-        list: ['sectionBreak', 'lineBreak', 'newLineBreak'],
+        list: [
+          'sectionBreak',
+          'lightSectionBreak',
+          'lineBreak',
+          'newLineBreak',
+        ],
         layout: 'radio',
       },
     },

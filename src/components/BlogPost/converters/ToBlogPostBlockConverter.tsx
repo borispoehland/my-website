@@ -5,7 +5,6 @@ const ToBlogPostBlockConverter = (block: BlockContentType): JSX.Element => {
   return (
     <section key={block[0]._key} className="blogpost-block">
       <CMSBlockContent blocks={block} />
-      <hr />
     </section>
   );
 };

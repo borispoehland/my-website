@@ -4,20 +4,36 @@ $blogpost-block-margin-md: $md-gap
 $blogpost-block-margin-lg: $xl-gap
 
 .blogpost-block
-  > *
-    word-break: break-word
+  border: 1px solid $c-text
+  padding: $xl-gap $lg-gap
+  border-radius: 10px
+  background: $c-blog-block
+  word-break: break-word
+
+  +from(md)
+    padding: $xl-gap
+
+  &:not(:last-child)
+    margin-bottom: $xl-gap
+
+  > *:last-child
+    margin-bottom: 0 !important
 
   h2
-    padding-top: $approxSpaceFromTop
-    margin-top: -$approxSpaceFromTop
+    padding-top: 150px
+    margin-top: -150px
     margin-bottom: $blogpost-block-margin-lg
 
   h3
     margin-bottom: $blogpost-block-margin-md
+
+  h4
+    margin-bottom: $blogpost-block-margin-md
     margin-top: $blogpost-block-margin-lg
 
   hr
-    margin: $hr-margin-bottom 0
+    margin-top: $hr-margin-bottom
+    margin-bottom: $hr-margin-bottom
 
   code
     color: $c-text
@@ -26,13 +42,30 @@ $blogpost-block-margin-lg: $xl-gap
   pre
     margin: $blogpost-block-margin-md 0 $blogpost-block-margin-lg !important
 
-  img
+  > div:not([class]) // next.js image component
     margin-top: $blogpost-block-margin-md !important
-    padding-bottom: $blogpost-block-margin-lg !important
+
+    &:not(:last-child)
+      margin-bottom: $blogpost-block-margin-lg !important
+
+  ul + div:not([class])
+    margin-top: $blogpost-block-margin-lg !important
 
   .highlight-box
     margin: $blogpost-block-margin-lg 0
 
-  &:last-child
-    hr
-      display: none
+  blockquote
+    background: $c-background
+    border-left: 10px solid $c-primary
+    margin: $blogpost-block-margin-lg 0
+    padding: $blogpost-block-margin-md 0 $blogpost-block-margin-md 10px
+    font-style: italic
+
+    &:before
+      content: open-quote
+      font-style: normal
+      color: $c-pale-text
+      font-size: 4rem
+      line-height: 0.1em
+      margin-right: 0.25em
+      vertical-align: -0.45em
