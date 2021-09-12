@@ -2,6 +2,7 @@
 
 $blogpost-block-margin-md: $md-gap
 $blogpost-block-margin-lg: $xl-gap
+$blockquote-stripe-width: 10px
 
 .blogpost-block
   border: 1px solid $c-text
@@ -56,9 +57,9 @@ $blogpost-block-margin-lg: $xl-gap
 
   blockquote
     background: $c-background
-    border-left: 10px solid $c-primary
+    border-left: $blockquote-stripe-width solid $c-primary
     margin: $blogpost-block-margin-lg 0
-    padding: $blogpost-block-margin-md 0 $blogpost-block-margin-md 10px
+    padding: $blogpost-block-margin-md 2*$blockquote-stripe-width $blogpost-block-margin-md $blockquote-stripe-width
     font-style: italic
 
     &:before
