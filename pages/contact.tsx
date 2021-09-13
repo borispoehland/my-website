@@ -1,8 +1,11 @@
 import Contact from '../src/components/Contact/Contact';
 import GenericIntro from '../src/components/GenericIntro/GenericIntro';
 import { NextSeo } from 'next-seo';
+import { useUrlBreadcrumbs } from '@components/Breadcrumbs/hooks';
 
 const ContactPage = (): JSX.Element => {
+  useUrlBreadcrumbs();
+
   return (
     <>
       <NextSeo
