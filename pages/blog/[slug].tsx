@@ -13,6 +13,10 @@ import BlogInfo from '@components/BlogPost/subcomponents/BlogInfo';
 import BlogHashTags from '@components/BlogPost/subcomponents/BlogHashTags';
 import ImageSerializer from '@components/CMSBlockContent/subcomponents/ImageSerializer';
 import BlogSeo from '@components/BlogPost/subcomponents/BlogSEO';
+import {
+  homeBreadCrumb,
+  useCustomBreadCrumbs,
+} from '@components/Breadcrumbs/hooks';
 
 interface IDataProps {
   post: IBlogPost;
@@ -34,6 +38,12 @@ const BlogPostPage = ({ data, preview }: IProps): JSX.Element => {
     initialData: data,
     enabled: preview && Boolean(slug),
   });
+
+  useCustomBreadCrumbs([
+    homeBreadCrumb,
+    { label: 'Blog', href: '/blog' },
+    { label: freshData?.post?.title },
+  ]);
 
   if (!freshData?.post || (!router.isFallback && !slug)) {
     return <ErrorPage statusCode={404} />;

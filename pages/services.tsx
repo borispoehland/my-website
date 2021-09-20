@@ -1,8 +1,11 @@
 import Services from '../src/components/Services/Services';
 import GenericIntro from '../src/components/GenericIntro/GenericIntro';
 import { NextSeo } from 'next-seo';
+import { useUrlBreadcrumbs } from '@components/Breadcrumbs/hooks';
 
 const ServicesPage = () => {
+  useUrlBreadcrumbs();
+
   return (
     <>
       <NextSeo

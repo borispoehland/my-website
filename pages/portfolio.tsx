@@ -6,8 +6,11 @@ import mkdirp from 'mkdirp';
 import { getPortfolioImageHeight, getPortfolioImageWidth } from '@utils/env';
 import GenericIntro from '../src/components/GenericIntro/GenericIntro';
 import { NextSeo } from 'next-seo';
+import { useUrlBreadcrumbs } from '@components/Breadcrumbs/hooks';
 
 export default function PortfolioPage() {
+  useUrlBreadcrumbs();
+
   return (
     <>
       <NextSeo

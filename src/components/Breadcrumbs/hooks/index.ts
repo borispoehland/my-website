@@ -1,31 +1,38 @@
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { IBreadCrumb } from '../Breadcrumbs';
 import { getBottomOfElementRelativeToViewport } from '@utils/positions';
+import { useSetRecoilState } from 'recoil';
+import { sBreadCrumbs } from '@store';
 
-export const useBreadcrumbs = (): State<IBreadCrumb[]> => {
+export const homeBreadCrumb = { label: 'Home', href: '/' };
+
+export const useCustomBreadCrumbs = (breadcrumbs: IBreadCrumb[]): void => {
+  const setBreadCrumbs = useSetRecoilState(sBreadCrumbs);
+
+  useEffect(() => {
+    setBreadCrumbs(breadcrumbs);
+  }, [setBreadCrumbs, breadcrumbs]);
+};
+
+export const useUrlBreadcrumbs = (): void => {
   const router = useRouter();
-  const [breadcrumbs, setBreadcrumbs] = useState<IBreadCrumb[]>([]);
+  const setBreadCrumbs = useSetRecoilState(sBreadCrumbs);
 
   useEffect((): void => {
     const linkPath = router.asPath.split('/');
     linkPath.shift();
 
-    const pathArray = linkPath.map((path, i): IBreadCrumb => {
+    const pathArray = linkPath.map((path, i, arr): IBreadCrumb => {
+      const isLast = i === arr.length - 1;
       return {
         label: path.split('#')[0].split('?')[0],
-        href: `/${linkPath.slice(0, i + 1).join('/')}`,
+        href: !isLast ? `/${linkPath.slice(0, i + 1).join('/')}` : undefined,
       };
     });
 
-    if (router.pathname === '/') {
-      setBreadcrumbs([]); // index page, we don't want breadcrumbs here
-    } else {
-      setBreadcrumbs([{ label: 'Home', href: '/' }, ...pathArray]);
-    }
-  }, [router]);
-
-  return [breadcrumbs, setBreadcrumbs];
+    setBreadCrumbs([homeBreadCrumb, ...pathArray]);
+  }, [setBreadCrumbs, router]);
 };
 
 export const useSetBreadcrumbsTop = () => {

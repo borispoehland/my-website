@@ -4,12 +4,15 @@ import { GetStaticPropsResult } from 'next';
 import { NextSeo } from 'next-seo';
 import GenericIntro from '@components/GenericIntro/GenericIntro';
 import BlogOverview from '@components/BlogOverview/BlogOverview';
+import { useUrlBreadcrumbs } from '@components/Breadcrumbs/hooks';
 
 interface IProps {
   blogPosts: ICommonBlog[];
 }
 
 const BlogPage = ({ blogPosts }: IProps): JSX.Element => {
+  useUrlBreadcrumbs();
+
   return (
     <>
       <NextSeo title="Blog" description="Boris Pöhland's blog" />
