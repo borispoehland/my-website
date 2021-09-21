@@ -11,7 +11,7 @@
 
   opacity: 0
   pointer-events: none
-  transition: opacity 200ms ease-out
+  transition: all 200ms ease-out
 
   margin-right: $navbar-toggler-padding-x
 
@@ -23,6 +23,8 @@
     pointer-events: all
 
   &:hover
+    box-shadow: 0 0 1px 2px $c-primary
+
     svg
       transform: translateY(-3px)
 
