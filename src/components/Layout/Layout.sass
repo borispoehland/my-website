@@ -1,10 +1,8 @@
 @use "styles/abstracts" as *
 
-$max-page-width: 1600px
-
 .page
   display: grid
-  grid-template-areas: "nprogress" "navbar" "breadcrumbs" "content" "footer"
+  grid-template-areas: "nprogress" "navbar" "breadcrumbs" "content" "scroll-up" "footer"
   min-height: 100vh
   grid-template-rows: auto auto auto 1fr auto
   background: $c-background
@@ -33,6 +31,17 @@ $max-page-width: 1600px
   &__footer
     grid-area: footer
 
+  &__scroll-up
+    grid-area: scroll-up
+
+    display: flex
+    justify-content: flex-end
+
+    +from(md)
+      position: sticky
+      bottom: calc(#{$navbar-toggler-padding-x} + #{$layout-x-gap})
+      right: 0
+
   &__progress
     grid-area: nprogress
     height: $nprogress-height
@@ -45,13 +54,13 @@ $max-page-width: 1600px
     height: 100px
     position: relative
 
-  &__content, &__navbar, &__footer
+  &__content, &__navbar, &__footer, &__scroll-up
     padding: 0 $layout-x-gap
 
   &__breadcrumbs
     padding: 0 $layout-x-gap 0.5rem $layout-x-gap
 
-  &__content, &__navbar, &__footer, &__breadcrumbs
+  &__content, &__navbar, &__footer, &__breadcrumbs, &__scroll-up
     width: 100%
     max-width: $max-page-width
     margin: 0 auto
