@@ -26,3 +26,14 @@ export const fireSweetAlert = ({
     html: swalDescription,
   });
 };
+
+export const reAppendDOMNode = (el: HTMLElement) => {
+  if (el) {
+    const parent = el.parentNode;
+    if (parent) {
+      const next = el.nextSibling;
+      parent.removeChild(el);
+      parent.insertBefore(el, next);
+    }
+  }
+};

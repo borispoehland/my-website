@@ -37,9 +37,10 @@
     display: flex
     justify-content: flex-end
 
-    position: sticky
-    bottom: $xl-gap
-    right: 0
+    +from(md)
+      position: sticky
+      bottom: calc(#{$navbar-toggler-padding-x} + #{$layout-x-gap})
+      right: 0
 
   &__progress
     grid-area: nprogress
