@@ -1,0 +1,23 @@
+@use "styles/abstracts" as *
+
+.to-top-button
+  padding: 0 1rem
+  border-radius: 50%
+
+  box-shadow: none
+  border: 2px solid $c-primary
+  color: $c-text
+  background: $c-background
+
+  opacity: 0
+  transition: opacity 200ms ease-out
+
+  &.--is-visible
+    opacity: 1
+
+  &:hover
+    svg
+      transform: translateY(-3px)
+
+  svg
+    transition: transform 200ms ease-out
