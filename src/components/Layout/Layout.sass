@@ -1,7 +1,5 @@
 @use "styles/abstracts" as *
 
-$max-page-width: 1600px
-
 .page
   display: grid
   grid-template-areas: "nprogress" "navbar" "breadcrumbs" "content" "scroll-up" "footer"
@@ -9,7 +7,6 @@ $max-page-width: 1600px
   grid-template-rows: auto auto auto 1fr auto
   background: $c-background
   gap: $nprogress-height
-  position: relative
 
   &__content
     grid-area: content

@@ -18,7 +18,7 @@ const ToBreadcrumbConverter = ({
   label,
 }: IProps): JSX.Element => {
   return (
-    <Fragment key={href}>
+    <Fragment key={label}>
       <span>
         {href && <NextLink href={href}>{getBreadCrumbText(label)}</NextLink>}
         {!href && getBreadCrumbText(label)}
