@@ -14,10 +14,10 @@ const getIndexSections = (
       heading: 'Hey',
       textContent: (
         <>
-          I&#39;m Boris Pöhland and I&#39;m Web Developer from Germany. I also
-          have a keen eye for <b>Usability</b>, my studies in human-computer
-          interaction helped me developing that. Besides my studies I enjoy
-          creating websites - preferably with <b>React.js</b>.
+          I&#39;m Boris Pöhland and I&#39;m <b>Web Developer</b> from Germany. I
+          also have a keen eye for <b>Usability</b>, my studies in
+          human-computer interaction helped me developing that. Besides my
+          studies I enjoy creating websites - preferably with <b>React.js</b>.
         </>
       ),
       actionButton: (
@@ -31,9 +31,9 @@ const getIndexSections = (
       heading: 'My tech stack',
       textContent: (
         <>
-          A good craftsman needs to master the right tools well. I specialised
-          myself in the Javascript ecosystem - with <b>Typescript</b>,{' '}
-          <b>SASS</b>, <b>React</b> and <b>Next.js</b> as my flagship
+          A good developer needs to master the right tools well. I specialised
+          myself in the Javascript ecosystem - with <b>React.js</b>,{' '}
+          <b>Next.js</b>, <b>Typescript</b> and <b>Tailwind</b> as my favorite
           technologies.
         </>
       ),

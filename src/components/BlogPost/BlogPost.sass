@@ -10,6 +10,8 @@
 @forward "subcomponents/BlogReadingTime"
 @forward "subcomponents/BlogHashTags"
 
+$tocTop: 120px
+
 .blogpost
   grid-template-areas: "content" "divider"
   column-gap: $xl-gap
@@ -30,13 +32,13 @@
     display: none
 
     position: sticky
-    top: $approxSpaceFromTop
+    top: $tocTop
 
     margin-bottom: 5rem // 2.5rem divider bottom, 1.5 rem divider top, 1rem gap
 
     align-self: start // to make the sticky working
 
-    max-height: calc(100vh - #{$approxSpaceFromTop + 30})
+    max-height: calc(100vh - #{$tocTop + 30})
     overflow: auto
 
     +from(md)

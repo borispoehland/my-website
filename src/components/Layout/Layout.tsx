@@ -1,8 +1,8 @@
 import Breadcrumbs from '../Breadcrumbs/Breadcrumbs';
 import Footer from '../Footer/Footer';
 import Image from 'next/image';
-import Navbar from '@components/Navbar/Navbar';
 import ScrollToTopButton from '@components/ScrollToTopButton/ScrollToTopButton';
+import Navbar from '@components/Navbar/Navbar';
 
 interface IProps extends HasChildren {}
 
