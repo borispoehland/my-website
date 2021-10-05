@@ -17,9 +17,19 @@ type Techs =
   | 'JavaFX'
   | 'GDrive'
   | 'Tailwind'
-  | 'Sanity';
+  | 'Sanity'
+  | 'NextAuth'
+  | 'Prisma';
 
 const Technologies: { [key in Techs]: ITechnology } = {
+  Prisma: {
+    name: 'Prisma',
+    borderColor: '#38a169',
+  },
+  NextAuth: {
+    name: 'NextAuth.js',
+    borderColor: '#a322d8',
+  },
   Sanity: {
     name: 'Sanity.io',
     borderColor: '#e93c2e',

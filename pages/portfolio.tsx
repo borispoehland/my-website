@@ -7,6 +7,7 @@ import { getPortfolioImageHeight, getPortfolioImageWidth } from '@utils/env';
 import GenericIntro from '../src/components/GenericIntro/GenericIntro';
 import { NextSeo } from 'next-seo';
 import { useUrlBreadcrumbs } from '@components/Breadcrumbs/hooks';
+import * as fs from 'fs';
 
 export default function PortfolioPage() {
   useUrlBreadcrumbs();
@@ -52,8 +53,10 @@ export async function getStaticProps() {
         const dir = getPortfolioImgFolder(imgFolder);
         await mkdirp(dir);
         const file = path.resolve(dir, `${imgFilename ?? 'main'}.png`);
-        await page.goto(href, { waitUntil: 'networkidle2' });
-        await page.screenshot({ path: file });
+        if (!fs.existsSync(file)) {
+          await page.goto(href, { waitUntil: 'networkidle2' });
+          await page.screenshot({ path: file });
+        }
       }
     }
 
