@@ -13,9 +13,8 @@ const getPortfolio = (router: NextRouter | undefined): IPortfolioItem[] => {
         <>
           A boilerplate where I set up a login system using{' '}
           <NextLink href="https://next-auth.js.org/">NextAuth.js</NextLink> for
-          future use. <br />
-          You can test it yourself by logging in via your Google, Facebook or
-          email account!
+          future use. You can test it yourself by logging in via your Google,
+          Facebook or email account!
         </>
       ),
       tags: [
@@ -48,9 +47,9 @@ const getPortfolio = (router: NextRouter | undefined): IPortfolioItem[] => {
       name: 'Website for Regina Pöhland',
       appetizer: (
         <>
-          In the first website I coded alone, I created the web presence for my
-          mother and german artist Regina Pöhland. Back then I used Javascript
-          to code the React components, today I work with <b>Typescript</b>.
+          Web presence for my mother and german artist Regina Pöhland. Back then
+          I used Javascript to code the React components, today I work with{' '}
+          <b>Typescript</b>.
         </>
       ),
       tags: [
@@ -65,10 +64,10 @@ const getPortfolio = (router: NextRouter | undefined): IPortfolioItem[] => {
       name: 'Guided tour system for OCR4all',
       appetizer: (
         <>
-          In my bachelor thesis, I expanded the existing software
-          &quot;OCR4all&quot; with a tour system that was developed according to
-          user requirements and with the aim of modularity. For more information
-          see the bachelor thesis below or{' '}
+          Expansion of the existing software &quot;OCR4all&quot; with a tour
+          system that was developed according to user requirements and with the
+          aim of modularity. For more information see the bachelor thesis below
+          or{' '}
           <NextLink
             href="https://github.com/OCR4all/OCR4all/compare/dev...borispoehland:master"
             hasExternalIndicator
@@ -101,11 +100,10 @@ const getPortfolio = (router: NextRouter | undefined): IPortfolioItem[] => {
       name: 'Artwork management tool for Regina Pöhland',
       appetizer: (
         <>
-          Because my mother is artist and has lots of artworks, she required a
-          tool to manage her stock. I provided her with an UI where she could
-          add, alter or delete artworks. The pictures of her updates / new
-          artworks are automatically added to Google Drive and she can export
-          her whole stock as CSV or HTML at any time.
+          GUI for my mother and german artist Regina Pöhland, where she can add,
+          alter or delete artworks. The pictures of her artworks are
+          automatically added to Google Drive and she can export her whole stock
+          as CSV or HTML at any time.
         </>
       ),
       tags: [Technologies.JavaFX, Technologies.GDrive],

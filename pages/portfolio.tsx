@@ -1,13 +1,13 @@
 import Portfolio from '../src/components/Portfolio/Portfolio';
 import getPortfolio from '../src/staticdata/portfolio';
-import path from 'path';
+import { resolve } from 'path';
 import puppeteer from 'puppeteer';
 import mkdirp from 'mkdirp';
 import { getPortfolioImageHeight, getPortfolioImageWidth } from '@utils/env';
 import GenericIntro from '../src/components/GenericIntro/GenericIntro';
 import { NextSeo } from 'next-seo';
 import { useUrlBreadcrumbs } from '@components/Breadcrumbs/hooks';
-import * as fs from 'fs';
+import { existsSync } from 'fs';
 
 export default function PortfolioPage() {
   useUrlBreadcrumbs();
@@ -32,10 +32,7 @@ export async function getStaticProps() {
 
   const captureScreenshotsOfPortfolioPages = async () => {
     const getPortfolioImgFolder = (imgFolder: string) => {
-      return path.resolve(
-        process.cwd(),
-        `public/img/portfolio-page/${imgFolder}/`
-      );
+      return resolve(process.cwd(), `public/img/portfolio-page/${imgFolder}/`);
     };
 
     const browser = await puppeteer.launch({
@@ -52,8 +49,8 @@ export async function getStaticProps() {
       if (href) {
         const dir = getPortfolioImgFolder(imgFolder);
         await mkdirp(dir);
-        const file = path.resolve(dir, `${imgFilename ?? 'main'}.png`);
-        if (!fs.existsSync(file)) {
+        const file = resolve(dir, `${imgFilename ?? 'main'}.png`);
+        if (!existsSync(file)) {
           await page.goto(href, { waitUntil: 'networkidle2' });
           await page.screenshot({ path: file });
         }

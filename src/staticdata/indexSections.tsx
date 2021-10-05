@@ -16,8 +16,8 @@ const getIndexSections = (
         <>
           I&#39;m Boris Pöhland and I&#39;m Web Developer from Germany. I also
           have a keen eye for <b>Usability</b>, my studies in human-computer
-          interaction helped me developing that. Currently I really much enjoy
-          creating websites - preferrably with <b>React.js</b>.
+          interaction helped me developing that. Besides my studies I enjoy
+          creating websites - preferably with <b>React.js</b>.
         </>
       ),
       actionButton: (
@@ -47,11 +47,10 @@ const getIndexSections = (
       heading: 'My vision',
       textContent: (
         <>
-          I am convinced that everyone deserves an easy-to-use and
-          lightning-fast web presence. However, with the world becoming more and
-          more digital, I don&#39;t want to lose the <b>human</b> aspect. It is
-          therefore important to me to keep communication and consultation high
-          on joint projects.
+          Everyone deserves an easy-to-use and lightning-fast web presence.
+          However, with the world becoming more and more digital, I don&#39;t
+          want to lose the <b>human</b> aspect. It is therefore important to me
+          to keep communication and consultation high on joint projects.
         </>
       ),
       actionButton: (
