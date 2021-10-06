@@ -30,7 +30,7 @@ const getIndexSections = (
     {
       imgSrc: `/img/index-page/stack-${theme}.png`,
       imgAlt: '',
-      heading: 'My tech stack',
+      heading: 'Tech stack',
       textContent: (
         <>
           A good developer needs to master the right tools well. I specialised
@@ -46,7 +46,7 @@ const getIndexSections = (
     {
       imgSrc: '/img/index-page/zoom.png',
       imgAlt: '',
-      heading: 'My vision',
+      heading: 'Vision',
       textContent: (
         <>
           Everyone deserves an easy-to-use and lightning-fast web presence.
