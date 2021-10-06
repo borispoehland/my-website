@@ -94,12 +94,14 @@ const getDefaultSEO = (): DefaultSeoProps => {
         // @ts-ignore
         as: 'font',
         href: '/webfonts/NunitoSans-Regular.ttf',
+        crossOrigin: 'anonymous',
       },
       {
         rel: 'preload',
         // @ts-ignore
         as: 'font',
         href: '/webfonts/NunitoSans-Bold.ttf',
+        crossOrigin: 'anonymous',
       },
     ],
   };

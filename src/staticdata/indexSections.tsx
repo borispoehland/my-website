@@ -11,17 +11,19 @@ const getIndexSections = (
     {
       imgSrc: '/img/index-page/me.png',
       imgAlt: '',
-      heading: 'Hey',
+      heading: 'Hey,',
       textContent: (
         <>
-          I&#39;m Boris Pöhland and I&#39;m <b>Web Developer</b> from Germany. I
-          also have a keen eye for <b>Usability</b>, my studies in
-          human-computer interaction helped me developing that. Besides my
-          studies I enjoy creating websites - preferably with <b>React.js</b>.
+          I&#39;m Boris Pöhland and I&#39;m <b>Web Developer</b> from Germany.
+          Thanks to my bachelor&apos;s degree in{' '}
+          <b>Human-Computer-Interaction</b>, I also have a keen eye for{' '}
+          <b>Usability</b>.
         </>
       ),
       actionButton: (
-        <Button onClick={() => router.push('/services')}>Services</Button>
+        <Button onClick={() => router.push('/portfolio')}>
+          View Portfolio
+        </Button>
       ),
       tag: 'main',
     },
@@ -33,12 +35,12 @@ const getIndexSections = (
         <>
           A good developer needs to master the right tools well. I specialised
           myself in the Javascript ecosystem - with <b>React.js</b>,{' '}
-          <b>Next.js</b>, <b>Typescript</b> and <b>Tailwind</b> as my favorite
-          technologies.
+          <b>Next.js</b>, <b>Typescript</b> and <b>Tailwind</b> as my main
+          stack.
         </>
       ),
       actionButton: (
-        <Button onClick={() => router.push('/portfolio')}>Portfolio</Button>
+        <Button onClick={() => router.push('/services')}>My services</Button>
       ),
     },
     {
@@ -50,7 +52,7 @@ const getIndexSections = (
           Everyone deserves an easy-to-use and lightning-fast web presence.
           However, with the world becoming more and more digital, I don&#39;t
           want to lose the <b>human</b> aspect. It is therefore important to me
-          to keep communication and consultation high on joint projects.
+          to <b>keep communication and consultation high</b> on joint projects.
         </>
       ),
       actionButton: (

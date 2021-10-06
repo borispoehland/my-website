@@ -3,10 +3,13 @@ import Footer from '../Footer/Footer';
 import Image from 'next/image';
 import ScrollToTopButton from '@components/ScrollToTopButton/ScrollToTopButton';
 import Navbar from '@components/Navbar/Navbar';
+import { useDarkModeOnSpecificTimeRange } from '@utils/pagesHooks';
 
 interface IProps extends HasChildren {}
 
 const Layout = ({ children }: IProps): JSX.Element => {
+  useDarkModeOnSpecificTimeRange('18:00', '06:00');
+
   return (
     <div className="page">
       <div className="page__progress" />
