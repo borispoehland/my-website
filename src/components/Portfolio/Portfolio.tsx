@@ -5,7 +5,7 @@ import { openResourceInNewTab } from '@utils/dom';
 import GenericSection from '../GenericSection/GenericSection';
 import { useRouter } from 'next/router';
 import { useMemoOne } from 'use-memo-one';
-import { CV_PATH } from '@utils/paths';
+import { BOILERPLATES_PATH, CV_PATH } from '@utils/paths';
 
 const Portfolio = (): JSX.Element => {
   const router = useRouter();
@@ -25,16 +25,23 @@ const Portfolio = (): JSX.Element => {
         shortIntro={
           <>
             Apart from this website I coded <b>{amountOfPortfolioItems}</b>{' '}
-            other project{amountOfPortfolioItems > 1 && 's'}.
+            other standalone project{amountOfPortfolioItems > 1 && 's'}.
           </>
         }
       >
         {portfolioItems.map(ToPortfolioItemConverter)}
       </GenericSection>
       <GenericSection
+        heading="Code boilerplates"
+        shortIntro="As a freelancer to be, I have a steadily growing collection of boilerplate code that I can use for my clients!"
+      >
+        <Button onClick={() => openResourceInNewTab(BOILERPLATES_PATH)}>
+          Check them out!
+        </Button>
+      </GenericSection>
+      <GenericSection
         heading="Other work"
-        shortIntro="My projects don't cover everything, because I also gained valuable
-          experience as an employee. Download my CV for the bigger picture!"
+        shortIntro="I also gained valuable experience as an employee. Download my CV for the bigger picture!"
       >
         <Button onClick={() => openResourceInNewTab(CV_PATH)}>
           Download CV

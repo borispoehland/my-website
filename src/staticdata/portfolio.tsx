@@ -8,26 +8,6 @@ import { NextRouter } from 'next/router';
 const getPortfolio = (router: NextRouter | undefined): IPortfolioItem[] => {
   return [
     {
-      name: 'BP Login Boilerplate',
-      appetizer: (
-        <>
-          A boilerplate where I set up a login system using{' '}
-          <NextLink href="https://next-auth.js.org/">NextAuth.js</NextLink> for
-          future use. You can test it yourself by logging in via your Google,
-          Facebook or email account!
-        </>
-      ),
-      tags: [
-        Technologies.NextAndReact,
-        Technologies.Typescript,
-        Technologies.NextAuth,
-        Technologies.Tailwind,
-        Technologies.Prisma,
-      ],
-      imgFolder: 'next-auth-boilerplate',
-      href: 'https://login-boilerplate.borispoehland.com',
-    },
-    {
       name: 'G-Hub Calendar',
       appetizer: (
         <>
