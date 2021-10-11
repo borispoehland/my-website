@@ -36,7 +36,7 @@ const getServices = (theme: ETheme): IServiceItem[] => [
     heading: 'Usability Consulting',
     description: (
       <>
-        I studied human-computer-interaction at the University of Würzburg in
+        I studied Human-Computer-Interaction at the University of Würzburg in
         Bavaria, Germany. The degree program taught me to recognize, evaluate
         and strive for the usability of software.
         <h3>What is usability?</h3>
