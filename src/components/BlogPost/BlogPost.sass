@@ -26,6 +26,10 @@ $tocTop: 120px
     max-width: 100%
     overflow-x: hidden
 
+    padding-top: $blog-heading-space-from-top
+    margin-top: -$blog-heading-space-from-top
+    // otherwise issue on chrome because setting overflow-x also influences overflow-y: https://stackoverflow.com/a/18135319
+
   &__toc
     grid-area: toc
 

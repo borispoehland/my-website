@@ -11,7 +11,7 @@ interface IProps extends HasChildren {
 const LinkSerializer = ({ mark: { href }, children }: IProps): JSX.Element => {
   if (!href) return <></>;
   return (
-    <NextLink href={href} hasExternalIndicator={href?.startsWith('http')}>
+    <NextLink href={href} hasExternalIndicator={href.startsWith('http')}>
       {children}
     </NextLink>
   );
