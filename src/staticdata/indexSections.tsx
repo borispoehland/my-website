@@ -21,9 +21,7 @@ const getIndexSections = (
         </>
       ),
       actionButton: (
-        <Button onClick={() => router.push('/portfolio')}>
-          View Portfolio
-        </Button>
+        <Button onClick={() => router.push('/services')}>My services</Button>
       ),
       tag: 'main',
     },
@@ -40,7 +38,9 @@ const getIndexSections = (
         </>
       ),
       actionButton: (
-        <Button onClick={() => router.push('/services')}>My services</Button>
+        <Button onClick={() => router.push('/portfolio')}>
+          View Portfolio
+        </Button>
       ),
     },
     {
