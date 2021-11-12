@@ -67,11 +67,7 @@ const getPortfolio = (router: NextRouter | undefined): IPortfolioItem[] => {
       ],
       imgFolder: 'ocr4all-thesis',
       customActionButton: (
-        <Button
-          onClick={() =>
-            openResourceInNewTab('/files/bachelor_thesis_boris_poehland.pdf')
-          }
-        >
+        <Button onClick={() => openResourceInNewTab('/thesis')}>
           See my thesis
         </Button>
       ),

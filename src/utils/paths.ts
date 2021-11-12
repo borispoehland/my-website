@@ -1,2 +1,2 @@
-export const CV_PATH = '/files/cv_boris_poehland.pdf';
+export const CV_PATH = '/cv';
 export const BOILERPLATES_PATH = 'https://linktr.ee/borispoehland';
