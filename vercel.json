@@ -3,6 +3,14 @@
     {
       "source": "/cms/(.*)",
       "destination": "/cms/index.html"
+    },
+    {
+      "source": "/thesis",
+      "destination": "/files/bachelor_thesis_boris_poehland.pdf"
+    },
+    {
+      "source": "/cv",
+      "destination": "/files/cv_boris_poehland.pdf"
     }
   ],
   "redirects": [
