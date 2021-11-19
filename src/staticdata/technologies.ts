@@ -4,6 +4,7 @@ export interface ITechnology {
 }
 
 type Techs =
+  | 'Wordpress'
   | 'NextAndReact'
   | 'Typescript'
   | 'Javascript'
@@ -22,6 +23,10 @@ type Techs =
   | 'Prisma';
 
 const Technologies: { [key in Techs]: ITechnology } = {
+  Wordpress: {
+    name: 'Wordpress',
+    borderColor: '#207196',
+  },
   Prisma: {
     name: 'Prisma',
     borderColor: '#38a169',

@@ -8,20 +8,17 @@ import { NextRouter } from 'next/router';
 const getPortfolio = (router: NextRouter | undefined): IPortfolioItem[] => {
   return [
     {
-      name: 'G-Hub Calendar',
+      name: 'Crypto G-Hub',
       appetizer: (
         <>
-          A small side project where I provide a calendar together with a CMS
-          for friends.
+          Web presence for the consultancy Crypto G-Hub. I worked on this
+          together with a Designer and another developer. It was my first
+          Wordpress production-project and I loved it!
         </>
       ),
-      tags: [
-        Technologies.NextAndReact,
-        Technologies.Typescript,
-        Technologies.Tailwind,
-        Technologies.Sanity,
-      ],
+      tags: [Technologies.Wordpress],
       imgFolder: 'g-hub',
+      href: 'https://cryptoghub.com',
     },
     {
       name: 'Website for Regina Pöhland',
