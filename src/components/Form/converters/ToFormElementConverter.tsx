@@ -46,6 +46,7 @@ const ToFormElementConverter = <T extends IFormFields>({
   label,
   Component,
 }: IProps<T>): JSX.Element => {
+  // @ts-ignore
   const errorMessage = (errors[id] as FieldError)?.message;
 
   useFormError(id, errorMessage);

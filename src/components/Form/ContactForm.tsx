@@ -27,7 +27,7 @@ const ContactForm = (): JSX.Element => {
         });
         await fireSweetAlert(res.data);
         reset();
-      } catch (err) {
+      } catch (err: any) {
         await fireSweetAlert(err.response.data);
       }
     },

@@ -8,7 +8,31 @@ import { NextRouter } from 'next/router';
 const getPortfolio = (router: NextRouter | undefined): IPortfolioItem[] => {
   return [
     {
-      name: 'Crypto G-Hub',
+      name: 'Launchpad ROI Tracker',
+      appetizer: (
+        <>
+          Tool to track the Return on Investment (ROI) of selected crypto
+          launchpads. I coded it with Wordpress, JetEngine for dynamic data
+          fetching and the{' '}
+          <NextLink
+            href="https://www.coingecko.com/en/api/documentation"
+            hasExternalIndicator
+          >
+            Coingecko REST API
+          </NextLink>{' '}
+          to display prices.
+        </>
+      ),
+      tags: [
+        Technologies.Wordpress,
+        Technologies.JetEngine,
+        Technologies.RestAPI,
+      ],
+      imgFolder: 'g-hub_launchpad-roi',
+      href: 'https://cryptoghub.com/launchpads',
+    },
+    {
+      name: 'Landing Page for Crypto G-Hub',
       appetizer: (
         <>
           Web presence for the consultancy Crypto G-Hub. I worked on this
@@ -16,7 +40,7 @@ const getPortfolio = (router: NextRouter | undefined): IPortfolioItem[] => {
           Wordpress production-project and I loved it!
         </>
       ),
-      tags: [Technologies.Wordpress],
+      tags: [Technologies.Wordpress, Technologies.JetEngine],
       imgFolder: 'g-hub',
       href: 'https://cryptoghub.com',
     },

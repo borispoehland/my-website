@@ -38,7 +38,7 @@ export default async function handler(
         'I received your message and sent you a confirmation mail. Please make sure to also check your <b>Spam</b> folder - just in case! You can close the window now.',
       swalType: 'success',
     });
-  } catch (err) {
+  } catch (err: any) {
     console.log('Contact form', err, req.body);
     if (err.response) console.log(err.response.body.errors);
     return res.status(502).send({

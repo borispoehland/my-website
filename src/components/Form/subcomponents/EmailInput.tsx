@@ -12,6 +12,7 @@ const EmailInput = <T extends IFormFields>({
       type="email"
       placeholder={placeholder}
       className="form-element__input"
+      // @ts-ignore
       {...register(id as Path<T>, rules)}
     />
   );

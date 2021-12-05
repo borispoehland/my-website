@@ -20,9 +20,19 @@ type Techs =
   | 'Tailwind'
   | 'Sanity'
   | 'NextAuth'
-  | 'Prisma';
+  | 'Prisma'
+  | 'RestAPI'
+  | 'JetEngine';
 
 const Technologies: { [key in Techs]: ITechnology } = {
+  JetEngine: {
+    name: 'JetEngine',
+    borderColor: '#9d64ed',
+  },
+  RestAPI: {
+    name: 'Rest API',
+    borderColor: '#79b22d',
+  },
   Wordpress: {
     name: 'Wordpress',
     borderColor: '#207196',
