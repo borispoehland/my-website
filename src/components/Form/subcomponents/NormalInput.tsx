@@ -12,8 +12,7 @@ const NormalInput = <T extends IFormFields>({
       type="text"
       placeholder={placeholder}
       className="form-element__input"
-      // @ts-ignore
-      {...register(id as Path<T>, rules)}
+      {...register(id as unknown as Path<T>, rules)}
     />
   );
 };
