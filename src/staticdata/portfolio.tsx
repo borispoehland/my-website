@@ -8,6 +8,24 @@ import { NextRouter } from 'next/router';
 const getPortfolio = (router: NextRouter | undefined): IPortfolioItem[] => {
   return [
     {
+      name: 'Seedify ROI Tracker',
+      appetizer: (
+        <>
+          A special version of the Launchpad ROI Tracker from below that is
+          tailored to Seedify. Apart from the different design, I also used an
+          entirely different tech stack!
+        </>
+      ),
+      tags: [
+        Technologies.NextAndReact,
+        Technologies.Typescript,
+        Technologies.Tailwind,
+        Technologies.RestAPI,
+      ],
+      imgFolder: 'seedify-launchpad-roi',
+      href: 'https://seedifyhodlers.com/tools/roi',
+    },
+    {
       name: 'Launchpad ROI Tracker',
       appetizer: (
         <>
