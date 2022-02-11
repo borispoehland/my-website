@@ -89,24 +89,20 @@ export const useAddLatestH2ToBreadcrumbs = ([
             const lastCrumbIsEarlierHeading =
               lastCrumb.index !== undefined && lastCrumb.index < index;
 
+            const label = heading.innerText.split('\n')[0];
+
             if (lastCrumbIsThisOne) {
               // if the current breadcrumb is already added, do nothing
               return oldCrumbs;
             } else if (lastCrumbIsEarlierHeading) {
               // if the current breadcrumb is a newer heading, replace the old one with the new one
-              return [
-                ...oldCrumbs.slice(0, -1),
-                { href: '', index, label: heading.innerText },
-              ];
+              return [...oldCrumbs.slice(0, -1), { href: '', index, label }];
             } else if (lastCrumbIsHeading) {
               // if the current breadcrumb is a older heading, do nothing
               return oldCrumbs;
             } else {
               // if no heading has been added yet, add the current breadcrumb
-              return [
-                ...oldCrumbs,
-                { href: '', index, label: heading.innerText },
-              ];
+              return [...oldCrumbs, { href: '', index, label }];
             }
           });
         } else {
