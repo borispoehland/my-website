@@ -14,10 +14,9 @@ const getIndexSections = (
       heading: 'Hey,',
       textContent: (
         <>
-          I&#39;m Boris Pöhland and I&#39;m <b>Web Developer</b> from Germany.
-          Thanks to my bachelor&apos;s degree in{' '}
-          <b>Human-Computer-Interaction</b>, I also have a keen eye for{' '}
-          <b>Usability</b>.
+          I&#39;m Boris Pöhland, <b>Web Developer</b> from Germany. I use modern
+          tech stacks to develop your next web application. I am currently
+          learning <b>Web3</b> and <b>Smart Contract</b> Development.
         </>
       ),
       actionButton: (
@@ -28,7 +27,7 @@ const getIndexSections = (
     {
       imgSrc: `/img/index-page/stack-${theme}.png`,
       imgAlt: '',
-      heading: 'Tech stack',
+      heading: 'Frontend stack',
       textContent: (
         <>
           A good developer needs to master the right tools well. I specialised
@@ -44,19 +43,38 @@ const getIndexSections = (
       ),
     },
     {
-      imgSrc: '/img/index-page/zoom.png',
+      imgSrc: `/img/index-page/web3.png`,
       imgAlt: '',
-      heading: 'Vision',
+      heading: 'Web3 is the future',
       textContent: (
         <>
-          Everyone deserves an easy-to-use and lightning-fast web presence.
-          However, with the world becoming more and more digital, I don&#39;t
-          want to lose the <b>human</b> aspect. It is therefore important to me
-          to <b>keep communication and consultation high</b> on joint projects.
+          Web3 is the internet formed and owned by <b>everyone</b>, not by big
+          tech companies. I am optimistic that <b>Web3</b> and <b>Blockchain</b>{' '}
+          will take their place in our daily lifes and actively adapt my
+          skillset to master these technologies!
         </>
       ),
       actionButton: (
-        <Button onClick={() => router.push('/contact')}>Hire me</Button>
+        <Button
+          onClick={() => router.push('/blog/why-you-should-care-about-web3')}
+        >
+          Read post
+        </Button>
+      ),
+    },
+    {
+      imgSrc: '/img/index-page/workspace.png',
+      imgAlt: '',
+      heading: 'Ready?',
+      textContent: (
+        <>
+          You want to make your vision reality but didn't dare the step yet?
+          Pull yourself together, reach out to me and start turning your dream
+          into reality! Me and my tools are ready, are you?
+        </>
+      ),
+      actionButton: (
+        <Button onClick={() => router.push('/contact')}>Get in touch</Button>
       ),
     },
   ];

@@ -54,8 +54,8 @@ const getPortfolio = (router: NextRouter | undefined): IPortfolioItem[] => {
       appetizer: (
         <>
           Web presence for the consultancy Crypto G-Hub. I worked on this
-          together with a Designer and another developer. It was my first
-          Wordpress production-project and I loved it!
+          together with a Designer. It was my first Wordpress production-project
+          and I loved it!
         </>
       ),
       tags: [Technologies.Wordpress, Technologies.JetEngine],

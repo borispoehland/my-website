@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 import GenericSection from '@components/GenericSection/GenericSection';
 
 export interface IServiceItem {
-  heading: string;
+  heading: string | ReactNode;
   description: ReactNode;
   imgSrc: string;
 }
@@ -14,7 +14,7 @@ const ToServicesItemConverter = ({
   imgSrc,
 }: IServiceItem): JSX.Element => {
   return (
-    <GenericSection key={heading}>
+    <GenericSection key={imgSrc}>
       <section className="services-item">
         <h2 className="services-item__heading">{heading}</h2>
         <div className="services-item__image">
