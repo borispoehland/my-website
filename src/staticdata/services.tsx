@@ -40,7 +40,7 @@ const getServices = (theme: ETheme): IServiceItem[] => [
         Be it Wordpress or custom React development - I got you covered. Check
         my <NextLink href="/portfolio">portfolio</NextLink> for further
         reference.
-        <h3>What is the right fit for me?</h3>
+        <h3>What is the right fit for you?</h3>
         React (or Next.js) pages are super fast and rely on the latest
         technology available, but also take more time to develop. Wordpress is
         more suited for static websites or websites that don't require
