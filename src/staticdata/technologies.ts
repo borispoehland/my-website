@@ -22,9 +22,19 @@ type Techs =
   | 'NextAuth'
   | 'Prisma'
   | 'RestAPI'
-  | 'JetEngine';
+  | 'JetEngine'
+  | 'Bootstrap'
+  | 'ElrondAPI';
 
 const Technologies: { [key in Techs]: ITechnology } = {
+  Bootstrap: {
+    name: 'Bootstrap',
+    borderColor: '#7f12f9',
+  },
+  ElrondAPI: {
+    name: 'Elrond API',
+    borderColor: '#1b46c2',
+  },
   JetEngine: {
     name: 'JetEngine',
     borderColor: '#9d64ed',

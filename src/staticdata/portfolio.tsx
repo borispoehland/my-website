@@ -8,6 +8,30 @@ import { NextRouter } from 'next/router';
 const getPortfolio = (router: NextRouter | undefined): IPortfolioItem[] => {
   return [
     {
+      name: 'Elrond Gallery',
+      appetizer: (
+        <>
+          An NFT Explorer on the Elrond blockchain. I like Elrond&apos;s NFT
+          ecosystem because it is very affordable,{' '}
+          <NextLink
+            href="https://elrond.com/blog/elrond-carbon-negative-offsetra/"
+            hasExternalIndicator
+          >
+            carbon negative
+          </NextLink>{' '}
+          and has an awesome and helping community.
+        </>
+      ),
+      tags: [
+        Technologies.NextAndReact,
+        Technologies.Typescript,
+        Technologies.Bootstrap,
+        Technologies.ElrondAPI,
+      ],
+      imgFolder: 'elrond-gallery',
+      href: 'https://eglry.com',
+    },
+    {
       name: 'Seedify ROI Tracker',
       appetizer: (
         <>
