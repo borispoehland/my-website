@@ -1,4 +1,4 @@
-import { FiInstagram, FiMail, FiTwitter } from 'react-icons/fi';
+import { FiInstagram, FiMail, FiTwitter, FiGithub } from 'react-icons/fi';
 import { IQuicklink } from '@components/QuicklinkBar/converters/ToQuicklinkConverter';
 import { FaLinkedin } from 'react-icons/fa';
 
@@ -7,6 +7,11 @@ const getQuicklinks = (): IQuicklink[] => [
     label: process.env.NEXT_PUBLIC_MY_EMAIL,
     href: `mailto:${process.env.NEXT_PUBLIC_MY_EMAIL}`,
     Icon: FiMail,
+  },
+  {
+    label: '@borispoehland',
+    href: 'https://github.com/borispoehland',
+    Icon: FiGithub,
   },
   {
     label: 'Boris Pöhland',
