@@ -7,6 +7,7 @@ interface IProps extends HasChildren {
   shortIntro?: string | ReactNode;
   className?: string;
   tag?: keyof HTMLElementTagNameMap;
+  disableAnimation?: boolean;
 
   [props: string]: any;
 }
@@ -17,6 +18,7 @@ const GenericSection = ({
   heading,
   shortIntro,
   tag,
+  disableAnimation,
   ...props
 }: IProps): JSX.Element => {
   const { observe, inView } = useInView({
@@ -28,7 +30,7 @@ const GenericSection = ({
   return (
     <Tag
       className={cx(className, 'generic-section', {
-        '--in-view': inView,
+        '--in-view': disableAnimation || inView,
       })}
       ref={observe}
       {...props}
@@ -43,6 +45,7 @@ const GenericSection = ({
 
 GenericSection.defaultProps = {
   tag: 'section',
+  disableAnimation: false,
 };
 
 export default GenericSection;
