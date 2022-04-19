@@ -21,7 +21,7 @@ const ScrollToTopButton = (): JSX.Element => {
       }}
       className="to-top-button"
     >
-      <HiArrowUp />
+      <HiArrowUp style={{ marginTop: '-3px' }} />
     </Button>
   );
 };

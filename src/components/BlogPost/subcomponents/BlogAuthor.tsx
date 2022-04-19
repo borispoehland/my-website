@@ -8,7 +8,7 @@ type IProps = Pick<IBlogPost, 'author'>;
 
 const BlogAuthor = ({ author: { bio, image, name } }: IProps): JSX.Element => {
   return (
-    <GenericSection heading="About the author">
+    <GenericSection heading="About the author" id="author">
       <div className="blog-author">
         <h3 className="blog-author__name">{name}</h3>
         <div className="blog-author__image">
