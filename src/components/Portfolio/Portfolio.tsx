@@ -24,8 +24,8 @@ const Portfolio = (): JSX.Element => {
         heading="Projects"
         shortIntro={
           <>
-            Apart from this website I coded <b>{amountOfPortfolioItems}</b>{' '}
-            other standalone project{amountOfPortfolioItems > 1 && 's'}.
+            Apart from this website I coded (on) <b>{amountOfPortfolioItems}</b>{' '}
+            other project{amountOfPortfolioItems > 1 && 's'}.
           </>
         }
       >

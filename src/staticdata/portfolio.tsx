@@ -8,6 +8,25 @@ import { NextRouter } from 'next/router';
 const getPortfolio = (router: NextRouter | undefined): IPortfolioItem[] => {
   return [
     {
+      name: 'Trust Market 2.0',
+      appetizer: (
+        <>
+          Trust Market has been migrated from regular React to Next.js. Thanks
+          to my past experience with Next.js, I could be of assistance in this
+          migration. The new marketplace is exponentially faster, partially
+          thanks to Next.js!
+        </>
+      ),
+      tags: [
+        Technologies.NextAndReact,
+        Technologies.Typescript,
+        Technologies.Bootstrap,
+        Technologies.ElrondAPI,
+      ],
+      imgFolder: 'trust-market',
+      href: 'https://trust.market',
+    },
+    {
       name: 'Elrond Gallery',
       appetizer: (
         <>
