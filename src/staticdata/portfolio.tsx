@@ -13,11 +13,12 @@ const getPortfolio = (router: NextRouter | undefined): IPortfolioItem[] => {
         <>
           As a Natural Born Degen, I love to work with this awesome, cultural
           NFT project on Elrond. The website you can see here is a work in
-          progress, but at least the &apos;Gullible Seagulls&apos; NFT minter
+          progress, but at least the &quot;Gullible Seagulls&quot; NFT minter
           works already! PS: I fell in love with{' '}
           <NextLink href="https://chakra-ui.com/" hasExternalIndicator>
             Chakra UI
           </NextLink>
+          .
         </>
       ),
       tags: [
