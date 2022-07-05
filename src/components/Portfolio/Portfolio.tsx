@@ -41,7 +41,7 @@ const Portfolio = (): JSX.Element => {
       </GenericSection> */}
       <GenericSection
         heading="Other work"
-        shortIntro="I regret every second I worked as an employee (luckily not much!). But after all it's also experience, so feel free to check it out for my other work!"
+        shortIntro="I regret every second I worked as an employee (luckily not much!). But after all it's also experience, so feel free to check my CV for my other work!"
       >
         <Button onClick={() => openResourceInNewTab(CV_PATH)}>
           Download CV
