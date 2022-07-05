@@ -24,9 +24,14 @@ type Techs =
   | 'RestAPI'
   | 'JetEngine'
   | 'Bootstrap'
-  | 'ElrondAPI';
+  | 'ElrondAPI'
+  | 'ChakraUI';
 
 const Technologies: { [key in Techs]: ITechnology } = {
+  ChakraUI: {
+    name: 'Chakra UI',
+    borderColor: '#319795',
+  },
   Bootstrap: {
     name: 'Bootstrap',
     borderColor: '#7f12f9',

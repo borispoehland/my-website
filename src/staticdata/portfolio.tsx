@@ -8,6 +8,45 @@ import { NextRouter } from 'next/router';
 const getPortfolio = (router: NextRouter | undefined): IPortfolioItem[] => {
   return [
     {
+      name: 'Natural Born Degenz',
+      appetizer: (
+        <>
+          As a Natural Born Degen, I love to work with this awesome, cultural
+          NFT project on Elrond. The website you can see here is a work in
+          progress, but at least the &apos;Gullible Seagulls&apos; NFT minter
+          works already! PS: I fell in love with{' '}
+          <NextLink href="https://chakra-ui.com/" hasExternalIndicator>
+            Chakra UI
+          </NextLink>
+        </>
+      ),
+      tags: [
+        Technologies.NextAndReact,
+        Technologies.Typescript,
+        Technologies.ChakraUI,
+        Technologies.ElrondAPI,
+      ],
+      imgFolder: 'nbd',
+      href: 'https://seagulls.naturalborndegenz.art',
+    },
+    {
+      name: 'XOXNO',
+      appetizer: (
+        <>
+          Trust Market rebranded to XOXNO, and I was involved in creating an
+          entirely new frontend and new features!
+        </>
+      ),
+      tags: [
+        Technologies.NextAndReact,
+        Technologies.Typescript,
+        Technologies.Bootstrap,
+        Technologies.ElrondAPI,
+      ],
+      imgFolder: 'xoxno',
+      href: 'https://xoxno.com',
+    },
+    {
       name: 'Trust Market 2.0',
       appetizer: (
         <>
