@@ -31,17 +31,17 @@ const Portfolio = (): JSX.Element => {
       >
         {portfolioItems.map(ToPortfolioItemConverter)}
       </GenericSection>
-      <GenericSection
+      {/* <GenericSection
         heading="Code boilerplates"
         shortIntro="As a freelancer to be, I have a steadily growing collection of boilerplate code that I can use for my clients!"
       >
         <Button onClick={() => openResourceInNewTab(BOILERPLATES_PATH)}>
           Check them out!
         </Button>
-      </GenericSection>
+      </GenericSection> */}
       <GenericSection
         heading="Other work"
-        shortIntro="I also gained valuable experience as an employee. Download my CV for the bigger picture!"
+        shortIntro="I regret every second I worked as an employee (luckily not much!). But after all it's also experience, so feel free to check it out for my other work!"
       >
         <Button onClick={() => openResourceInNewTab(CV_PATH)}>
           Download CV
