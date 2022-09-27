@@ -13,7 +13,12 @@ interface IProps {
 
 const ImageSerializer = ({ node: { asset, alt } }: IProps): JSX.Element => {
   return (
-    <Image src={urlForImage(asset)} alt={alt} width={1920} height={1080} />
+    <Image
+      src={typeof asset === 'string' ? asset : urlForImage(asset)}
+      alt={alt}
+      width={1920}
+      height={1080}
+    />
   );
 };
 

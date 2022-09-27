@@ -68,9 +68,9 @@ const getIndexSections = (
       heading: 'Ready?',
       textContent: (
         <>
-          You want to make your vision reality but didn't dare the step yet?
-          Pull yourself together, reach out to me and start turning your dream
-          into reality! Me and my tools are ready, are you?
+          You want to make your vision reality but didn&apos;t dare the step
+          yet? Pull yourself together, reach out to me and start turning your
+          dream into reality! Me and my tools are ready, are you?
         </>
       ),
       actionButton: (

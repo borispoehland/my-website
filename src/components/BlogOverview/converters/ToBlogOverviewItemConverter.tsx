@@ -26,9 +26,11 @@ const ToBlogOverviewItemConverter = ({
 
   const router = useRouter();
 
+  const isExternal = slug.startsWith('https://');
+
   const blogPostUrl = useMemoOne(() => {
-    return `/blog/${slug}`;
-  }, [slug]);
+    return isExternal ? slug : `/blog/${slug}`;
+  }, [slug, isExternal]);
 
   return (
     <section
@@ -43,13 +45,20 @@ const ToBlogOverviewItemConverter = ({
         </NextLink>
       </div>
       <p className="blog-item__appetizer">
-        <CMSBlockContent blocks={shortDescription} />
+        {typeof shortDescription === 'string' ? (
+          shortDescription
+        ) : (
+          <CMSBlockContent blocks={shortDescription} />
+        )}
       </p>
       <BlogTags tags={tags} />
       <BlogReadingTime estimatedReadingTime={estimatedReadingTime} />
       <Button
         className="blog-item__action"
-        onClick={() => router.push(blogPostUrl)}
+        onClick={() => {
+          if (isExternal) window.open(blogPostUrl, '_blank');
+          else router.push(blogPostUrl);
+        }}
       >
         Read post
       </Button>

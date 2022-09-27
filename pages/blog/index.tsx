@@ -5,6 +5,7 @@ import { NextSeo } from 'next-seo';
 import GenericIntro from '@components/GenericIntro/GenericIntro';
 import BlogOverview from '@components/BlogOverview/BlogOverview';
 import { useUrlBreadcrumbs } from '@components/Breadcrumbs/hooks';
+import externalBlogPosts from '@data/externalBlogPosts';
 
 interface IProps {
   blogPosts: ICommonBlog[];
@@ -17,7 +18,7 @@ const BlogPage = ({ blogPosts }: IProps): JSX.Element => {
     <>
       <NextSeo title="Blog" description="Boris Pöhland's blog" />
       <GenericIntro heading="Blog" catchPhrase="Follow my journey!" />
-      <BlogOverview blogPosts={blogPosts} />
+      <BlogOverview blogPosts={[...externalBlogPosts, ...blogPosts]} />
     </>
   );
 };
