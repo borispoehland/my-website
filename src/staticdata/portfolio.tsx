@@ -8,34 +8,12 @@ import { NextRouter } from 'next/router';
 const getPortfolio = (router: NextRouter | undefined): IPortfolioItem[] => {
   return [
     {
-      name: 'Natural Born Degenz',
-      appetizer: (
-        <>
-          As a Natural Born Degen, I love to work with this awesome, cultural
-          NFT project on Elrond. The website you can see here is a work in
-          progress, but at least the &quot;Gullible Seagulls&quot; NFT minter
-          works already! PS: I fell in love with{' '}
-          <NextLink href="https://chakra-ui.com/" hasExternalIndicator>
-            Chakra UI
-          </NextLink>
-          .
-        </>
-      ),
-      tags: [
-        Technologies.NextAndReact,
-        Technologies.Typescript,
-        Technologies.ChakraUI,
-        Technologies.ElrondAPI,
-      ],
-      imgFolder: 'nbd',
-      href: 'https://seagulls.naturalborndegenz.art',
-    },
-    {
       name: 'XOXNO',
       appetizer: (
         <>
-          Trust Market rebranded to XOXNO, and I was involved in creating an
-          entirely new frontend and new features!
+          XOXNO is the major NFT marketplace on MultiversX (ex. Elrond). I was
+          involved in the migration to Next.js, as well as the new frontend and
+          features.
         </>
       ),
       tags: [
@@ -48,6 +26,24 @@ const getPortfolio = (router: NextRouter | undefined): IPortfolioItem[] => {
       href: 'https://xoxno.com',
     },
     {
+      name: 'Natural Born Degenz',
+      appetizer: (
+        <>
+          As a proof of concept for my own Next.js NFT template, I coded this
+          NFT minting and staking website for the cultural MultiversX NFT
+          project.
+        </>
+      ),
+      tags: [
+        Technologies.NextAndReact,
+        Technologies.Typescript,
+        Technologies.ChakraUI,
+        Technologies.ElrondAPI,
+      ],
+      imgFolder: 'nbd',
+      href: 'https://naturalborndegenz.art',
+    },
+    /* {
       name: 'Trust Market 2.0',
       appetizer: (
         <>
@@ -65,7 +61,7 @@ const getPortfolio = (router: NextRouter | undefined): IPortfolioItem[] => {
       ],
       imgFolder: 'trust-market',
       href: 'https://trust.market',
-    },
+    }, */
     {
       name: 'Elrond Gallery',
       appetizer: (
@@ -88,9 +84,9 @@ const getPortfolio = (router: NextRouter | undefined): IPortfolioItem[] => {
         Technologies.ElrondAPI,
       ],
       imgFolder: 'elrond-gallery',
-      href: 'https://eglry.com',
+      href: 'https://elrond-gallery.vercel.app',
     },
-    {
+    /*  {
       name: 'Seedify ROI Tracker',
       appetizer: (
         <>
@@ -107,8 +103,8 @@ const getPortfolio = (router: NextRouter | undefined): IPortfolioItem[] => {
       ],
       imgFolder: 'seedify-launchpad-roi',
       href: 'https://seedifyhodlers.com/tools/roi',
-    },
-    {
+    }, */
+    /* {
       name: 'Launchpad ROI Tracker',
       appetizer: (
         <>
@@ -131,8 +127,8 @@ const getPortfolio = (router: NextRouter | undefined): IPortfolioItem[] => {
       ],
       imgFolder: 'g-hub_launchpad-roi',
       href: 'https://cryptoghub.com/launchpads',
-    },
-    {
+    }, */
+    /* {
       name: 'Landing Page for Crypto G-Hub',
       appetizer: (
         <>
@@ -144,7 +140,7 @@ const getPortfolio = (router: NextRouter | undefined): IPortfolioItem[] => {
       tags: [Technologies.Wordpress, Technologies.JetEngine],
       imgFolder: 'g-hub',
       href: 'https://cryptoghub.com',
-    },
+    }, */
     {
       name: 'Website for Regina Pöhland',
       appetizer: (
