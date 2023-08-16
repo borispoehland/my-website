@@ -1,12 +1,9 @@
 import { IServiceItem } from '@components/Services/converters/ToServicesItemConverter';
 import NextLink from '@components/NextLink/NextLink';
 import { ETheme } from '@enums';
-import Emoji from '@components/Emoji/Emoji';
-import { BsClock } from 'react-icons/bs';
-import HeadingWithBadge from '@components/Services/subcomponents/HeadingWithBadge';
 
 const getServices = (theme: ETheme): IServiceItem[] => [
-  {
+/*   {
     heading: (
       <HeadingWithBadge
         Icon={BsClock}
@@ -32,7 +29,7 @@ const getServices = (theme: ETheme): IServiceItem[] => [
       </>
     ),
     imgSrc: `/img/services-page/web3-${theme}.png`,
-  },
+  }, */
   {
     heading: 'Web Development',
     description: (
