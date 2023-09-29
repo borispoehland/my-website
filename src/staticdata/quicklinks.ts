@@ -15,7 +15,7 @@ const getQuicklinks = (): IQuicklink[] => [
   },
   {
     label: 'Boris Pöhland',
-    href: 'https://www.linkedin.com/in/boris-p%C3%B6hland-541a28207/',
+    href: 'https://www.linkedin.com/in/borispoehland',
     Icon: FaLinkedin,
   },
   {

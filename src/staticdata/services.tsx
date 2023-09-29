@@ -3,7 +3,7 @@ import NextLink from '@components/NextLink/NextLink';
 import { ETheme } from '@enums';
 
 const getServices = (theme: ETheme): IServiceItem[] => [
-/*   {
+  /*   {
     heading: (
       <HeadingWithBadge
         Icon={BsClock}
@@ -30,6 +30,23 @@ const getServices = (theme: ETheme): IServiceItem[] => [
     ),
     imgSrc: `/img/services-page/web3-${theme}.png`,
   }, */
+  {
+    heading: 'Next.js Development',
+    description: (
+      <>
+        Next.js is my main stack. I offer Drop-in Next.js Services
+        <h3>What can you do for my Next.js Codebase?</h3>
+        Fix nasty bugs, refactor your code or update to Next.js 13. With my
+        backend skills, I can also assist you in DevOps questions as well as
+        architectural or logic related challenges.
+        <h3>Get started</h3>
+        Visit the website of{' '}
+        <NextLink href="https://nextdev.agency">Next Dev Agency</NextLink> and
+        get started for as low as 250$!
+      </>
+    ),
+    imgSrc: `/img/services-page/nextdev.png`,
+  },
   {
     heading: 'Web Development',
     description: (

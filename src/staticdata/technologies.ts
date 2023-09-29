@@ -25,7 +25,8 @@ type Techs =
   | 'JetEngine'
   | 'Bootstrap'
   | 'ElrondAPI'
-  | 'ChakraUI';
+  | 'ChakraUI'
+  | 'AWS';
 
 const Technologies: { [key in Techs]: ITechnology } = {
   ChakraUI: {
@@ -111,6 +112,10 @@ const Technologies: { [key in Techs]: ITechnology } = {
   Sass: {
     name: 'SASS',
     borderColor: '#ce6999',
+  },
+  AWS: {
+    name: 'AWS',
+    borderColor: '#ff9c08',
   },
   Unknown: {
     name: '???',

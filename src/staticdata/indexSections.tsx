@@ -14,32 +14,47 @@ const getIndexSections = (
       heading: 'Hey,',
       textContent: (
         <>
-          I&#39;m Boris Pöhland, <b>Web Developer</b> from Germany. I use modern
-          tech stacks to develop your next web application. I am currently
-          learning <b>Web3</b> and <b>Smart Contract</b> Development.
+          I&#39;m Boris Pöhland, <b>Web Developer</b> living in Montenegro. I
+          use modern tech stacks to develop your next web application. But I
+          also build cool and free stuff!
         </>
       ),
       actionButton: (
-        <Button onClick={() => router.push('/services')}>My services</Button>
+        <div className="wrapper">
+          <Button
+            onClick={() => window.open('https://calendly.com/web3dev/30min')}
+          >
+            Book free call
+          </Button>
+          <Button
+            isSecondary
+            onClick={() => window.open('https://montescout.com')}
+          >
+            Free stuff
+          </Button>
+        </div>
       ),
       tag: 'main',
     },
     {
       imgSrc: `/img/index-page/stack-${theme}.png`,
       imgAlt: '',
-      heading: 'Frontend stack',
+      heading: 'I love Next.js',
       textContent: (
         <>
-          A good developer needs to master the right tools well. I specialised
-          myself in the Javascript ecosystem - with <b>React.js</b>,{' '}
-          <b>Next.js</b>, <b>Typescript</b> and <b>Tailwind</b> as my main
-          stack.
+          I specialised myself in the Next.js ecosystem - and offer Drop-In
+          Next.js Services.
         </>
       ),
       actionButton: (
-        <Button onClick={() => router.push('/portfolio')}>
-          View Portfolio
-        </Button>
+        <div className="wrapper">
+          <Button onClick={() => window.open('https://nextdev.agency')}>
+            Book Next.js services
+          </Button>
+          <Button isSecondary onClick={() => router.push('/portfolio')}>
+            View Portfolio
+          </Button>
+        </div>
       ),
     },
     {
@@ -48,18 +63,23 @@ const getIndexSections = (
       heading: 'Web3 is the future',
       textContent: (
         <>
-          Web3 is the internet formed and owned by <b>everyone</b>, not by big
-          tech companies. I am optimistic that <b>Web3</b> and <b>Blockchain</b>{' '}
-          will take their place in our daily lifes and actively adapt my
-          skillset to master these technologies!
+          Web3 and smart contracts offer a permissionless way to exchange goods.
+          That&apos;s why I founded WEB3DEV, a company specialised in web
+          development on the MultiversX blockchain
         </>
       ),
       actionButton: (
-        <Button
-          onClick={() => router.push('/blog/why-you-should-care-about-web3')}
-        >
-          Read post
-        </Button>
+        <div className="wrapper">
+          <Button onClick={() => window.open('https://xweb3.dev')}>
+            Check out WEB3DEV
+          </Button>
+          <Button
+            isSecondary
+            onClick={() => router.push('/blog/why-you-should-care-about-web3')}
+          >
+            Read post
+          </Button>
+        </div>
       ),
     },
     {
@@ -68,13 +88,21 @@ const getIndexSections = (
       heading: 'Ready?',
       textContent: (
         <>
-          You want to make your vision reality but didn&apos;t dare the step
-          yet? Pull yourself together, reach out to me and start turning your
-          dream into reality! Me and my tools are ready, are you?
+          Profit from years of experience in the realm of web and choose me as
+          your trusted partner
         </>
       ),
       actionButton: (
-        <Button onClick={() => router.push('/contact')}>Get in touch</Button>
+        <div className="wrapper">
+          <Button
+            onClick={() => window.open('https://calendly.com/web3dev/30min')}
+          >
+            Book free call
+          </Button>
+          <Button isSecondary onClick={() => router.push('/contact')}>
+            Write me
+          </Button>
+        </div>
       ),
     },
   ];

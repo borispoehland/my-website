@@ -16,7 +16,7 @@ export default function PortfolioPage() {
     <>
       <NextSeo
         title="Portfolio"
-        description="Boris Pöhland is Web Developer and Usability Consultant from Würzburg, Germany. See the IT projects he has been working on!"
+        description="Boris Pöhland is Web Developer and Indie Hacker living in Montenegro. See the IT projects he has been working on!"
       />
       <GenericIntro
         catchPhrase="What I bring to the table"

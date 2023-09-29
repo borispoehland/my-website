@@ -1,26 +1,11 @@
 @use "../abstracts" as *
 
-@font-face
-  font-family: 'Nunito Sans'
-  font-style: normal
-  font-weight: 400
-  font-display: swap
-  src: url('/webfonts/NunitoSans-Regular.ttf')
-
-@font-face
-  font-family: 'Nunito Sans'
-  font-style: normal
-  font-weight: 700
-  font-display: swap
-  src: url('/webfonts/NunitoSans-Bold.ttf')
-
 html,
 body
   padding: 0
   margin: 0
 
 body
-  font-family: 'Nunito Sans', var(--bs-font-sans-serif)
   font-size: 17px
 
   &.--overflow-y-hidden
@@ -42,3 +27,7 @@ h1, h2, h3, h4, h5, p, ul
 
 h2
   font-weight: bold
+
+.wrapper
+  display: flex
+  gap: 0.5rem

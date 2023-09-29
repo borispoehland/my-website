@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import { getPortfolioImageHeight, getPortfolioImageWidth } from '@utils/env';
 
 interface IProps {

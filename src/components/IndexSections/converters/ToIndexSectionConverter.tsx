@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import { ElementType, ReactNode } from 'react';
 
 export interface IIndexSection {

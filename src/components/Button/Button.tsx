@@ -8,6 +8,7 @@ interface IProps extends HasChildren {
   onClick?: MouseEventHandler;
   type?: ButtonType;
   isLoading?: boolean;
+  isSecondary?: boolean;
 }
 
 const Button = ({
@@ -16,11 +17,15 @@ const Button = ({
   onClick,
   type,
   isLoading,
+  isSecondary,
 }: IProps): JSX.Element => {
   return (
     <button
       type={type}
-      className={cx('button', className, { '--is-loading': isLoading })}
+      className={cx('button', className, {
+        '--is-loading': isLoading,
+        '--is-secondary': isSecondary,
+      })}
       onClick={onClick}
       disabled={isLoading}
     >

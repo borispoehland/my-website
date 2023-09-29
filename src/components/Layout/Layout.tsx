@@ -1,6 +1,6 @@
 import Breadcrumbs from '../Breadcrumbs/Breadcrumbs';
 import Footer from '../Footer/Footer';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import ScrollToTopButton from '@components/ScrollToTopButton/ScrollToTopButton';
 import Navbar from '@components/Navbar/Navbar';
 import { useDarkModeOnSpecificTimeRange } from '@utils/pagesHooks';

@@ -1,7 +1,7 @@
 import { DefaultSeoProps } from 'next-seo';
 
 export const defaultDescription =
-  'Meet Boris Pöhland, Web Developer and Usability Consultant from Würzburg, Germany';
+  'Meet Boris Pöhland, Web Developer and Indie Hacker living in Montenegro';
 
 const getDefaultSEO = (): DefaultSeoProps => {
   return {
@@ -11,10 +11,10 @@ const getDefaultSEO = (): DefaultSeoProps => {
       locale: 'en',
       url: 'https://www.borispoehland.com',
       site_name: 'Boris Pöhland',
-      title: 'Boris Pöhland | Web Developer and Usability Consultant',
+      title: 'Boris Pöhland | Web Developer and Indie Hacker',
       images: [
         {
-          url: 'https://boris-webseite.vercel.app/img/seo/opengraph.png',
+          url: 'https://boris-webseite.vercel.app/img/seo/boris.png',
           width: 1200,
           height: 630,
           alt: "Banner of Boris Pöhland's website",
@@ -59,7 +59,7 @@ const getDefaultSEO = (): DefaultSeoProps => {
       {
         name: 'keywords',
         content:
-          'developer, programming, react, next, react.js, next.js, frontend, javascript, html, css, wertheim, würzburg, consulting, typescript, prototyping, usability, ux, ui, design, development, software, website, seo, sass, scss, portfolio, design, designer, intellij, germany, entwickler, programmierer, software-developer, software-entwickler, inventor, IT, computer science, creator, freelancer, freelancing',
+          'developer, programming, react, next, react.js, next.js, frontend, javascript, html, css, wertheim, würzburg, consulting, typescript, prototyping, usability, ux, ui, design, development, software, website, seo, sass, scss, portfolio, design, designer, intellij, montenegro, entwickler, programmierer, software-developer, software-entwickler, inventor, IT, computer science, creator, freelancer, freelancing',
       },
     ],
     additionalLinkTags: [

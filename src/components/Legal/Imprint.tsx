@@ -5,19 +5,6 @@ import MyEmail from '@components/Legal/subcomponents/MyEmail';
 const Imprint = (): JSX.Element => {
   return (
     <div className="legal">
-      <GenericSection heading="General information">
-        <LegalItem heading="According to § 5 TMG">
-          Boris Pöhland <br /> Student, Web Developer, Usability Consultant
-          <br /> Friedleinsgasse 17 <br /> 97877 Wertheim, Germany
-        </LegalItem>
-        <LegalItem heading="Contact">
-          Phone: +49 174 733 03 69 <br /> E-Mail: <MyEmail />
-        </LegalItem>
-        <LegalItem heading="Responsible for content according to § 55 Abs. 2 RStV">
-          Boris Pöhland <br /> Student, Web Developer, Usability Consultant
-          <br /> Friedleinsgasse 17 <br /> 97877 Wertheim, Germany
-        </LegalItem>
-      </GenericSection>
       <GenericSection heading="Liability and Copyright">
         <LegalItem heading="Liability for content">
           As a service provider, we are responsible for our own content on these

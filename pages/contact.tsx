@@ -10,7 +10,7 @@ const ContactPage = (): JSX.Element => {
     <>
       <NextSeo
         title="Contact"
-        description="Boris Pöhland is Web Developer and Usability Consultant from Würzburg, Germany. Hire him today!"
+        description="Boris Pöhland is Web Developer and Indie Hacker living in Montenegro. Hire him today!"
       />
       <GenericIntro
         heading="Contact"

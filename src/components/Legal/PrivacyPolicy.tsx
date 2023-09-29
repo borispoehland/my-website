@@ -37,13 +37,6 @@ const PrivacyPolicy = (): JSX.Element => {
           and data protection. You may also, of course, file a complaint with
           the competent regulatory authorities.
         </LegalItem>
-        <LegalItem heading="Responsible for content according to § 55 Abs. 2 RStV">
-          Boris Pöhland <br />
-          Student, Web Developer, Usability Consultant
-          <br />
-          Friedleinsgasse 17 <br />
-          97877 Wertheim, Germany
-        </LegalItem>
       </GenericSection>
       <GenericSection heading="Hosting and Content Delivery Networks (CDN)">
         <LegalItem heading="External hosting">
@@ -82,21 +75,6 @@ const PrivacyPolicy = (): JSX.Element => {
           Please note that data transmitted via the internet (e.g. via email
           communication) may be subject to security breaches. Complete
           protection of your data from third-party access is not possible.
-        </LegalItem>
-        <LegalItem heading="Note on the responsible authority">
-          The person responsible for data processing on this website is:
-          <br /> <br />
-          Boris Pöhland <br />
-          Student, Web Developer, Usability Consultant
-          <br />
-          Friedleinsgasse 17 <br />
-          97877 Wertheim, Germany <br />
-          Phone: +49 174 733 03 69 <br />
-          E-Mail: <MyEmail />
-          <br /> <br />
-          The responsible authority is the natural or legal person who decides,
-          alone or together with others, about the purposes and means of
-          processing personal data (e.g. names, email addresses, etc.).
         </LegalItem>
         <LegalItem heading="Right to object to data collection in special cases and direct mail (Art. 21 GDPR)">
           If the data processing is carried out on the basis of Art. 6 (1) (e)

@@ -20,7 +20,7 @@ const NextLink = ({
   }, [href]);
 
   return (
-    <Link href={href}>
+    <Link href={href} legacyBehavior>
       <a
         target={isExternalLink ? '__blank' : undefined}
         className={cx('link', className, {

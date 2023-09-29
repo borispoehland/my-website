@@ -10,7 +10,7 @@ const ServicesPage = () => {
     <>
       <NextSeo
         title="Services"
-        description="Boris Pöhland is Web Developer and Usability Consultant from Würzburg, Germany. See the services he can offer you or your business!"
+        description="Boris Pöhland is Web Developer and Indie Hacker living in Montenegro. See the services he can offer you or your business!"
       />
       <GenericIntro catchPhrase="What I can do for you" heading="Services" />
       <Services />

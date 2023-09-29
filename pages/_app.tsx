@@ -15,6 +15,10 @@ import {
 import { DefaultSeo } from 'next-seo';
 import getDefaultSEO from '@data/defaultSEO';
 
+import { Montserrat } from 'next/font/google';
+
+const font = Montserrat({ subsets: ['latin'], display: 'swap' });
+
 NProgress.configure({ showSpinner: false, parent: '.page__progress' });
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
@@ -26,6 +30,11 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 
   return (
     <>
+      <style jsx global>{`
+        body {
+          font-family: ${font.style.fontFamily};
+        }
+      `}</style>
       <DefaultSeo {...getDefaultSEO()} />
       <UIDReset prefix="uid_">
         <RecoilRoot>

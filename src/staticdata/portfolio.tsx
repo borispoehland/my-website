@@ -8,6 +8,43 @@ import { NextRouter } from 'next/router';
 const getPortfolio = (router: NextRouter | undefined): IPortfolioItem[] => {
   return [
     {
+      name: 'Montescout',
+      appetizer: (
+        <>
+          Montescout is a platform to connect buyers, renters and owners of
+          Property in Montenegro. You can think of it as Mini-Airbnb for
+          Montenegro :)
+        </>
+      ),
+      tags: [
+        Technologies.NextAndReact,
+        Technologies.Typescript,
+        Technologies.Tailwind,
+        Technologies.AWS,
+        Technologies.Postgres,
+      ],
+      imgFolder: 'montescout',
+      href: 'https://montescout.com',
+    },
+    {
+      name: 'Zion Multiverse',
+      appetizer: (
+        <>
+          Zion Multiverse is an NFT project on the MultiversX blockchain. I
+          assisted them in their development efforts, and was responsible for
+          creating a reliable, functional web3 presence
+        </>
+      ),
+      tags: [
+        Technologies.NextAndReact,
+        Technologies.Typescript,
+        Technologies.Tailwind,
+        Technologies.Postgres,
+      ],
+      imgFolder: 'zion',
+      href: 'https://zionmultiverse.com',
+    },
+    {
       name: 'XOXNO',
       appetizer: (
         <>

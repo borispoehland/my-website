@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import { urlForImage } from '@cmsclient/sanity';
 import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 
