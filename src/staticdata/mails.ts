@@ -30,7 +30,7 @@ const getMails = ({
       },
       to: email,
       replyTo: process.env.NEXT_PUBLIC_MY_EMAIL,
-      templateId: process.env.SENDGRID_TEMPLATE_ID,
+      templateId: 'd-e608f14c3fa247a889c7579c08cb46b2',
       dynamicTemplateData: {
         subject,
         fullName: `${firstName} ${lastName}`,
