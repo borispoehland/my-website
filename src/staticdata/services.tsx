@@ -57,13 +57,13 @@ const getServices = (theme: ETheme): IServiceItem[] => [
         <h3>What is the right fit for you?</h3>
         React (or Next.js) pages are super fast and rely on the latest
         technology available, but also take more time to develop. Wordpress is
-        more suited for static websites or websites that don't require
+        more suited for static websites or websites that don&apos;t require
         cutting-edge speed. I can build with both, which one to use on{' '}
         <i>your</i> site also highly depends on your vision and budget.
         <h3>Get in touch</h3>
-        If you want to build a website but don't have a plan yet, don't worry!{' '}
-        <NextLink href="/contact">Contact me</NextLink> to discuss about your
-        project!
+        If you want to build a website but don&apos;t have a plan yet,
+        don&apos;t worry! <NextLink href="/contact">Contact me</NextLink> to
+        discuss about your project!
       </>
     ),
     imgSrc: `/img/services-page/code-${theme}.png`,
