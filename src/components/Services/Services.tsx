@@ -3,10 +3,8 @@ import getServices from '@data/services';
 import { useRecoilValue } from 'recoil';
 import { sTheme } from '@store';
 import Button from '../Button/Button';
-import { openResourceInNewTab } from '@utils/dom';
 import GenericSection from '../GenericSection/GenericSection';
 import NextLink from '../NextLink/NextLink';
-import { CV_PATH } from '@utils/paths';
 
 const Services = (): JSX.Element => {
   const theme = useRecoilValue(sTheme);
@@ -23,7 +21,11 @@ const Services = (): JSX.Element => {
           </>
         }
       >
-        <Button onClick={() => openResourceInNewTab(CV_PATH)}>
+        <Button
+          onClick={() =>
+            window.open('https://www.linkedin.com/in/borispoehland', '_blank')
+          }
+        >
           Download CV
         </Button>
       </GenericSection>

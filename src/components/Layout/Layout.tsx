@@ -8,7 +8,7 @@ import { useDarkModeOnSpecificTimeRange } from '@utils/pagesHooks';
 interface IProps extends HasChildren {}
 
 const Layout = ({ children }: IProps): JSX.Element => {
-  useDarkModeOnSpecificTimeRange('18:00', '06:00');
+  useDarkModeOnSpecificTimeRange('18:00', '17:59');
 
   return (
     <div className="page">

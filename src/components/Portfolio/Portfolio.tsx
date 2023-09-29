@@ -1,11 +1,9 @@
 import getPortfolio from '@data/portfolio';
 import ToPortfolioItemConverter from './converters/ToPortfolioItemConverter';
 import Button from '../Button/Button';
-import { openResourceInNewTab } from '@utils/dom';
 import GenericSection from '../GenericSection/GenericSection';
 import { useRouter } from 'next/router';
 import { useMemoOne } from 'use-memo-one';
-import { BOILERPLATES_PATH, CV_PATH } from '@utils/paths';
 
 const Portfolio = (): JSX.Element => {
   const router = useRouter();
@@ -41,9 +39,13 @@ const Portfolio = (): JSX.Element => {
       </GenericSection> */}
       <GenericSection
         heading="Other work"
-        shortIntro="I regret every second I worked as an employee (luckily not much!). But after all it's also experience, so feel free to check my CV for my other work!"
+        shortIntro="Feel free to check my CV for my other work!"
       >
-        <Button onClick={() => openResourceInNewTab(CV_PATH)}>
+        <Button
+          onClick={() =>
+            window.open('https://www.linkedin.com/in/borispoehland', '_blank')
+          }
+        >
           Download CV
         </Button>
       </GenericSection>
