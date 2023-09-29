@@ -8,7 +8,10 @@ export default function HomePage() {
 
   return (
     <>
-      <NextSeo title="Home" description={defaultDescription} />
+      <NextSeo
+        title="Boris Pöhland - Next.js Developer"
+        description={defaultDescription}
+      />
       <IndexSections />
     </>
   );
