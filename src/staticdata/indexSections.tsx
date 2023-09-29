@@ -22,13 +22,15 @@ const getIndexSections = (
       actionButton: (
         <div className="wrapper">
           <Button
-            onClick={() => window.open('https://calendly.com/web3dev/30min')}
+            onClick={() =>
+              window.open('https://calendly.com/web3dev/30min', '_blank')
+            }
           >
             Book free call
           </Button>
           <Button
             isSecondary
-            onClick={() => window.open('https://montescout.com')}
+            onClick={() => window.open('https://montescout.com', '_blank')}
           >
             Free stuff
           </Button>
@@ -48,7 +50,9 @@ const getIndexSections = (
       ),
       actionButton: (
         <div className="wrapper">
-          <Button onClick={() => window.open('https://nextdev.agency')}>
+          <Button
+            onClick={() => window.open('https://nextdev.agency', '_blank')}
+          >
             Book Next.js services
           </Button>
           <Button isSecondary onClick={() => router.push('/portfolio')}>
@@ -70,7 +74,7 @@ const getIndexSections = (
       ),
       actionButton: (
         <div className="wrapper">
-          <Button onClick={() => window.open('https://xweb3.dev')}>
+          <Button onClick={() => window.open('https://xweb3.dev', '_blank')}>
             Check out WEB3DEV
           </Button>
           <Button
@@ -95,7 +99,9 @@ const getIndexSections = (
       actionButton: (
         <div className="wrapper">
           <Button
-            onClick={() => window.open('https://calendly.com/web3dev/30min')}
+            onClick={() =>
+              window.open('https://calendly.com/web3dev/30min', '_blank')
+            }
           >
             Book free call
           </Button>
