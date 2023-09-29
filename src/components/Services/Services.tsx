@@ -23,7 +23,10 @@ const Services = (): JSX.Element => {
       >
         <Button
           onClick={() =>
-            window.open('https://www.linkedin.com/in/borispoehland', '_blank')
+            window.open(
+              'https://montescout.com/company/about/boris#my_career',
+              '_blank'
+            )
           }
         >
           Download CV

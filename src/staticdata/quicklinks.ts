@@ -25,7 +25,7 @@ const getQuicklinks = (): IQuicklink[] => [
   },
   {
     label: '@borispoehland',
-    href: 'https://www.instagram.com/borispoehland/',
+    href: 'https://www.instagram.com/borispoehland',
     Icon: FiInstagram,
   },
 ];
