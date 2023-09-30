@@ -13,21 +13,6 @@ const Contact = (): JSX.Element => {
         <ContactForm />
       </GenericSection>
       <GenericSection
-        heading="In case you missed it ..."
-        shortIntro="You can download my CV below."
-      >
-        <Button
-          onClick={() =>
-            window.open(
-              'https://montescout.com/company/about/boris#my_career',
-              '_blank'
-            )
-          }
-        >
-          Download CV
-        </Button>
-      </GenericSection>
-      <GenericSection
         heading="Contact me later"
         shortIntro="Add me to your contacts and reach out to me whenever you have time."
       >

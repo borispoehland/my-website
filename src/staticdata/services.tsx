@@ -48,22 +48,17 @@ const getServices = (theme: ETheme): IServiceItem[] => [
     imgSrc: `/img/services-page/nextdev.png`,
   },
   {
-    heading: 'Web Development',
+    heading: 'Everything web',
     description: (
       <>
-        Be it Wordpress or custom React development - I got you covered. Check
-        my <NextLink href="/portfolio">portfolio</NextLink> for further
-        reference.
-        <h3>What is the right fit for you?</h3>
-        React (or Next.js) pages are super fast and rely on the latest
-        technology available, but also take more time to develop. Wordpress is
-        more suited for static websites or websites that don&apos;t require
-        cutting-edge speed. I can build with both, which one to use on{' '}
-        <i>your</i> site also highly depends on your vision and budget.
-        <h3>Get in touch</h3>
-        If you want to build a website but don&apos;t have a plan yet,
-        don&apos;t worry! <NextLink href="/contact">Contact me</NextLink> to
-        discuss about your project!
+        IT guys are expected to do anything tech related - from coding websites,
+        to troubleshooting shutdown issues, up to fixing the damn printer. We
+        are problem solvers by heart, and over the years I gained valuable
+        knowledge in everything web related: Domains, Emails, Deployment,
+        Databases, Git, DevOps, AWS, PWAs, a bit of Wordpress.
+        <h3>Get started</h3>
+        <NextLink href="/contact">Contact</NextLink> me any time to find out how
+        I can help you!
       </>
     ),
     imgSrc: `/img/services-page/code-${theme}.png`,
@@ -79,10 +74,6 @@ const getServices = (theme: ETheme): IServiceItem[] => [
         Broadly spoken, usability is the ease-of-use you feel when using a
         specific software. A good usability is key to a enjoyable user
         experience (UX).
-        <h3>Get in touch</h3>I can analyze the usability of your product, as
-        well as giving design implications to enhance it. If you&#39;re
-        interested in boosting the usability of your product to the next level,{' '}
-        <NextLink href="/contact">contact me</NextLink> today!
       </>
     ),
     imgSrc: '/img/services-page/usability.png',

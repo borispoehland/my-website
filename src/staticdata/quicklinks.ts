@@ -14,7 +14,7 @@ const getQuicklinks = (): IQuicklink[] => [
     Icon: FiGithub,
   },
   {
-    label: '@in/borispoehland',
+    label: '@borispoehland',
     href: 'https://www.linkedin.com/in/borispoehland',
     Icon: FaLinkedin,
   },

@@ -64,12 +64,12 @@ const getIndexSections = (
     {
       imgSrc: `/img/index-page/web3.png`,
       imgAlt: '',
-      heading: 'Web3 is the future',
+      heading: 'I also like Web3',
       textContent: (
         <>
           Web3 and smart contracts offer a permissionless way to exchange goods.
-          That&apos;s why I founded WEB3DEV, a company specialised in web
-          development on the MultiversX blockchain
+          That&apos;s why I founded WEB3DEV, a company specialised in Web
+          Development on the MultiversX blockchain
         </>
       ),
       actionButton: (
@@ -93,7 +93,8 @@ const getIndexSections = (
       textContent: (
         <>
           Profit from years of experience in the realm of web and choose me as
-          your trusted partner
+          your trusted partner for everything web: Websites, Emails, Domains,
+          DevOps, DBs and everything web
         </>
       ),
       actionButton: (

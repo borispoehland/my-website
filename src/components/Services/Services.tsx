@@ -16,7 +16,7 @@ const Services = (): JSX.Element => {
         shortIntro={
           <>
             For further information about my qualification, check my{' '}
-            <NextLink href="/portfolio">portfolio</NextLink> or download my CV
+            <NextLink href="/portfolio">portfolio</NextLink> or check my CV
             below.
           </>
         }
@@ -29,7 +29,7 @@ const Services = (): JSX.Element => {
             )
           }
         >
-          Download CV
+          View CV
         </Button>
       </GenericSection>
     </>
