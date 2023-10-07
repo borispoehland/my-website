@@ -2,7 +2,7 @@ import BlockContent, { BlockContentType } from '@sanity/block-content-to-react';
 import LinkSerializer from '@components/CMSBlockContent/subcomponents/LinkSerializer';
 import CodeSerializer from '@components/CMSBlockContent/subcomponents/CodeSerializer';
 import BlockContentSerializer from '@components/CMSBlockContent/subcomponents/BlockContentSerializer';
-import { PropsWithChildren } from 'react';
+import { ComponentProps, PropsWithChildren } from 'react';
 import ImageSerializer from '@components/CMSBlockContent/subcomponents/ImageSerializer';
 import HighlightedBoxSerializer from '@components/CMSBlockContent/subcomponents/HighlightedBoxSerializer';
 import BreakSerializer from '@components/CMSBlockContent/subcomponents/BreakSerializer';
@@ -20,7 +20,9 @@ const serializers = {
   types: {
     codeWithHighlightedLines: CodeSerializer,
     block: BlockContentSerializer,
-    image: ImageSerializer,
+    image: (props: ComponentProps<typeof ImageSerializer>) => (
+      <ImageSerializer {...props} className="mt-4" />
+    ),
     highlightedBox: HighlightedBoxSerializer,
     break: BreakSerializer,
   },
