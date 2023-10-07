@@ -18,6 +18,7 @@ const ImageSerializer = ({ node: { asset, alt } }: IProps): JSX.Element => {
       alt={alt}
       width={1920}
       height={1080}
+      className="mt-4"
     />
   );
 };

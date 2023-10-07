@@ -18,7 +18,13 @@ const BlogPage = ({ blogPosts }: IProps): JSX.Element => {
     <>
       <NextSeo title="Blog" description="Boris Pöhland's blog" />
       <GenericIntro heading="Blog" catchPhrase="Follow my journey!" />
-      <BlogOverview blogPosts={[...externalBlogPosts, ...blogPosts]} />
+      <BlogOverview
+        blogPosts={[
+          ...blogPosts.slice(0, 1),
+          ...externalBlogPosts,
+          ...blogPosts.slice(1),
+        ]}
+      />
     </>
   );
 };
