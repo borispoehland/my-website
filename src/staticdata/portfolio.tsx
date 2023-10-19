@@ -12,8 +12,9 @@ const getPortfolio = (router: NextRouter | undefined): IPortfolioItem[] => {
       appetizer: (
         <>
           Montescout is a platform to connect buyers, renters and owners of
-          Property in Montenegro. You can think of it as Mini-Airbnb for
-          Montenegro :)
+          Property in Montenegro. Owners can list their Property and get
+          contacted by interested buyers or renters. You can also contact
+          agencies to help you with secure and reliable transactions.
         </>
       ),
       tags: [
@@ -25,6 +26,25 @@ const getPortfolio = (router: NextRouter | undefined): IPortfolioItem[] => {
       ],
       imgFolder: 'montescout',
       href: 'https://montescout.com',
+    },
+    {
+      name: 'My Montescout',
+      appetizer: (
+        <>
+          Emigrating to a foreign country is not easy. The biggest problem is
+          when you don&apos;t know reliable connections, you will probably get
+          screwed over. As expat myself, I released &quot;My Montescout&quot; to
+          offer quotes and help with the things you could need when emigrating
+          to Montenegro. All the advice is free, so check it out!
+        </>
+      ),
+      tags: [
+        Technologies.NextAndReact,
+        Technologies.Typescript,
+        Technologies.Tailwind,
+      ],
+      imgFolder: 'my-montescout',
+      href: 'https://montescout.me',
     },
     {
       name: 'Zion Multiverse',
