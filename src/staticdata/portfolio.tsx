@@ -47,6 +47,24 @@ const getPortfolio = (router: NextRouter | undefined): IPortfolioItem[] => {
       href: 'https://montescout.me',
     },
     {
+      name: 'Next Dev Agency',
+      appetizer: (
+        <>
+          Next Dev Agency is a Drop-in Next.js service agency, where you can
+          book me to fix, refactor or clean your whole Next.js codebase. With
+          plenty of experience with Next.js 13 and the new App Router, I can
+          help you get your codebase to the next level! Schooling included.
+        </>
+      ),
+      tags: [
+        Technologies.NextAndReact,
+        Technologies.Typescript,
+        Technologies.Tailwind,
+      ],
+      imgFolder: 'next-dev-agency',
+      href: 'https://nextdev.agency',
+    },
+    {
       name: 'Zion Multiverse',
       appetizer: (
         <>
