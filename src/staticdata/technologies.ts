@@ -26,7 +26,8 @@ type Techs =
   | 'Bootstrap'
   | 'ElrondAPI'
   | 'ChakraUI'
-  | 'AWS';
+  | 'AWS'
+  | 'ContentLayer';
 
 const Technologies: { [key in Techs]: ITechnology } = {
   ChakraUI: {
@@ -120,6 +121,10 @@ const Technologies: { [key in Techs]: ITechnology } = {
   Unknown: {
     name: '???',
     borderColor: '#1def27',
+  },
+  ContentLayer: {
+    name: 'Contentlayer',
+    borderColor: '#7c3aed',
   },
 };
 

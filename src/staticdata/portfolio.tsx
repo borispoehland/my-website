@@ -8,6 +8,24 @@ import { NextRouter } from 'next/router';
 const getPortfolio = (router: NextRouter | undefined): IPortfolioItem[] => {
   return [
     {
+      name: 'Stackguru',
+      appetizer: (
+        <>
+          Stackguru is a free and crisp glossary for spicy web technologies. Get
+          to know new technologies, like Next.js, Typescript, Bun, Shadcn UI and
+          many more!
+        </>
+      ),
+      tags: [
+        Technologies.NextAndReact,
+        Technologies.Typescript,
+        Technologies.Tailwind,
+        Technologies.ContentLayer,
+      ],
+      imgFolder: 'stackguru',
+      href: 'https://stackguru.io',
+    },
+    {
       name: 'Montescout',
       appetizer: (
         <>
