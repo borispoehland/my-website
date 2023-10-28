@@ -9,7 +9,7 @@ const getIndexSections = (
 ): IIndexSection[] => {
   return [
     {
-      imgSrc: '/img/index-page/me.png',
+      imgSrc: 'https://montescout.com/public/about/behind.png',
       imgAlt: '',
       heading: 'Hey,',
       textContent: (
