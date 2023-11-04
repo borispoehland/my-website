@@ -8,6 +8,24 @@ import { NextRouter } from 'next/router';
 const getPortfolio = (router: NextRouter | undefined): IPortfolioItem[] => {
   return [
     {
+      name: 'Indie Hub',
+      appetizer: (
+        <>
+          Indie Hub aims to easen your everyday workflows as digital maker and
+          marketer. So far it comes with a Google Analytics integration that
+          makes it a bliss to manage your GA4 properties, even on mobile
+        </>
+      ),
+      tags: [
+        Technologies.NextAndReact,
+        Technologies.Typescript,
+        Technologies.Tailwind,
+        Technologies.Stripe,
+      ],
+      imgFolder: 'indie-hub',
+      href: 'https://indie-hub.com',
+    },
+    {
       name: 'Stackguru',
       appetizer: (
         <>

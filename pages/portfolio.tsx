@@ -51,7 +51,7 @@ export async function getStaticProps() {
         await mkdirp(dir);
         const file = resolve(dir, `${imgFilename ?? 'main'}.png`);
         if (!existsSync(file)) {
-          await page.goto(href, { waitUntil: 'networkidle0' });
+          await page.goto(href, { waitUntil: 'networkidle2' });
           await page.screenshot({ path: file });
         }
       }

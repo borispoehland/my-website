@@ -27,7 +27,8 @@ type Techs =
   | 'ElrondAPI'
   | 'ChakraUI'
   | 'AWS'
-  | 'ContentLayer';
+  | 'ContentLayer'
+  | 'Stripe';
 
 const Technologies: { [key in Techs]: ITechnology } = {
   ChakraUI: {
@@ -125,6 +126,10 @@ const Technologies: { [key in Techs]: ITechnology } = {
   ContentLayer: {
     name: 'Contentlayer',
     borderColor: '#7c3aed',
+  },
+  Stripe: {
+    name: 'Stripe',
+    borderColor: 'rgb(99, 91, 255)',
   },
 };
 
