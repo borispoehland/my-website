@@ -8,12 +8,31 @@ import { NextRouter } from 'next/router';
 const getPortfolio = (router: NextRouter | undefined): IPortfolioItem[] => {
   return [
     {
+      name: 'XOXNO',
+      appetizer: (
+        <>
+          XOXNO is the major NFT marketplace on MultiversX. The new frontend
+          runs on Next.js 15, and utilizes a modern frontend stack to provide a
+          rich suite of features.
+        </>
+      ),
+      tags: [
+        Technologies.NextAndReact,
+        Technologies.Typescript,
+        Technologies.Tailwind,
+        Technologies.Stripe,
+        Technologies.ElrondAPI,
+      ],
+      imgFolder: 'xoxno',
+      href: 'https://xoxno.com',
+    },
+    {
       name: 'Indie Hub',
       appetizer: (
         <>
           Indie Hub aims to easen your everyday workflows as digital maker and
           marketer. So far it comes with a Google Analytics integration that
-          makes it a bliss to manage your GA4 properties, even on mobile
+          makes it a bliss to manage your GA4 properties, even on mobile.
         </>
       ),
       tags: [
@@ -106,7 +125,7 @@ const getPortfolio = (router: NextRouter | undefined): IPortfolioItem[] => {
         <>
           Zion Multiverse is an NFT project on the MultiversX blockchain. I
           assisted them in their development efforts, and was responsible for
-          creating a reliable, functional web3 presence
+          creating a reliable, functional web3 presence.
         </>
       ),
       tags: [
@@ -117,24 +136,6 @@ const getPortfolio = (router: NextRouter | undefined): IPortfolioItem[] => {
       ],
       imgFolder: 'zion',
       href: 'https://zionmultiverse.com',
-    },
-    {
-      name: 'XOXNO',
-      appetizer: (
-        <>
-          XOXNO is the major NFT marketplace on MultiversX (ex. Elrond). I was
-          involved in the migration to Next.js, as well as the new frontend and
-          features.
-        </>
-      ),
-      tags: [
-        Technologies.NextAndReact,
-        Technologies.Typescript,
-        Technologies.Bootstrap,
-        Technologies.ElrondAPI,
-      ],
-      imgFolder: 'xoxno',
-      href: 'https://xoxno.com',
     },
     {
       name: 'Natural Born Degenz',
