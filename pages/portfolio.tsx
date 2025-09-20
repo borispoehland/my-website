@@ -28,7 +28,7 @@ export default function PortfolioPage() {
 }
 
 export async function getStaticProps() {
-  const portfolioItems = getPortfolio(undefined);
+  /* const portfolioItems = getPortfolio(undefined);
 
   const captureScreenshotsOfPortfolioPages = async () => {
     const getPortfolioImgFolder = (imgFolder: string) => {
@@ -60,7 +60,7 @@ export async function getStaticProps() {
     await browser.close();
   };
 
-  await captureScreenshotsOfPortfolioPages();
+  await captureScreenshotsOfPortfolioPages(); */
 
   return {
     props: {}, // will be passed to the page component as props
