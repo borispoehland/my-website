@@ -13,7 +13,7 @@
       "destination": "/files/boris_poehland_cv.pdf"
     },
     {
-      "source": "/",
+      "source": "/home",
       "destination": "https://montescout.com/company/about/boris"
     }
   ],
