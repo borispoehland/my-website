@@ -1,19 +1,11 @@
-/**
- * This is the schema definition for the rich text fields used for
- * for this blog studio. When you import it in schemas.js it can be
- * reused in other parts of the studio with:
- *  {
- *    name: 'someName',
- *    title: 'Some title',
- *    type: 'blockContent'
- *  }
- */
-export default {
+import { defineType, defineField } from 'sanity';
+
+export default defineType({
   title: 'Block Content',
   name: 'blockContent',
   type: 'array',
   of: [
-    {
+    defineField({
       title: 'Block',
       type: 'block',
       styles: [
@@ -33,25 +25,25 @@ export default {
           { title: 'Strike', value: 'strike-through' },
         ],
       },
-    },
-    {
+    }),
+    defineField({
       type: 'image',
       fields: [
-        {
+        defineField({
           title: 'Alternative Text',
           name: 'alt',
           type: 'string',
-        },
+        }),
       ],
-    },
-    {
+    }),
+    defineField({
       type: 'codeWithHighlightedLines',
-    },
-    {
+    }),
+    defineField({
       type: 'break',
-    },
-    {
+    }),
+    defineField({
       type: 'highlightedBox',
-    },
+    }),
   ],
-};
+});
